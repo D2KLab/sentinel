@@ -11,7 +11,7 @@
     "I drove a Linconl and it's a truly dream" 
     Linconl -> proper noun -> positive
 
-    "I drove a Linconl and I was awful"
+    "I drove a Linconl and it was awful"
     Linconl -> proper noun -> negative
     
 ### Team

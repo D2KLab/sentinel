@@ -1,19 +1,20 @@
-# sentinel : Named Entity Sentiment Analysis 
+# sentinel
+## Named Entity Sentiment Analysis 
 
-## Approach
+### Approach
 // to fill up
 
-## How to run
+### How to run
 //to fill up
 
-## Examples
+### Examples
     "I drove a Linconl and it's a truly dream" 
     Linconl -> proper noun -> positive
 
     "I drove a Linconl and I was awful"
     Linconl -> proper noun -> negative
     
-## Team
+### Team
 * ..
 * ...
 * Giuseppe Rizzo

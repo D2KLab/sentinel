@@ -1,4 +1,4 @@
-# sentinel : Named Entity Sentiment Detector 
+# sentinel : Named Entity Sentiment Analysis 
 
 ## Approach
 // to fill up

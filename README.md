@@ -1,5 +1,5 @@
 # sentinel
-## Named Entity Sentiment Analysis 
+... Named Entity Sentiment Analysis ...
 
 ### Approach
 // to fill up

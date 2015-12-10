@@ -29,6 +29,7 @@ public class Word2VecDemo {
         // Strip white space before and after for each line
         SentenceIterator iter = UimaSentenceIterator.createWithPath(filePath);
         // Split on white spaces in the line to get words
+        log.info("Tokenize data....");
         TokenizerFactory t = new DefaultTokenizerFactory();
         t.setTokenPreProcessor(new CommonPreprocessor());
 
@@ -41,9 +42,9 @@ public class Word2VecDemo {
 
         log.info("Building model....");
         Word2Vec vec = new Word2Vec.Builder()
-                .minWordFrequency(5).iterations(1)
-                .layerSize(100).lookupTable(table)
-                .stopWords(new ArrayList<String>())
+                .minWordFrequency(5).iterations(1) // set the minimum number of times a word must appear in the corpus
+                .layerSize(100).lookupTable(table) // specify the number of features in the word vector
+                .stopWords(new ArrayList<String>())// 
                 .vocabCache(cache).seed(42)
                 .windowSize(5).iterate(iter).tokenizerFactory(t).build();
 
@@ -51,7 +52,7 @@ public class Word2VecDemo {
         vec.fit();
 
         log.info("Writing word vectors to text file....");
-        // Write word
+        // Write word embedding matrix, save the model
         WordVectorSerializer.writeWordVectors(vec, "Word2VecDemo.txt");
 
         log.info("Closest Words:");

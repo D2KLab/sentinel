@@ -1,5 +1,6 @@
 # sentinel
 ... Named Entity Sentiment Analysis ...
+We are implementing IOA system right now, all the codes we did are in the IOA folder.
 
 ### Approach
 // to fill up
@@ -15,7 +16,7 @@
     Linconl -> proper noun -> negative
     
 ### Team
-* ..
-* ...
+* Ahmed Abdelli
+* Yonghui Feng
 * Giuseppe Rizzo
 * Raphael Troncy

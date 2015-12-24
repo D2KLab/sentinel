@@ -11,7 +11,7 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
  */
 public class Tweet {
 	private String rawTweet;
-	private String tweetID;
+	private String tweetID;	
     private String tweetString;
     private String sentiment;
     private List<TaggedToken> wordList;
@@ -26,11 +26,43 @@ public class Tweet {
 	private Set<String> clusterList;
 	private Set<String> emoticonList;
 	private Set<String> stemList;
-    
+
+	// target positioin
+	private String targetBegin;
+	private String targetEnd;
+
+    /*
     public Tweet(String tweet, String senti, String tID){
     	rawTweet = tweet;
         sentiment = senti;
     	tweetID = tID;
+    }
+    */
+	
+	
+    /**
+     * Create Tweet
+     * @param tweet content of tweet
+     * @param senti sentiment of the target
+     * @param tID tweet id
+     * @param targetBegin beginning of the target position
+     * @param targetEnd end of the target postition
+     */
+    public Tweet(String tweet, String senti, String tID, String targetBegin, String targetEnd){
+    	rawTweet = tweet;
+        sentiment = senti;
+    	tweetID = tID;
+    	this.targetBegin = targetBegin;
+    	this.targetEnd = targetEnd;
+    }
+    
+    
+    public String getTargetBegin() {
+    	return targetBegin;
+    }
+    
+    public String getTargetEnd() {
+    	return targetEnd;
     }
     
     public String getRawTweetString() {
@@ -172,8 +204,27 @@ public class Tweet {
 		if (this.rawTweet == null) {
 			if (other.rawTweet != null)
 				return false;
-		} else if (!this.tweetID.equals(other.tweetID))
+		} else if (!this.tweetID.equals(other.tweetID)) {
 			return false;
+		}
+		else if (!this.targetBegin.equals(other.targetBegin)) {
+			return false;
+		} else if (!this.targetEnd.equals(other.targetEnd)) {
+			return false;
+		}
 		return true;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Tweet [ tweetID=" + tweetID
+				+ ", targetBegin=" + targetBegin
+				+ ", targetEnd=" + targetEnd 
+				+ ", sentiment=" + sentiment 
+				+ "rawTweet=" + rawTweet + "]";
+		
+	}
+
+
 }

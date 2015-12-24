@@ -1,11 +1,7 @@
 package com.eurecom.sentinel;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Main {
 	
-	static Set<Tweet> tweetList = new HashSet<Tweet>();
 	static String mode;
 	static String PATH = "";
 	private static long startTime = System.currentTimeMillis();
@@ -18,8 +14,6 @@ public class Main {
 	public static void main(String[] args) throws Exception{
 		
 		String nameOfNRCTrain = "";
-		int evalmodelmode = 0;
-		int trainmodelmode = 0;
 		String name = "";
 		
 		if (args.length != 2) {
@@ -32,10 +26,10 @@ public class Main {
 		SentimentanalysisECIR sentimentanalysis = new SentimentanalysisECIR(PATH);
 		switch(args[0]) {
 			case "eval":
-				sentimentanalysis.testSystem(evalmodelmode, nameOfNRCTrain);
+				sentimentanalysis.testSystem(nameOfNRCTrain);
 				break;
 			case "train":
-				sentimentanalysis.trainSystem(trainmodelmode, name);
+				sentimentanalysis.trainSystem(name);
 				break;
 			default:
 				throw new IllegalArgumentException("Invalid mode: " + args[0]);

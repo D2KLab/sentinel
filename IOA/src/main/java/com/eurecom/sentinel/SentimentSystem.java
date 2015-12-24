@@ -83,7 +83,7 @@ public class SentimentSystem {
     	for (int i = 0; i < tweetString.length() - 2; i++){
     		nGramList.add(tweetString.substring(i, i + 3));
     		if (i + 4 <= tweetString.length()) nGramList.add(tweetString.substring(i, i + 4));
-    		if (i + 5 <= tweetString.length())nGramList.add(tweetString.substring(i, i + 5));
+    		if (i + 5 <= tweetString.length()) nGramList.add(tweetString.substring(i, i + 5));
     	}
     	tweet.setCharNGramList(nGramList);
     	return nGramList;
@@ -353,6 +353,7 @@ public class SentimentSystem {
 	 * @return returns a list with all lexica features
 	 */
     protected List<Double> getLexiScores(Map<String,Double> lexi, List<TaggedToken> wordList, boolean neg) {
+    	// need to add min score and count of non-negative score
     	double totalCount = 0.0;
     	double totalScore = 0.0;
     	double maxScore = 0.0;
@@ -390,6 +391,7 @@ public class SentimentSystem {
      * @return returns a list with all lexica features
      */
     protected List<Double> getLexiScoresBi(Map<String,Double> lexi, Set<String> wordList, boolean neg) {
+      	// need to add min score and count of non-negative score
     	double totalCount = 0.0;
     	double totalScore = 0.0;
     	double maxScore = 0.0;

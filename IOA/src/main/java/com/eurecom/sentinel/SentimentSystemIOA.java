@@ -24,14 +24,14 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
 /**
  * Trains and tests the NRC system
  */
-public class SentimentSystemNRC extends SentimentSystem {
+public class SentimentSystemIOA extends SentimentSystem {
 
     /**
      * Constructor gets all Tweets in a list.
      * 
      * @param tweetList the list with all Tweets.
      */    
-	public SentimentSystemNRC(Set<Tweet> tweetList) {
+	public SentimentSystemIOA(Set<Tweet> tweetList) {
 		super(tweetList);
 	}
 

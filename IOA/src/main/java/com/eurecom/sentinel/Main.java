@@ -26,13 +26,13 @@ public class Main {
 			PATH = args[1];
 		}
 
-		SentimentanalysisECIR sentimentanalysis = new SentimentanalysisECIR(PATH);
+		SentimentAnalysis sentimentAnalysis = new SentimentAnalysis(PATH);
 		switch(args[0]) {
 			case "eval":
-				sentimentanalysis.testSystem(nameOfTrain);
+				sentimentAnalysis.testSystem(nameOfTrain);
 				break;
 			case "train":
-				sentimentanalysis.trainSystem(saveName);
+				sentimentAnalysis.trainSystem(saveName);
 				break;
 			default:
 				throw new IllegalArgumentException("Invalid mode: " + args[0]);

@@ -16,7 +16,7 @@ import org.apache.commons.lang.StringUtils;
 /**
  * Handels traning, testing and evaluation of the Sentimentsystems.
  */
-public class SentimentanalysisECIR {
+public class SentimentAnalysis {
 
 	private Set<Tweet> tweetList = new HashSet<Tweet>();
 	private String PATH =  "";
@@ -31,7 +31,7 @@ public class SentimentanalysisECIR {
 	 * @throws FileNotFoundException
 	 * @throws UnsupportedEncodingException
 	 */
-	public SentimentanalysisECIR(String path) throws FileNotFoundException, UnsupportedEncodingException {
+	public SentimentAnalysis(String path) throws FileNotFoundException, UnsupportedEncodingException {
 		this.PATH = path; //path to train or test file
 		loadTweets(path);
 	}
@@ -42,7 +42,7 @@ public class SentimentanalysisECIR {
 	 * @param savename optional filename for the arff file
 	 */
 	public void trainSystem(String savename) throws IOException {
-		SentimentSystemNRC nrcSystem = new SentimentSystemNRC(tweetList);
+		SentimentSystemIOA nrcSystem = new SentimentSystemIOA(tweetList);
 		nrcSystem.train(savename);
 	}	
 	
@@ -52,7 +52,7 @@ public class SentimentanalysisECIR {
 	 * @param trainname optional filename of the arff file
 	 */
 	public void testSystem(String trainname) throws Exception {
-		SentimentSystemNRC nrcSystem = new SentimentSystemNRC(tweetList);
+		SentimentSystemIOA nrcSystem = new SentimentSystemIOA(tweetList);
 		this.evalModel(nrcSystem.test(trainname));
 	}
 	

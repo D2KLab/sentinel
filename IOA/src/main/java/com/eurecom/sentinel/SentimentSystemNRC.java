@@ -41,7 +41,7 @@ public class SentimentSystemNRC extends SentimentSystem {
      * @param savename optional filename for the arff file
      * @throws IOException
      */	
-	public void train(String savename) throws IOException{
+	public void train(String saveName) throws IOException{
 		System.out.println("Starting NRC Train");
 		System.out.println("Tweets: " +  this.tweetList.size());
 		
@@ -554,15 +554,15 @@ public class SentimentSystemNRC extends SentimentSystem {
 		//save features and training instances in .arff file
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(trainingSet);
-		saver.setFile(new File("resources/arff/Trained-Features-" + "NRC" + savename + ".arff"));
+		saver.setFile(new File("resources/arff/Trained-Features-" + "NRC" + saveName + ".arff"));
 		saver.writeBatch();
-		System.out.println("Trained-Features-" + "NRC" + savename + " saved");
+		System.out.println("Trained-Features-" + "NRC" + saveName + " saved");
 	}
 	
     /**
      * Creates all features and instances for the testdata and classifies the Tweet
      * 
-     * @param nameOfTrain optional filename of the arff file
+     * @param nameOfTrain optional filename of the arff file to train
      * @return returns all results in a map
      * @throws Exception
      */ 	
@@ -769,7 +769,7 @@ public class SentimentSystemNRC extends SentimentSystem {
             //classify Tweet
             double result = classifier.classifyInstance(train.lastInstance());
             double[] resultDistribution = classifier.distributionForInstance(train.lastInstance());
-            resultMap.put(tweet.getTweetID(), new ClassificationResult(tweet, resultDistribution, result));
+            resultMap.put(tweet.getTweetID() + " " + tweet.getTargetBegin() + " " + tweet.getTargetEnd(), new ClassificationResult(tweet, resultDistribution, result));
 		}
 		
 		return resultMap;

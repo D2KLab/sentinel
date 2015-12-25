@@ -20,6 +20,9 @@ public class SentimentanalysisECIR {
 
 	private Set<Tweet> tweetList = new HashSet<Tweet>();
 	private String PATH =  "";
+	private boolean debug = true;
+	//public static final String ANSI_RED = "\u001B[31m";
+	//public static final String ANSI_RESET = "\u001B[0m";
 	
 	/**
 	 * Constructor loads all Tweets from a Path.
@@ -35,6 +38,7 @@ public class SentimentanalysisECIR {
 	
 	/**
 	 * Trains systemNRC
+	 * 
 	 * @param savename optional filename for the arff file
 	 */
 	public void trainSystem(String savename) throws IOException {
@@ -45,23 +49,6 @@ public class SentimentanalysisECIR {
 	/**
 	 * Tests and evaluate a specific system
 	 * 
-	 * @param system system ID (0: NRC; 1: GU-MLT-LT; 2: KLUE)
-	 * @param trainname optional filename of the arff file
-	 * @throws Exception
-	 */
-	public void testSystem(int system, String trainname) throws Exception {
-		switch (system){
-			case 0:
-				SentimentSystemNRC nrcSystem = new SentimentSystemNRC(tweetList);
-				this.evalModel(nrcSystem.test(trainname));
-				break;
-			default:
-				throw new IllegalArgumentException("Invalid system: " + system);
-		}
-	}
-	
-	/**
-	 * Tests and evaluate a specific system
 	 * @param trainname optional filename of the arff file
 	 */
 	public void testSystem(String trainname) throws Exception {
@@ -103,7 +90,7 @@ public class SentimentanalysisECIR {
 		System.out.println("multiple Tweets: " + multiple);
 		scanner.close();
 	}
-
+	
 	/**
 	 * Stores Tweet in tweetList, if not already in there
 	 * 
@@ -118,12 +105,16 @@ public class SentimentanalysisECIR {
 	private boolean storeTweetUni(String tweetString, String senti, String tweetID, String targetBegin, String targetEnd) throws UnsupportedEncodingException{
 		Tweet tweet = new Tweet(tweetString, senti, tweetID, targetBegin, targetEnd);		
 	    if(this.tweetList.add(tweet)){
-	    	System.out.println(tweet.toString());
+	    	if (debug) {
+	    		System.out.println(tweet.toString());
+	    	}
 	    	return true;
 	    }
 	    else {
-	    	System.out.println(tweet.toString());
-			return false;
+	    	if (debug) {
+	    		System.out.println(tweet.toString());
+	    	}
+	    	return false;
 		}
     }
 	
@@ -136,27 +127,32 @@ public class SentimentanalysisECIR {
 	private void evalModel(Map<String, ClassificationResult> resultMap) throws Exception {
 		System.out.println("Starting eval Model");
 		System.out.println("Tweets: " +  tweetList.size());
+		//matrix stores actualSentiment and resultSentiment
 		double[][] matrix = new double[3][3];
 		Map<String, Integer> classValue = new HashMap<String, Integer>();
 		classValue.put("positive", 0);
 		classValue.put("neutral", 1);
 		classValue.put("negative", 2);
+		
+		// resultMapToPrint store <tweetIDWithPosition, result sentiment>
 		Map<String, Integer> resultMapToPrint = new HashMap<String, Integer>();
 		for (Map.Entry<String, ClassificationResult> tweet : resultMap.entrySet()){
-			String tweetID = tweet.getKey();
+			String tweetIDWithTargetPosition = tweet.getKey();
 			ClassificationResult senti = tweet.getValue();
 			double[] useSentiArray = {0,0,0};
 			for (int i = 0; i < 3; i++){
 				useSentiArray[i] = (senti.getResultDistribution()[i]);
 			}
-			int useSenti = 1;
+			
+			// useSenti: the result sentiment after the system,defaut value is neutral
+			int useSenti = 1; 
 			if(useSentiArray[0] > useSentiArray[1] && useSentiArray[0] > useSentiArray[2]){
 				useSenti = 0;
 			}
 			if(useSentiArray[2] > useSentiArray[0] && useSentiArray[2] > useSentiArray[1]){
 				useSenti = 2;
 			}
-			resultMapToPrint.put(tweetID, useSenti);
+			resultMapToPrint.put(tweetIDWithTargetPosition, useSenti);
 			if (!tweet.getValue().getTweet().getSentiment().equals("unknwn")){
 				Integer actualSenti = classValue.get(tweet.getValue().getTweet().getSentiment());
 				matrix[actualSenti][useSenti]++;
@@ -201,50 +197,69 @@ public class SentimentanalysisECIR {
 //	    System.out.println("recallNeg: " + recallC);
 		System.out.println("f1: " + f1);
 		System.out.println("f1 without neutral: " + (f1A + f1C) / 2);
-
 	}
 	
 	/**
 	 * Prints the result of the sentiment analysis to the result file
+	 * errorcount includes bad predict and tweet "Not available"
 	 * 
 	 * @param resultMapToPrint a map with the results for all Tweets
 	 * @throws FileNotFoundException
 	 */	
-	private void printResultToFile(Map<String, Integer> resultMapToPrint) throws FileNotFoundException {    
-        int errorcount = 0;
+	protected void printResultToFile (Map<String, Integer> resultMapToPrint) throws FileNotFoundException {
+		int errorcount = 0;
         Map<Integer, String> classValue = new HashMap<Integer, String>();
         classValue.put(0, "positive");
         classValue.put(1, "neutral");
         classValue.put(2, "negative");
         File file = new File("resources/tweets/" + this.PATH + ".txt");
-        PrintStream tweetPrintStream = new PrintStream(new File("resources/erg/result.txt"));
+        PrintStream tweetPrintStream = new PrintStream(new File("output/result.txt"));
+        PrintStream tweetPrintStreamError = new PrintStream(new File("output/error_analysis/error.txt"));
         Scanner scanner = new Scanner(file);
+        
         while (scanner.hasNextLine()) {
             String[] line = scanner.nextLine().split("\t");
-            String id = line[0];
+            String id = line[0] + " " + line[2] + " " + line[3];
             if (line[0].equals("NA")){
             	id = line[1];
             }
-            if (line.length == 4){        
-                String senti = classValue.get(resultMapToPrint.get(id));
-                if (senti != null){
-                    line[2] = senti;
-                }
-                else{
-                    System.out.println("Error while printResultToFile: tweetID:" + id);
+            if (line.length == 6 && !line[5].equals("Not Available")){        
+                String resultSenti = classValue.get(resultMapToPrint.get(id)); //result sentiment
+                String initialSenti = line[4]; // initial sentiment
+                if (resultSenti != null){
+                    //line[4] = resultSenti;
+                    if (!initialSenti.equals(resultSenti)){
+                    	errorcount++;
+                    	line[4] = "[Error] Inital: " + initialSenti + " Result: " + resultSenti;
+                    	if (debug) {
+                       		System.out.print(StringUtils.join(line, "\t"));
+                    		System.out.println();
+                    	}
+                    	tweetPrintStreamError.print(StringUtils.join(line, "\t"));
+                    	tweetPrintStreamError.println();
+                    } else {
+                    	line[4] = "[OK] 	Result: " + resultSenti;
+                    	if (debug) {
+                    		System.out.print(StringUtils.join(line, "\t"));
+                    		System.out.println();
+                    	}
+                    }
+                } else {
+                    System.out.println("Error while printResultToFile (result sentiment == null): tweetIDWithPosition:" + id);
                     errorcount++;
                     line[2] = "neutral";
                 }
-            }
-            else{
+            } else if (line.length == 6 && line[5].equals("Not Available")){
                 errorcount++;
-                System.out.println(line[0]);
-            }           
+            } else {
+            	System.out.println(line[0]);
+            }
             tweetPrintStream.print(StringUtils.join(line, "\t"));
             tweetPrintStream.println();
         }
         scanner.close();
         tweetPrintStream.close();
-        if (errorcount != 0) System.out.println("Errors while printResultToFile: " + errorcount);
+        tweetPrintStreamError.close();
+        if (errorcount != 0) System.out.println("Not Available tweets: " + errorcount);
 	}
 }

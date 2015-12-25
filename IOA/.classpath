@@ -24,5 +24,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="lib/ark-tweet-nlp-0.3.2.jar"/>
+	<classpathentry kind="lib" path="lib/LibLINEAR-1.9.0.jar"/>
+	<classpathentry kind="lib" path="lib/weka-3.7.10.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jazzy-core-0.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/liblinear-1.92.jar"/>
+	<classpathentry kind="lib" path="lib/snowball-stemmers-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/stanford-postagger-3.5.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

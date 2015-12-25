@@ -1,5 +1,357 @@
 @relation test
 
+@attribute 'NGRAM_bowl ....' numeric
+@attribute 'NGRAM_the cotton bowl ....' numeric
+@attribute 'NGRAM_new lil spot' numeric
+@attribute 'NGRAM_from my new' numeric
+@attribute NGRAM_lunch numeric
+@attribute 'NGRAM_#1st #time' numeric
+@attribute 'NGRAM_going back#' numeric
+@attribute NGRAM_cotton numeric
+@attribute 'NGRAM_pretty good #1st' numeric
+@attribute 'NGRAM_.... pretty good #1st' numeric
+@attribute 'NGRAM_cotton bowl ....' numeric
+@attribute NGRAM_good numeric
+@attribute NGRAM_lil numeric
+@attribute NGRAM_back# numeric
+@attribute 'NGRAM_... the cotton' numeric
+@attribute 'NGRAM_my new' numeric
+@attribute NGRAM_.... numeric
+@attribute 'NGRAM_lunch from' numeric
+@attribute NGRAM_from numeric
+@attribute 'NGRAM_cotton bowl .... pretty' numeric
+@attribute 'NGRAM_pretty good #1st #time' numeric
+@attribute NGRAM_new numeric
+@attribute 'NGRAM_good #1st' numeric
+@attribute NGRAM_going numeric
+@attribute 'NGRAM_pretty good' numeric
+@attribute NGRAM_my numeric
+@attribute 'NGRAM_bowl .... pretty' numeric
+@attribute 'NGRAM_the cotton' numeric
+@attribute 'NGRAM_from my new lil' numeric
+@attribute 'NGRAM_#will be going back#' numeric
+@attribute 'NGRAM_#will be going' numeric
+@attribute NGRAM_spot numeric
+@attribute 'NGRAM_good #1st #time' numeric
+@attribute 'NGRAM_my new lil' numeric
+@attribute 'NGRAM_lil spot' numeric
+@attribute NGRAM_be numeric
+@attribute 'NGRAM_lil spot ...' numeric
+@attribute 'NGRAM_... the' numeric
+@attribute 'NGRAM_lunch from my' numeric
+@attribute 'NGRAM_spot ... the cotton' numeric
+@attribute 'NGRAM_#1st #time #will' numeric
+@attribute NGRAM_bowl numeric
+@attribute 'NGRAM_#1st #time #will be' numeric
+@attribute 'NGRAM_#time #will be going' numeric
+@attribute 'NGRAM_.... pretty good' numeric
+@attribute 'NGRAM_#will be' numeric
+@attribute NGRAM_#will numeric
+@attribute 'NGRAM_the cotton bowl' numeric
+@attribute 'NGRAM_be going back#' numeric
+@attribute NGRAM_#time numeric
+@attribute 'NGRAM_#time #will' numeric
+@attribute 'NGRAM_lil spot ... the' numeric
+@attribute 'NGRAM_cotton bowl' numeric
+@attribute 'NGRAM_lunch from my new' numeric
+@attribute 'NGRAM_be going' numeric
+@attribute NGRAM_#1st numeric
+@attribute NGRAM_pretty numeric
+@attribute 'NGRAM_#time #will be' numeric
+@attribute 'NGRAM_new lil' numeric
+@attribute 'NGRAM_spot ...' numeric
+@attribute NGRAM_... numeric
+@attribute 'NGRAM_good #1st #time #will' numeric
+@attribute 'NGRAM_spot ... the' numeric
+@attribute 'NGRAM_from my' numeric
+@attribute NGRAM_the numeric
+@attribute 'NGRAM_my new lil spot' numeric
+@attribute 'NGRAM_... the cotton bowl' numeric
+@attribute 'NGRAM_bowl .... pretty good' numeric
+@attribute 'NGRAM_new lil spot ...' numeric
+@attribute 'NGRAM_.... pretty' numeric
+@attribute 'CHARNGRAM_om ' numeric
+@attribute CHARNGRAM_lun numeric
+@attribute CHARNGRAM_pret numeric
+@attribute CHARNGRAM_bac numeric
+@attribute CHARNGRAM_1st# numeric
+@attribute 'CHARNGRAM_m my' numeric
+@attribute 'CHARNGRAM_ be ' numeric
+@attribute 'CHARNGRAM_ be g' numeric
+@attribute 'CHARNGRAM_on ' numeric
+@attribute CHARNGRAM_..th numeric
+@attribute CHARNGRAM_d#1st numeric
+@attribute CHARNGRAM_t#t numeric
+@attribute CHARNGRAM_going numeric
+@attribute 'CHARNGRAM_e co' numeric
+@attribute CHARNGRAM_ood# numeric
+@attribute CHARNGRAM_..the numeric
+@attribute 'CHARNGRAM_he c' numeric
+@attribute 'CHARNGRAM_will ' numeric
+@attribute CHARNGRAM_#wi numeric
+@attribute 'CHARNGRAM_ from' numeric
+@attribute 'CHARNGRAM_ty ' numeric
+@attribute 'CHARNGRAM_ng ba' numeric
+@attribute CHARNGRAM_prett numeric
+@attribute 'CHARNGRAM_be ' numeric
+@attribute CHARNGRAM_goin numeric
+@attribute 'CHARNGRAM_ ...t' numeric
+@attribute 'CHARNGRAM_ ...' numeric
+@attribute 'CHARNGRAM_.the ' numeric
+@attribute 'CHARNGRAM_ton b' numeric
+@attribute 'CHARNGRAM_l be' numeric
+@attribute 'CHARNGRAM_ing ' numeric
+@attribute 'CHARNGRAM_ew l' numeric
+@attribute CHARNGRAM_#will numeric
+@attribute 'CHARNGRAM_ill b' numeric
+@attribute CHARNGRAM_1st numeric
+@attribute CHARNGRAM_pot numeric
+@attribute 'CHARNGRAM_on b' numeric
+@attribute 'CHARNGRAM_wl ..' numeric
+@attribute 'CHARNGRAM_ch ' numeric
+@attribute 'CHARNGRAM_pot ' numeric
+@attribute 'CHARNGRAM_ing b' numeric
+@attribute 'CHARNGRAM_ ba' numeric
+@attribute 'CHARNGRAM_on bo' numeric
+@attribute CHARNGRAM_time# numeric
+@attribute 'CHARNGRAM_ be' numeric
+@attribute 'CHARNGRAM_from ' numeric
+@attribute 'CHARNGRAM_ lil ' numeric
+@attribute 'CHARNGRAM_rom ' numeric
+@attribute 'CHARNGRAM_rom m' numeric
+@attribute CHARNGRAM_tton numeric
+@attribute CHARNGRAM_1st#t numeric
+@attribute 'CHARNGRAM_ bo' numeric
+@attribute CHARNGRAM_....p numeric
+@attribute CHARNGRAM_...pr numeric
+@attribute 'CHARNGRAM_ew li' numeric
+@attribute CHARNGRAM_... numeric
+@attribute CHARNGRAM_the numeric
+@attribute 'CHARNGRAM_ goi' numeric
+@attribute 'CHARNGRAM_be go' numeric
+@attribute 'CHARNGRAM_ goo' numeric
+@attribute 'CHARNGRAM_ ....' numeric
+@attribute 'CHARNGRAM_ sp' numeric
+@attribute CHARNGRAM_..pre numeric
+@attribute CHARNGRAM_t#tim numeric
+@attribute 'CHARNGRAM_ lil' numeric
+@attribute CHARNGRAM_me#w numeric
+@attribute CHARNGRAM_goi numeric
+@attribute 'CHARNGRAM_y g' numeric
+@attribute CHARNGRAM_ood numeric
+@attribute 'CHARNGRAM_y n' numeric
+@attribute CHARNGRAM_goo numeric
+@attribute 'CHARNGRAM_il s' numeric
+@attribute 'CHARNGRAM_ot .' numeric
+@attribute CHARNGRAM_unch numeric
+@attribute 'CHARNGRAM_l be ' numeric
+@attribute CHARNGRAM_ack numeric
+@attribute 'CHARNGRAM_y ne' numeric
+@attribute 'CHARNGRAM_ co' numeric
+@attribute CHARNGRAM_good numeric
+@attribute CHARNGRAM_lil numeric
+@attribute CHARNGRAM_retty numeric
+@attribute CHARNGRAM_ack# numeric
+@attribute 'CHARNGRAM_tty g' numeric
+@attribute CHARNGRAM_tim numeric
+@attribute 'CHARNGRAM_my ne' numeric
+@attribute 'CHARNGRAM_om m' numeric
+@attribute 'CHARNGRAM_l sp' numeric
+@attribute CHARNGRAM_ret numeric
+@attribute 'CHARNGRAM_ll ' numeric
+@attribute 'CHARNGRAM_h fro' numeric
+@attribute CHARNGRAM_pre numeric
+@attribute 'CHARNGRAM_e go' numeric
+@attribute 'CHARNGRAM_h f' numeric
+@attribute CHARNGRAM_..p numeric
+@attribute CHARNGRAM_.pr numeric
+@attribute CHARNGRAM_#1st# numeric
+@attribute 'CHARNGRAM_new ' numeric
+@attribute 'CHARNGRAM_t ...' numeric
+@attribute CHARNGRAM_ime# numeric
+@attribute CHARNGRAM_..t numeric
+@attribute 'CHARNGRAM_g ba' numeric
+@attribute CHARNGRAM_ck# numeric
+@attribute 'CHARNGRAM_l ...' numeric
+@attribute 'CHARNGRAM_ll be' numeric
+@attribute 'CHARNGRAM_owl .' numeric
+@attribute 'CHARNGRAM_he ' numeric
+@attribute CHARNGRAM_#wil numeric
+@attribute 'CHARNGRAM_my n' numeric
+@attribute CHARNGRAM_back numeric
+@attribute CHARNGRAM_lunc numeric
+@attribute CHARNGRAM_d#1s numeric
+@attribute CHARNGRAM_t#ti numeric
+@attribute 'CHARNGRAM_e cot' numeric
+@attribute 'CHARNGRAM_t ..' numeric
+@attribute 'CHARNGRAM_y goo' numeric
+@attribute CHARNGRAM_good# numeric
+@attribute 'CHARNGRAM_ spot' numeric
+@attribute 'CHARNGRAM_ot ' numeric
+@attribute 'CHARNGRAM_nch f' numeric
+@attribute 'CHARNGRAM_the c' numeric
+@attribute CHARNGRAM_st#t numeric
+@attribute 'CHARNGRAM_g b' numeric
+@attribute 'CHARNGRAM_etty ' numeric
+@attribute CHARNGRAM_unc numeric
+@attribute 'CHARNGRAM_ fr' numeric
+@attribute 'CHARNGRAM_ my n' numeric
+@attribute CHARNGRAM_od# numeric
+@attribute 'CHARNGRAM_ back' numeric
+@attribute 'CHARNGRAM_ty go' numeric
+@attribute CHARNGRAM_time numeric
+@attribute 'CHARNGRAM_lil s' numeric
+@attribute CHARNGRAM_lunch numeric
+@attribute 'CHARNGRAM_w l' numeric
+@attribute 'CHARNGRAM_n bow' numeric
+@attribute 'CHARNGRAM_ go' numeric
+@attribute 'CHARNGRAM_n bo' numeric
+@attribute 'CHARNGRAM_ fro' numeric
+@attribute CHARNGRAM_otto numeric
+@attribute 'CHARNGRAM_ton ' numeric
+@attribute CHARNGRAM_otton numeric
+@attribute CHARNGRAM_e#wil numeric
+@attribute 'CHARNGRAM_nch ' numeric
+@attribute 'CHARNGRAM_oing ' numeric
+@attribute CHARNGRAM_fro numeric
+@attribute CHARNGRAM_.th numeric
+@attribute CHARNGRAM_oing numeric
+@attribute 'CHARNGRAM_owl ' numeric
+@attribute CHARNGRAM_ott numeric
+@attribute 'CHARNGRAM_ good' numeric
+@attribute CHARNGRAM_od#1 numeric
+@attribute 'CHARNGRAM_n b' numeric
+@attribute CHARNGRAM_spot numeric
+@attribute 'CHARNGRAM_tton ' numeric
+@attribute 'CHARNGRAM_lil ' numeric
+@attribute 'CHARNGRAM_ch f' numeric
+@attribute CHARNGRAM_nch numeric
+@attribute CHARNGRAM_ton numeric
+@attribute CHARNGRAM_#time numeric
+@attribute 'CHARNGRAM_ new ' numeric
+@attribute CHARNGRAM_etty numeric
+@attribute 'CHARNGRAM_il ' numeric
+@attribute CHARNGRAM_st#ti numeric
+@attribute CHARNGRAM_#1st numeric
+@attribute 'CHARNGRAM_om my' numeric
+@attribute 'CHARNGRAM_e c' numeric
+@attribute 'CHARNGRAM_e g' numeric
+@attribute 'CHARNGRAM_g bac' numeric
+@attribute 'CHARNGRAM_tty ' numeric
+@attribute 'CHARNGRAM_ cot' numeric
+@attribute 'CHARNGRAM_m m' numeric
+@attribute 'CHARNGRAM_l .' numeric
+@attribute 'CHARNGRAM_pot .' numeric
+@attribute 'CHARNGRAM_ spo' numeric
+@attribute 'CHARNGRAM_il sp' numeric
+@attribute 'CHARNGRAM_t .' numeric
+@attribute CHARNGRAM_#tim numeric
+@attribute CHARNGRAM_owl numeric
+@attribute 'CHARNGRAM_unch ' numeric
+@attribute 'CHARNGRAM_ng ' numeric
+@attribute 'CHARNGRAM_he co' numeric
+@attribute 'CHARNGRAM_ng b' numeric
+@attribute CHARNGRAM_cot numeric
+@attribute 'CHARNGRAM_ot ..' numeric
+@attribute CHARNGRAM_me# numeric
+@attribute CHARNGRAM_back# numeric
+@attribute 'CHARNGRAM_ new' numeric
+@attribute 'CHARNGRAM_wl .' numeric
+@attribute CHARNGRAM_.the numeric
+@attribute CHARNGRAM_.... numeric
+@attribute CHARNGRAM_from numeric
+@attribute CHARNGRAM_od#1s numeric
+@attribute 'CHARNGRAM_ li' numeric
+@attribute CHARNGRAM_e#wi numeric
+@attribute CHARNGRAM_new numeric
+@attribute CHARNGRAM_ood#1 numeric
+@attribute CHARNGRAM_.pre numeric
+@attribute CHARNGRAM_cotto numeric
+@attribute CHARNGRAM_ett numeric
+@attribute 'CHARNGRAM_ill ' numeric
+@attribute CHARNGRAM_ill numeric
+@attribute 'CHARNGRAM_h fr' numeric
+@attribute 'CHARNGRAM_ew ' numeric
+@attribute 'CHARNGRAM_l b' numeric
+@attribute CHARNGRAM_spo numeric
+@attribute CHARNGRAM_me#wi numeric
+@attribute 'CHARNGRAM_ bow' numeric
+@attribute 'CHARNGRAM_ty g' numeric
+@attribute 'CHARNGRAM_l s' numeric
+@attribute 'CHARNGRAM_y new' numeric
+@attribute CHARNGRAM_ime numeric
+@attribute CHARNGRAM_cott numeric
+@attribute 'CHARNGRAM_ my ' numeric
+@attribute 'CHARNGRAM_ch fr' numeric
+@attribute 'CHARNGRAM_l ..' numeric
+@attribute CHARNGRAM_#1s numeric
+@attribute CHARNGRAM_rett numeric
+@attribute CHARNGRAM_bow numeric
+@attribute 'CHARNGRAM_ my' numeric
+@attribute CHARNGRAM_bowl numeric
+@attribute CHARNGRAM_ime#w numeric
+@attribute CHARNGRAM_rom numeric
+@attribute 'CHARNGRAM_m my ' numeric
+@attribute 'CHARNGRAM_new l' numeric
+@attribute CHARNGRAM_...t numeric
+@attribute CHARNGRAM_d#1 numeric
+@attribute CHARNGRAM_oin numeric
+@attribute 'CHARNGRAM_ ne' numeric
+@attribute 'CHARNGRAM_spot ' numeric
+@attribute CHARNGRAM_...p numeric
+@attribute CHARNGRAM_..pr numeric
+@attribute 'CHARNGRAM_y go' numeric
+@attribute CHARNGRAM_#ti numeric
+@attribute CHARNGRAM_e#w numeric
+@attribute 'CHARNGRAM_e goi' numeric
+@attribute CHARNGRAM_wil numeric
+@attribute 'CHARNGRAM_ goin' numeric
+@attribute 'CHARNGRAM_ ..' numeric
+@attribute CHARNGRAM_.pret numeric
+@attribute CHARNGRAM_st# numeric
+@attribute CHARNGRAM_ing numeric
+@attribute 'CHARNGRAM_be g' numeric
+@attribute CHARNGRAM_will numeric
+@attribute 'CHARNGRAM_bowl ' numeric
+@attribute 'CHARNGRAM_wl ' numeric
+@attribute CHARNGRAM_tto numeric
+@attribute 'CHARNGRAM_w li' numeric
+@attribute 'CHARNGRAM_ll b' numeric
+@attribute 'CHARNGRAM_ bowl' numeric
+@attribute 'CHARNGRAM_ bac' numeric
+@attribute 'CHARNGRAM_my ' numeric
+@attribute CHARNGRAM_tty numeric
+@attribute 'CHARNGRAM_the ' numeric
+@attribute 'CHARNGRAM_w lil' numeric
+@attribute 'CHARNGRAM_l spo' numeric
+@attribute 'CHARNGRAM_ cott' numeric
+@attribute CHARNGRAM_...th numeric
+@attribute POS_P numeric
+@attribute POS_A numeric
+@attribute POS_R numeric
+@attribute POS_# numeric
+@attribute POS_D numeric
+@attribute POS_V numeric
+@attribute 'POS_,' numeric
+@attribute POS_N numeric
+@attribute CLUSTER_1111110111000 numeric
+@attribute CLUSTER_11111100000 numeric
+@attribute CLUSTER_1111010111110 numeric
+@attribute CLUSTER_011110001100 numeric
+@attribute CLUSTER_110110 numeric
+@attribute CLUSTER_110100 numeric
+@attribute CLUSTER_111111010010 numeric
+@attribute CLUSTER_0101110 numeric
+@attribute CLUSTER_11110111101100 numeric
+@attribute CLUSTER_1111100110 numeric
+@attribute CLUSTER_10001010 numeric
+@attribute CLUSTER_100001 numeric
+@attribute CLUSTER_1111110110 numeric
+@attribute CLUSTER_1011101110 numeric
+@attribute CLUSTER_111101111100010 numeric
+@attribute CLUSTER_01101100001 numeric
+@attribute CLUSTER_1110010101 numeric
+@attribute CLUSTER_11100010 numeric
 @attribute 'NGRAM_match #getin .' numeric
 @attribute NGRAM_very numeric
 @attribute 'NGRAM_, with awareness day\'s' numeric
@@ -77,9 +429,7 @@
 @attribute 'NGRAM_, tomorrow is' numeric
 @attribute 'NGRAM_and debates .' numeric
 @attribute 'NGRAM_busy day , with' numeric
-@attribute NGRAM_... numeric
 @attribute 'NGRAM_very busy' numeric
-@attribute NGRAM_the numeric
 @attribute 'NGRAM_debates . gulp .' numeric
 @attribute NGRAM_with numeric
 @attribute 'NGRAM_a very busy day' numeric
@@ -104,7 +454,6 @@
 @attribute 'CHARNGRAM_p. de' numeric
 @attribute CHARNGRAM_rrow numeric
 @attribute CHARNGRAM_omorr numeric
-@attribute 'CHARNGRAM_on ' numeric
 @attribute CHARNGRAM_tomor numeric
 @attribute CHARNGRAM_tes numeric
 @attribute 'CHARNGRAM_p. ' numeric
@@ -133,15 +482,12 @@
 @attribute CHARNGRAM_are numeric
 @attribute 'CHARNGRAM_ aw' numeric
 @attribute 'CHARNGRAM_ a v' numeric
-@attribute 'CHARNGRAM_ch ' numeric
 @attribute 'CHARNGRAM_y, w' numeric
 @attribute 'CHARNGRAM_ith a' numeric
 @attribute CHARNGRAM_ness numeric
 @attribute 'CHARNGRAM_day\'s' numeric
 @attribute 'CHARNGRAM_h #' numeric
 @attribute CHARNGRAM_#geti numeric
-@attribute CHARNGRAM_... numeric
-@attribute CHARNGRAM_the numeric
 @attribute 'CHARNGRAM_he ma' numeric
 @attribute 'CHARNGRAM_ bus' numeric
 @attribute 'CHARNGRAM_ bu' numeric
@@ -194,7 +540,6 @@
 @attribute 'CHARNGRAM_e mat' numeric
 @attribute 'CHARNGRAM_h aw' numeric
 @attribute CHARNGRAM_es.. numeric
-@attribute 'CHARNGRAM_he ' numeric
 @attribute CHARNGRAM_gulp numeric
 @attribute 'CHARNGRAM_ #g' numeric
 @attribute CHARNGRAM_es... numeric
@@ -375,22 +720,12 @@
 @attribute 'CHARNGRAM_s a' numeric
 @attribute 'CHARNGRAM_s d' numeric
 @attribute CHARNGRAM_plu numeric
-@attribute 'CHARNGRAM_the ' numeric
 @attribute 'CHARNGRAM_\'s an' numeric
 @attribute CHARNGRAM_eness numeric
 @attribute 'CHARNGRAM_ a ' numeric
-@attribute POS_P numeric
-@attribute POS_A numeric
-@attribute POS_R numeric
-@attribute POS_# numeric
-@attribute POS_D numeric
-@attribute POS_V numeric
 @attribute POS_& numeric
-@attribute 'POS_,' numeric
-@attribute POS_N numeric
 @attribute CLUSTER_111100110111101 numeric
 @attribute CLUSTER_1000100 numeric
-@attribute CLUSTER_110100 numeric
 @attribute CLUSTER_111100111010 numeric
 @attribute CLUSTER_0111111000 numeric
 @attribute CLUSTER_1111010101011 numeric
@@ -398,7 +733,6 @@
 @attribute CLUSTER_011001100 numeric
 @attribute CLUSTER_0111100100011 numeric
 @attribute CLUSTER_11101011011100 numeric
-@attribute CLUSTER_100001 numeric
 @attribute CLUSTER_10010 numeric
 @attribute CLUSTER_11000 numeric
 @attribute CLUSTER_11111011111110 numeric
@@ -408,340 +742,858 @@
 @attribute CLUSTER_111111011101110 numeric
 @attribute CLUSTER_0110100011111 numeric
 @attribute CLUSTER_010101110 numeric
-@attribute 'NGRAM_bowl ....' numeric
-@attribute 'NGRAM_the cotton bowl ....' numeric
-@attribute 'NGRAM_new lil spot' numeric
-@attribute 'NGRAM_from my new' numeric
-@attribute NGRAM_lunch numeric
-@attribute 'NGRAM_#1st #time' numeric
-@attribute 'NGRAM_going back#' numeric
-@attribute NGRAM_cotton numeric
-@attribute 'NGRAM_pretty good #1st' numeric
-@attribute 'NGRAM_.... pretty good #1st' numeric
-@attribute 'NGRAM_cotton bowl ....' numeric
-@attribute NGRAM_good numeric
-@attribute NGRAM_lil numeric
-@attribute NGRAM_back# numeric
-@attribute 'NGRAM_... the cotton' numeric
-@attribute 'NGRAM_my new' numeric
-@attribute NGRAM_.... numeric
-@attribute 'NGRAM_lunch from' numeric
-@attribute NGRAM_from numeric
-@attribute 'NGRAM_cotton bowl .... pretty' numeric
-@attribute 'NGRAM_pretty good #1st #time' numeric
-@attribute NGRAM_new numeric
-@attribute 'NGRAM_good #1st' numeric
-@attribute NGRAM_going numeric
-@attribute 'NGRAM_pretty good' numeric
-@attribute NGRAM_my numeric
-@attribute 'NGRAM_bowl .... pretty' numeric
-@attribute 'NGRAM_the cotton' numeric
-@attribute 'NGRAM_from my new lil' numeric
-@attribute 'NGRAM_#will be going back#' numeric
-@attribute 'NGRAM_#will be going' numeric
-@attribute NGRAM_spot numeric
-@attribute 'NGRAM_good #1st #time' numeric
-@attribute 'NGRAM_my new lil' numeric
-@attribute 'NGRAM_lil spot' numeric
-@attribute NGRAM_be numeric
-@attribute 'NGRAM_lil spot ...' numeric
-@attribute 'NGRAM_... the' numeric
-@attribute 'NGRAM_lunch from my' numeric
-@attribute 'NGRAM_spot ... the cotton' numeric
-@attribute 'NGRAM_#1st #time #will' numeric
-@attribute NGRAM_bowl numeric
-@attribute 'NGRAM_#1st #time #will be' numeric
-@attribute 'NGRAM_#time #will be going' numeric
-@attribute 'NGRAM_.... pretty good' numeric
-@attribute 'NGRAM_#will be' numeric
-@attribute NGRAM_#will numeric
-@attribute 'NGRAM_the cotton bowl' numeric
-@attribute 'NGRAM_be going back#' numeric
-@attribute NGRAM_#time numeric
-@attribute 'NGRAM_#time #will' numeric
-@attribute 'NGRAM_lil spot ... the' numeric
-@attribute 'NGRAM_cotton bowl' numeric
-@attribute 'NGRAM_lunch from my new' numeric
-@attribute 'NGRAM_be going' numeric
-@attribute NGRAM_#1st numeric
-@attribute NGRAM_pretty numeric
-@attribute 'NGRAM_#time #will be' numeric
-@attribute 'NGRAM_new lil' numeric
-@attribute 'NGRAM_spot ...' numeric
-@attribute 'NGRAM_good #1st #time #will' numeric
-@attribute 'NGRAM_spot ... the' numeric
-@attribute 'NGRAM_from my' numeric
-@attribute 'NGRAM_my new lil spot' numeric
-@attribute 'NGRAM_... the cotton bowl' numeric
-@attribute 'NGRAM_bowl .... pretty good' numeric
-@attribute 'NGRAM_new lil spot ...' numeric
-@attribute 'NGRAM_.... pretty' numeric
-@attribute 'CHARNGRAM_om ' numeric
-@attribute CHARNGRAM_lun numeric
-@attribute CHARNGRAM_pret numeric
-@attribute CHARNGRAM_bac numeric
-@attribute CHARNGRAM_1st# numeric
-@attribute 'CHARNGRAM_m my' numeric
-@attribute 'CHARNGRAM_ be ' numeric
-@attribute 'CHARNGRAM_ be g' numeric
-@attribute CHARNGRAM_..th numeric
-@attribute CHARNGRAM_d#1st numeric
-@attribute CHARNGRAM_t#t numeric
-@attribute CHARNGRAM_going numeric
-@attribute 'CHARNGRAM_e co' numeric
-@attribute CHARNGRAM_ood# numeric
-@attribute CHARNGRAM_..the numeric
-@attribute 'CHARNGRAM_he c' numeric
-@attribute 'CHARNGRAM_will ' numeric
-@attribute CHARNGRAM_#wi numeric
-@attribute 'CHARNGRAM_ from' numeric
-@attribute 'CHARNGRAM_ty ' numeric
-@attribute 'CHARNGRAM_ng ba' numeric
-@attribute CHARNGRAM_prett numeric
-@attribute 'CHARNGRAM_be ' numeric
-@attribute CHARNGRAM_goin numeric
-@attribute 'CHARNGRAM_ ...t' numeric
-@attribute 'CHARNGRAM_ ...' numeric
-@attribute 'CHARNGRAM_.the ' numeric
-@attribute 'CHARNGRAM_ton b' numeric
-@attribute 'CHARNGRAM_l be' numeric
-@attribute 'CHARNGRAM_ing ' numeric
-@attribute 'CHARNGRAM_ew l' numeric
-@attribute CHARNGRAM_#will numeric
-@attribute 'CHARNGRAM_ill b' numeric
-@attribute CHARNGRAM_1st numeric
-@attribute CHARNGRAM_pot numeric
-@attribute 'CHARNGRAM_on b' numeric
-@attribute 'CHARNGRAM_wl ..' numeric
-@attribute 'CHARNGRAM_pot ' numeric
-@attribute 'CHARNGRAM_ing b' numeric
-@attribute 'CHARNGRAM_ ba' numeric
-@attribute 'CHARNGRAM_on bo' numeric
-@attribute CHARNGRAM_time# numeric
-@attribute 'CHARNGRAM_ be' numeric
-@attribute 'CHARNGRAM_from ' numeric
-@attribute 'CHARNGRAM_ lil ' numeric
-@attribute 'CHARNGRAM_rom ' numeric
-@attribute 'CHARNGRAM_rom m' numeric
-@attribute CHARNGRAM_tton numeric
-@attribute CHARNGRAM_1st#t numeric
-@attribute 'CHARNGRAM_ bo' numeric
-@attribute CHARNGRAM_....p numeric
-@attribute CHARNGRAM_...pr numeric
-@attribute 'CHARNGRAM_ew li' numeric
-@attribute 'CHARNGRAM_ goi' numeric
-@attribute 'CHARNGRAM_be go' numeric
-@attribute 'CHARNGRAM_ goo' numeric
-@attribute 'CHARNGRAM_ ....' numeric
-@attribute 'CHARNGRAM_ sp' numeric
-@attribute CHARNGRAM_..pre numeric
-@attribute CHARNGRAM_t#tim numeric
-@attribute 'CHARNGRAM_ lil' numeric
-@attribute CHARNGRAM_me#w numeric
-@attribute CHARNGRAM_goi numeric
-@attribute 'CHARNGRAM_y g' numeric
-@attribute CHARNGRAM_ood numeric
-@attribute 'CHARNGRAM_y n' numeric
-@attribute CHARNGRAM_goo numeric
-@attribute 'CHARNGRAM_il s' numeric
-@attribute 'CHARNGRAM_ot .' numeric
-@attribute CHARNGRAM_unch numeric
-@attribute 'CHARNGRAM_l be ' numeric
-@attribute CHARNGRAM_ack numeric
-@attribute 'CHARNGRAM_y ne' numeric
-@attribute 'CHARNGRAM_ co' numeric
-@attribute CHARNGRAM_good numeric
-@attribute CHARNGRAM_lil numeric
-@attribute CHARNGRAM_retty numeric
-@attribute CHARNGRAM_ack# numeric
-@attribute 'CHARNGRAM_tty g' numeric
-@attribute CHARNGRAM_tim numeric
-@attribute 'CHARNGRAM_my ne' numeric
-@attribute 'CHARNGRAM_om m' numeric
-@attribute 'CHARNGRAM_l sp' numeric
-@attribute CHARNGRAM_ret numeric
-@attribute 'CHARNGRAM_ll ' numeric
-@attribute 'CHARNGRAM_h fro' numeric
-@attribute CHARNGRAM_pre numeric
-@attribute 'CHARNGRAM_e go' numeric
-@attribute 'CHARNGRAM_h f' numeric
-@attribute CHARNGRAM_..p numeric
-@attribute CHARNGRAM_.pr numeric
-@attribute CHARNGRAM_#1st# numeric
-@attribute 'CHARNGRAM_new ' numeric
-@attribute 'CHARNGRAM_t ...' numeric
-@attribute CHARNGRAM_ime# numeric
-@attribute CHARNGRAM_..t numeric
-@attribute 'CHARNGRAM_g ba' numeric
-@attribute CHARNGRAM_ck# numeric
-@attribute 'CHARNGRAM_l ...' numeric
-@attribute 'CHARNGRAM_ll be' numeric
-@attribute 'CHARNGRAM_owl .' numeric
-@attribute CHARNGRAM_#wil numeric
-@attribute 'CHARNGRAM_my n' numeric
-@attribute CHARNGRAM_back numeric
-@attribute CHARNGRAM_lunc numeric
-@attribute CHARNGRAM_d#1s numeric
-@attribute CHARNGRAM_t#ti numeric
-@attribute 'CHARNGRAM_e cot' numeric
-@attribute 'CHARNGRAM_t ..' numeric
-@attribute 'CHARNGRAM_y goo' numeric
-@attribute CHARNGRAM_good# numeric
-@attribute 'CHARNGRAM_ spot' numeric
-@attribute 'CHARNGRAM_ot ' numeric
-@attribute 'CHARNGRAM_nch f' numeric
-@attribute 'CHARNGRAM_the c' numeric
-@attribute CHARNGRAM_st#t numeric
-@attribute 'CHARNGRAM_g b' numeric
-@attribute 'CHARNGRAM_etty ' numeric
-@attribute CHARNGRAM_unc numeric
-@attribute 'CHARNGRAM_ fr' numeric
-@attribute 'CHARNGRAM_ my n' numeric
-@attribute CHARNGRAM_od# numeric
-@attribute 'CHARNGRAM_ back' numeric
-@attribute 'CHARNGRAM_ty go' numeric
-@attribute CHARNGRAM_time numeric
-@attribute 'CHARNGRAM_lil s' numeric
-@attribute CHARNGRAM_lunch numeric
-@attribute 'CHARNGRAM_w l' numeric
-@attribute 'CHARNGRAM_n bow' numeric
-@attribute 'CHARNGRAM_ go' numeric
-@attribute 'CHARNGRAM_n bo' numeric
-@attribute 'CHARNGRAM_ fro' numeric
-@attribute CHARNGRAM_otto numeric
-@attribute 'CHARNGRAM_ton ' numeric
-@attribute CHARNGRAM_otton numeric
-@attribute CHARNGRAM_e#wil numeric
-@attribute 'CHARNGRAM_nch ' numeric
-@attribute 'CHARNGRAM_oing ' numeric
-@attribute CHARNGRAM_fro numeric
-@attribute CHARNGRAM_.th numeric
-@attribute CHARNGRAM_oing numeric
-@attribute 'CHARNGRAM_owl ' numeric
-@attribute CHARNGRAM_ott numeric
-@attribute 'CHARNGRAM_ good' numeric
-@attribute CHARNGRAM_od#1 numeric
-@attribute 'CHARNGRAM_n b' numeric
-@attribute CHARNGRAM_spot numeric
-@attribute 'CHARNGRAM_tton ' numeric
-@attribute 'CHARNGRAM_lil ' numeric
-@attribute 'CHARNGRAM_ch f' numeric
-@attribute CHARNGRAM_nch numeric
-@attribute CHARNGRAM_ton numeric
-@attribute CHARNGRAM_#time numeric
-@attribute 'CHARNGRAM_ new ' numeric
-@attribute CHARNGRAM_etty numeric
-@attribute 'CHARNGRAM_il ' numeric
-@attribute CHARNGRAM_st#ti numeric
-@attribute CHARNGRAM_#1st numeric
-@attribute 'CHARNGRAM_om my' numeric
-@attribute 'CHARNGRAM_e c' numeric
-@attribute 'CHARNGRAM_e g' numeric
-@attribute 'CHARNGRAM_g bac' numeric
-@attribute 'CHARNGRAM_tty ' numeric
-@attribute 'CHARNGRAM_ cot' numeric
-@attribute 'CHARNGRAM_m m' numeric
-@attribute 'CHARNGRAM_l .' numeric
-@attribute 'CHARNGRAM_pot .' numeric
-@attribute 'CHARNGRAM_ spo' numeric
-@attribute 'CHARNGRAM_il sp' numeric
-@attribute 'CHARNGRAM_t .' numeric
-@attribute CHARNGRAM_#tim numeric
-@attribute CHARNGRAM_owl numeric
-@attribute 'CHARNGRAM_unch ' numeric
-@attribute 'CHARNGRAM_ng ' numeric
-@attribute 'CHARNGRAM_he co' numeric
-@attribute 'CHARNGRAM_ng b' numeric
-@attribute CHARNGRAM_cot numeric
-@attribute 'CHARNGRAM_ot ..' numeric
-@attribute CHARNGRAM_me# numeric
-@attribute CHARNGRAM_back# numeric
-@attribute 'CHARNGRAM_ new' numeric
-@attribute 'CHARNGRAM_wl .' numeric
-@attribute CHARNGRAM_.the numeric
-@attribute CHARNGRAM_.... numeric
-@attribute CHARNGRAM_from numeric
-@attribute CHARNGRAM_od#1s numeric
-@attribute 'CHARNGRAM_ li' numeric
-@attribute CHARNGRAM_e#wi numeric
-@attribute CHARNGRAM_new numeric
-@attribute CHARNGRAM_ood#1 numeric
-@attribute CHARNGRAM_.pre numeric
-@attribute CHARNGRAM_cotto numeric
-@attribute CHARNGRAM_ett numeric
-@attribute 'CHARNGRAM_ill ' numeric
-@attribute CHARNGRAM_ill numeric
-@attribute 'CHARNGRAM_h fr' numeric
-@attribute 'CHARNGRAM_ew ' numeric
-@attribute 'CHARNGRAM_l b' numeric
-@attribute CHARNGRAM_spo numeric
-@attribute CHARNGRAM_me#wi numeric
-@attribute 'CHARNGRAM_ bow' numeric
-@attribute 'CHARNGRAM_ty g' numeric
-@attribute 'CHARNGRAM_l s' numeric
-@attribute 'CHARNGRAM_y new' numeric
-@attribute CHARNGRAM_ime numeric
-@attribute CHARNGRAM_cott numeric
-@attribute 'CHARNGRAM_ my ' numeric
-@attribute 'CHARNGRAM_ch fr' numeric
-@attribute 'CHARNGRAM_l ..' numeric
-@attribute CHARNGRAM_#1s numeric
-@attribute CHARNGRAM_rett numeric
-@attribute CHARNGRAM_bow numeric
-@attribute 'CHARNGRAM_ my' numeric
-@attribute CHARNGRAM_bowl numeric
-@attribute CHARNGRAM_ime#w numeric
-@attribute CHARNGRAM_rom numeric
-@attribute 'CHARNGRAM_m my ' numeric
-@attribute 'CHARNGRAM_new l' numeric
-@attribute CHARNGRAM_...t numeric
-@attribute CHARNGRAM_d#1 numeric
-@attribute CHARNGRAM_oin numeric
-@attribute 'CHARNGRAM_ ne' numeric
-@attribute 'CHARNGRAM_spot ' numeric
-@attribute CHARNGRAM_...p numeric
-@attribute CHARNGRAM_..pr numeric
-@attribute 'CHARNGRAM_y go' numeric
-@attribute CHARNGRAM_#ti numeric
-@attribute CHARNGRAM_e#w numeric
-@attribute 'CHARNGRAM_e goi' numeric
-@attribute CHARNGRAM_wil numeric
-@attribute 'CHARNGRAM_ goin' numeric
-@attribute 'CHARNGRAM_ ..' numeric
-@attribute CHARNGRAM_.pret numeric
-@attribute CHARNGRAM_st# numeric
-@attribute CHARNGRAM_ing numeric
-@attribute 'CHARNGRAM_be g' numeric
-@attribute CHARNGRAM_will numeric
-@attribute 'CHARNGRAM_bowl ' numeric
-@attribute 'CHARNGRAM_wl ' numeric
-@attribute CHARNGRAM_tto numeric
-@attribute 'CHARNGRAM_w li' numeric
-@attribute 'CHARNGRAM_ll b' numeric
-@attribute 'CHARNGRAM_ bowl' numeric
-@attribute 'CHARNGRAM_ bac' numeric
-@attribute 'CHARNGRAM_my ' numeric
-@attribute CHARNGRAM_tty numeric
-@attribute 'CHARNGRAM_w lil' numeric
-@attribute 'CHARNGRAM_l spo' numeric
-@attribute 'CHARNGRAM_ cott' numeric
-@attribute CHARNGRAM_...th numeric
-@attribute CLUSTER_1111110111000 numeric
-@attribute CLUSTER_11111100000 numeric
-@attribute CLUSTER_1111010111110 numeric
-@attribute CLUSTER_011110001100 numeric
-@attribute CLUSTER_110110 numeric
-@attribute CLUSTER_111111010010 numeric
-@attribute CLUSTER_0101110 numeric
-@attribute CLUSTER_11110111101100 numeric
-@attribute CLUSTER_1111100110 numeric
-@attribute CLUSTER_10001010 numeric
-@attribute CLUSTER_1111110110 numeric
-@attribute CLUSTER_1011101110 numeric
-@attribute CLUSTER_111101111100010 numeric
-@attribute CLUSTER_01101100001 numeric
-@attribute CLUSTER_1110010101 numeric
-@attribute CLUSTER_11100010 numeric
+@attribute 'NGRAM_announcers hype how alabama' numeric
+@attribute 'NGRAM_how each' numeric
+@attribute 'NGRAM_hype how alabama can' numeric
+@attribute 'NGRAM_each monday state how' numeric
+@attribute 'NGRAM_be beat and each' numeric
+@attribute 'NGRAM_number one' numeric
+@attribute 'NGRAM_i like how each' numeric
+@attribute 'NGRAM_monday state how alabama' numeric
+@attribute NGRAM_number numeric
+@attribute 'NGRAM_each friday' numeric
+@attribute 'NGRAM_one ...' numeric
+@attribute 'NGRAM_the announcers hype' numeric
+@attribute NGRAM_beat numeric
+@attribute 'NGRAM_each monday' numeric
+@attribute 'NGRAM_how alabama' numeric
+@attribute NGRAM_state numeric
+@attribute 'NGRAM_like how each friday' numeric
+@attribute 'NGRAM_can be beat' numeric
+@attribute 'NGRAM_be beat' numeric
+@attribute 'NGRAM_can be beat and' numeric
+@attribute 'NGRAM_the announcers hype how' numeric
+@attribute NGRAM_still numeric
+@attribute NGRAM_like numeric
+@attribute NGRAM_alabama numeric
+@attribute 'NGRAM_how each friday the' numeric
+@attribute 'NGRAM_friday the announcers hype' numeric
+@attribute 'NGRAM_like how each' numeric
+@attribute 'NGRAM_still number one ...' numeric
+@attribute 'NGRAM_how alabama is still' numeric
+@attribute NGRAM_each numeric
+@attribute 'NGRAM_and each monday' numeric
+@attribute 'NGRAM_alabama can' numeric
+@attribute 'NGRAM_how each friday' numeric
+@attribute 'NGRAM_be beat and' numeric
+@attribute 'NGRAM_each monday state' numeric
+@attribute 'NGRAM_how alabama is' numeric
+@attribute 'NGRAM_each friday the announcers' numeric
+@attribute 'NGRAM_number one ...' numeric
+@attribute 'NGRAM_beat and each' numeric
+@attribute 'NGRAM_still number one' numeric
+@attribute 'NGRAM_still number' numeric
+@attribute 'NGRAM_i like' numeric
+@attribute 'NGRAM_beat and each monday' numeric
+@attribute 'NGRAM_state how alabama is' numeric
+@attribute 'NGRAM_i like how' numeric
+@attribute 'NGRAM_alabama is still' numeric
+@attribute NGRAM_how numeric
+@attribute NGRAM_can numeric
+@attribute 'NGRAM_announcers hype how' numeric
+@attribute 'NGRAM_is still number one' numeric
+@attribute 'NGRAM_monday state how' numeric
+@attribute 'NGRAM_state how' numeric
+@attribute 'NGRAM_alabama can be beat' numeric
+@attribute 'NGRAM_hype how alabama' numeric
+@attribute NGRAM_friday numeric
+@attribute 'NGRAM_how alabama can' numeric
+@attribute 'NGRAM_alabama is' numeric
+@attribute NGRAM_announcers numeric
+@attribute 'NGRAM_alabama can be' numeric
+@attribute 'NGRAM_is still' numeric
+@attribute NGRAM_monday numeric
+@attribute 'NGRAM_announcers hype' numeric
+@attribute 'NGRAM_monday state' numeric
+@attribute 'NGRAM_each friday the' numeric
+@attribute 'NGRAM_friday the announcers' numeric
+@attribute 'NGRAM_the announcers' numeric
+@attribute 'NGRAM_like how' numeric
+@attribute 'NGRAM_how alabama can be' numeric
+@attribute NGRAM_one numeric
+@attribute NGRAM_i numeric
+@attribute 'NGRAM_can be' numeric
+@attribute 'NGRAM_beat and' numeric
+@attribute 'NGRAM_alabama is still number' numeric
+@attribute 'NGRAM_friday the' numeric
+@attribute NGRAM_hype numeric
+@attribute 'NGRAM_state how alabama' numeric
+@attribute 'NGRAM_is still number' numeric
+@attribute 'NGRAM_hype how' numeric
+@attribute 'NGRAM_and each' numeric
+@attribute 'NGRAM_and each monday state' numeric
+@attribute 'CHARNGRAM_ how ' numeric
+@attribute 'CHARNGRAM_ke ' numeric
+@attribute 'CHARNGRAM_s s' numeric
+@attribute CHARNGRAM_annou numeric
+@attribute CHARNGRAM_cers numeric
+@attribute CHARNGRAM_numbe numeric
+@attribute CHARNGRAM_bam numeric
+@attribute 'CHARNGRAM_ sta' numeric
+@attribute 'CHARNGRAM_ be b' numeric
+@attribute 'CHARNGRAM_ sti' numeric
+@attribute 'CHARNGRAM_ow e' numeric
+@attribute 'CHARNGRAM_d eac' numeric
+@attribute 'CHARNGRAM_iday ' numeric
+@attribute CHARNGRAM_state numeric
+@attribute 'CHARNGRAM_ow a' numeric
+@attribute 'CHARNGRAM_ how' numeric
+@attribute CHARNGRAM_abam numeric
+@attribute CHARNGRAM_sta numeric
+@attribute 'CHARNGRAM_eat a' numeric
+@attribute 'CHARNGRAM_ beat' numeric
+@attribute CHARNGRAM_noun numeric
+@attribute CHARNGRAM_sti numeric
+@attribute 'CHARNGRAM_day ' numeric
+@attribute 'CHARNGRAM_ype h' numeric
+@attribute CHARNGRAM_each numeric
+@attribute CHARNGRAM_ounc numeric
+@attribute CHARNGRAM_ype numeric
+@attribute 'CHARNGRAM_s hyp' numeric
+@attribute 'CHARNGRAM_e ann' numeric
+@attribute CHARNGRAM_bama numeric
+@attribute 'CHARNGRAM_r o' numeric
+@attribute 'CHARNGRAM_ like' numeric
+@attribute 'CHARNGRAM_w al' numeric
+@attribute 'CHARNGRAM_ll nu' numeric
+@attribute CHARNGRAM_laba numeric
+@attribute 'CHARNGRAM_ma ca' numeric
+@attribute 'CHARNGRAM_nd e' numeric
+@attribute 'CHARNGRAM_ numb' numeric
+@attribute 'CHARNGRAM_ al' numeric
+@attribute 'CHARNGRAM_at ' numeric
+@attribute 'CHARNGRAM_ill n' numeric
+@attribute 'CHARNGRAM_ bea' numeric
+@attribute 'CHARNGRAM_te h' numeric
+@attribute CHARNGRAM_how numeric
+@attribute CHARNGRAM_cer numeric
+@attribute 'CHARNGRAM_a ca' numeric
+@attribute CHARNGRAM_umber numeric
+@attribute 'CHARNGRAM_ one' numeric
+@attribute 'CHARNGRAM_t and' numeric
+@attribute 'CHARNGRAM_ alab' numeric
+@attribute CHARNGRAM_nday numeric
+@attribute CHARNGRAM_aba numeric
+@attribute CHARNGRAM_stat numeric
+@attribute CHARNGRAM_ond numeric
+@attribute 'CHARNGRAM_a c' numeric
+@attribute CHARNGRAM_labam numeric
+@attribute CHARNGRAM_one numeric
+@attribute 'CHARNGRAM_a i' numeric
+@attribute CHARNGRAM_abama numeric
+@attribute CHARNGRAM_riday numeric
+@attribute 'CHARNGRAM_i l' numeric
+@attribute 'CHARNGRAM_h mo' numeric
+@attribute 'CHARNGRAM_ach ' numeric
+@attribute 'CHARNGRAM_r on' numeric
+@attribute 'CHARNGRAM_rs h' numeric
+@attribute 'CHARNGRAM_ lik' numeric
+@attribute 'CHARNGRAM_ ca' numeric
+@attribute 'CHARNGRAM_can ' numeric
+@attribute CHARNGRAM_bea numeric
+@attribute 'CHARNGRAM_ st' numeric
+@attribute 'CHARNGRAM_w eac' numeric
+@attribute CHARNGRAM_anno numeric
+@attribute CHARNGRAM_till numeric
+@attribute CHARNGRAM_ach numeric
+@attribute 'CHARNGRAM_ber o' numeric
+@attribute 'CHARNGRAM_e ho' numeric
+@attribute 'CHARNGRAM_y t' numeric
+@attribute CHARNGRAM_unce numeric
+@attribute 'CHARNGRAM_y s' numeric
+@attribute CHARNGRAM_ber numeric
+@attribute CHARNGRAM_lik numeric
+@attribute 'CHARNGRAM_a is ' numeric
+@attribute CHARNGRAM_til numeric
+@attribute 'CHARNGRAM_ stil' numeric
+@attribute 'CHARNGRAM_h mon' numeric
+@attribute 'CHARNGRAM_an be' numeric
+@attribute 'CHARNGRAM_ch mo' numeric
+@attribute 'CHARNGRAM_s sti' numeric
+@attribute 'CHARNGRAM_till ' numeric
+@attribute 'CHARNGRAM_ay t' numeric
+@attribute CHARNGRAM_iday numeric
+@attribute 'CHARNGRAM_i li' numeric
+@attribute 'CHARNGRAM_ay s' numeric
+@attribute CHARNGRAM_ida numeric
+@attribute CHARNGRAM_onda numeric
+@attribute 'CHARNGRAM_h fri' numeric
+@attribute CHARNGRAM_nno numeric
+@attribute 'CHARNGRAM_h m' numeric
+@attribute 'CHARNGRAM_at an' numeric
+@attribute 'CHARNGRAM_ ea' numeric
+@attribute CHARNGRAM_one. numeric
+@attribute CHARNGRAM_monda numeric
+@attribute 'CHARNGRAM_beat ' numeric
+@attribute CHARNGRAM_rida numeric
+@attribute 'CHARNGRAM_ay st' numeric
+@attribute 'CHARNGRAM_ach f' numeric
+@attribute 'CHARNGRAM_pe h' numeric
+@attribute 'CHARNGRAM_pe ' numeric
+@attribute CHARNGRAM_umb numeric
+@attribute 'CHARNGRAM_ike ' numeric
+@attribute 'CHARNGRAM_is s' numeric
+@attribute 'CHARNGRAM_ay th' numeric
+@attribute 'CHARNGRAM_tate ' numeric
+@attribute 'CHARNGRAM_w ea' numeric
+@attribute 'CHARNGRAM_be be' numeric
+@attribute CHARNGRAM_nou numeric
+@attribute 'CHARNGRAM_ach m' numeric
+@attribute CHARNGRAM_frid numeric
+@attribute 'CHARNGRAM_the a' numeric
+@attribute CHARNGRAM_e.. numeric
+@attribute 'CHARNGRAM_ma c' numeric
+@attribute 'CHARNGRAM_ay ' numeric
+@attribute 'CHARNGRAM_ is s' numeric
+@attribute CHARNGRAM_one.. numeric
+@attribute CHARNGRAM_mond numeric
+@attribute 'CHARNGRAM_is st' numeric
+@attribute 'CHARNGRAM_ fri' numeric
+@attribute CHARNGRAM_umbe numeric
+@attribute 'CHARNGRAM_ma i' numeric
+@attribute 'CHARNGRAM_w ala' numeric
+@attribute 'CHARNGRAM_ike h' numeric
+@attribute 'CHARNGRAM_y the' numeric
+@attribute 'CHARNGRAM_ frid' numeric
+@attribute CHARNGRAM_hype numeric
+@attribute 'CHARNGRAM_a can' numeric
+@attribute 'CHARNGRAM_w a' numeric
+@attribute 'CHARNGRAM_ mon' numeric
+@attribute 'CHARNGRAM_w e' numeric
+@attribute 'CHARNGRAM_an b' numeric
+@attribute 'CHARNGRAM_n be' numeric
+@attribute CHARNGRAM_rid numeric
+@attribute 'CHARNGRAM_ma ' numeric
+@attribute CHARNGRAM_mon numeric
+@attribute 'CHARNGRAM_ mond' numeric
+@attribute 'CHARNGRAM_ke h' numeric
+@attribute CHARNGRAM_ncer numeric
+@attribute 'CHARNGRAM_ hype' numeric
+@attribute CHARNGRAM_onday numeric
+@attribute 'CHARNGRAM_er ' numeric
+@attribute 'CHARNGRAM_ma is' numeric
+@attribute 'CHARNGRAM_s st' numeric
+@attribute CHARNGRAM_fri numeric
+@attribute CHARNGRAM_still numeric
+@attribute 'CHARNGRAM_ama ' numeric
+@attribute 'CHARNGRAM_ ho' numeric
+@attribute 'CHARNGRAM_rs hy' numeric
+@attribute 'CHARNGRAM_ hy' numeric
+@attribute 'CHARNGRAM_ow al' numeric
+@attribute 'CHARNGRAM_ama c' numeric
+@attribute CHARNGRAM_mber numeric
+@attribute 'CHARNGRAM_ eac' numeric
+@attribute 'CHARNGRAM_ama i' numeric
+@attribute 'CHARNGRAM_ anno' numeric
+@attribute 'CHARNGRAM_day s' numeric
+@attribute 'CHARNGRAM_y sta' numeric
+@attribute CHARNGRAM_eac numeric
+@attribute CHARNGRAM_oun numeric
+@attribute 'CHARNGRAM_like ' numeric
+@attribute 'CHARNGRAM_pe ho' numeric
+@attribute 'CHARNGRAM_y th' numeric
+@attribute 'CHARNGRAM_ hyp' numeric
+@attribute 'CHARNGRAM_nday ' numeric
+@attribute CHARNGRAM_nce numeric
+@attribute 'CHARNGRAM_ers ' numeric
+@attribute CHARNGRAM_ne. numeric
+@attribute CHARNGRAM_eat numeric
+@attribute 'CHARNGRAM_ch m' numeric
+@attribute 'CHARNGRAM_day t' numeric
+@attribute 'CHARNGRAM_y st' numeric
+@attribute 'CHARNGRAM_ber ' numeric
+@attribute 'CHARNGRAM_ one.' numeric
+@attribute 'CHARNGRAM_a is' numeric
+@attribute 'CHARNGRAM_ ala' numeric
+@attribute 'CHARNGRAM_e b' numeric
+@attribute 'CHARNGRAM_e a' numeric
+@attribute CHARNGRAM_ers numeric
+@attribute CHARNGRAM_nda numeric
+@attribute CHARNGRAM_ne... numeric
+@attribute 'CHARNGRAM_e h' numeric
+@attribute 'CHARNGRAM_t an' numeric
+@attribute 'CHARNGRAM_mber ' numeric
+@attribute CHARNGRAM_mbe numeric
+@attribute CHARNGRAM_stil numeric
+@attribute 'CHARNGRAM_ num' numeric
+@attribute 'CHARNGRAM_how e' numeric
+@attribute 'CHARNGRAM_nd ea' numeric
+@attribute 'CHARNGRAM_how a' numeric
+@attribute CHARNGRAM_hyp numeric
+@attribute 'CHARNGRAM_i lik' numeric
+@attribute 'CHARNGRAM_ can ' numeric
+@attribute CHARNGRAM_ike numeric
+@attribute 'CHARNGRAM_each ' numeric
+@attribute CHARNGRAM_ne.. numeric
+@attribute 'CHARNGRAM_ow ea' numeric
+@attribute 'CHARNGRAM_te ho' numeric
+@attribute CHARNGRAM_num numeric
+@attribute CHARNGRAM_frida numeric
+@attribute 'CHARNGRAM_e how' numeric
+@attribute 'CHARNGRAM_ype ' numeric
+@attribute CHARNGRAM_lab numeric
+@attribute 'CHARNGRAM_ stat' numeric
+@attribute 'CHARNGRAM_an ' numeric
+@attribute 'CHARNGRAM_er o' numeric
+@attribute CHARNGRAM_nnou numeric
+@attribute 'CHARNGRAM_n be ' numeric
+@attribute CHARNGRAM_ala numeric
+@attribute CHARNGRAM_beat numeric
+@attribute 'CHARNGRAM_at a' numeric
+@attribute 'CHARNGRAM_ke ho' numeric
+@attribute 'CHARNGRAM_ can' numeric
+@attribute CHARNGRAM_alab numeric
+@attribute CHARNGRAM_like numeric
+@attribute CHARNGRAM_tat numeric
+@attribute 'CHARNGRAM_d e' numeric
+@attribute CHARNGRAM_tate numeric
+@attribute CHARNGRAM_ncers numeric
+@attribute CHARNGRAM_numb numeric
+@attribute 'CHARNGRAM_can b' numeric
+@attribute CHARNGRAM_uncer numeric
+@attribute CHARNGRAM_ama numeric
+@attribute 'CHARNGRAM_t a' numeric
+@attribute 'CHARNGRAM_l n' numeric
+@attribute 'CHARNGRAM_ mo' numeric
+@attribute CHARNGRAM_e... numeric
+@attribute CHARNGRAM_nnoun numeric
+@attribute 'CHARNGRAM_l nu' numeric
+@attribute CHARNGRAM_nounc numeric
+@attribute 'CHARNGRAM_he a' numeric
+@attribute 'CHARNGRAM_te ' numeric
+@attribute 'CHARNGRAM_l num' numeric
+@attribute 'CHARNGRAM_ ann' numeric
+@attribute CHARNGRAM_can numeric
+@attribute 'CHARNGRAM_ each' numeric
+@attribute 'CHARNGRAM_and e' numeric
+@attribute 'CHARNGRAM_he an' numeric
+@attribute 'CHARNGRAM_ate h' numeric
+@attribute CHARNGRAM_alaba numeric
+@attribute 'CHARNGRAM_e bea' numeric
+@attribute 'CHARNGRAM_how ' numeric
+@attribute CHARNGRAM_ann numeric
+@attribute 'CHARNGRAM_ate ' numeric
+@attribute 'CHARNGRAM_e an' numeric
+@attribute 'CHARNGRAM_eat ' numeric
+@attribute 'CHARNGRAM_ nu' numeric
+@attribute 'CHARNGRAM_hype ' numeric
+@attribute 'CHARNGRAM_ers h' numeric
+@attribute 'CHARNGRAM_s hy' numeric
+@attribute 'CHARNGRAM_be b' numeric
+@attribute 'CHARNGRAM_r one' numeric
+@attribute 'CHARNGRAM_e be' numeric
+@attribute 'CHARNGRAM_er on' numeric
+@attribute 'CHARNGRAM_d ea' numeric
+@attribute CHARNGRAM_ounce numeric
+@attribute 'CHARNGRAM_s h' numeric
+@attribute 'CHARNGRAM_ll n' numeric
+@attribute 'CHARNGRAM_rs ' numeric
+@attribute 'CHARNGRAM_cers ' numeric
+@attribute 'CHARNGRAM_bama ' numeric
+@attribute 'CHARNGRAM_ on' numeric
+@attribute POS_$ numeric
+@attribute POS_^ numeric
+@attribute POS_O numeric
+@attribute CLUSTER_011011100 numeric
+@attribute CLUSTER_011010110 numeric
+@attribute CLUSTER_00101111110 numeric
+@attribute CLUSTER_111101011100 numeric
+@attribute CLUSTER_111101011101 numeric
+@attribute CLUSTER_1111110010010 numeric
+@attribute CLUSTER_11110101011111 numeric
+@attribute CLUSTER_00111001 numeric
+@attribute CLUSTER_11100110101 numeric
+@attribute CLUSTER_01010101001 numeric
+@attribute CLUSTER_11111111011111 numeric
+@attribute CLUSTER_1111011111100111 numeric
+@attribute CLUSTER_0000 numeric
+@attribute CLUSTER_1111000110 numeric
+@attribute CLUSTER_111100110100 numeric
+@attribute 'NGRAM_, suarez ,' numeric
+@attribute 'NGRAM_? #consistency' numeric
+@attribute NGRAM_career numeric
+@attribute 'NGRAM_so clattenburg\'s alleged' numeric
+@attribute 'NGRAM_and can\'t play_NEG for_NEG' numeric
+@attribute 'NGRAM_and can\'t play_NEG' numeric
+@attribute 'NGRAM_so clattenburg\'s alleged racism' numeric
+@attribute NGRAM_a_NEG numeric
+@attribute 'NGRAM_weeks_NEG ?' numeric
+@attribute 'NGRAM_racism may mean end' numeric
+@attribute NGRAM_rio numeric
+@attribute 'NGRAM_use it and can\'t' numeric
+@attribute 'NGRAM_weeks_NEG ? #consistency' numeric
+@attribute 'NGRAM_for_NEG a_NEG couple_NEG of_NEG' numeric
+@attribute 'NGRAM_terry ,' numeric
+@attribute 'NGRAM_career ; terry ,' numeric
+@attribute 'NGRAM_so clattenburg\'s' numeric
+@attribute 'NGRAM_, suarez' numeric
+@attribute 'NGRAM_couple_NEG of_NEG' numeric
+@attribute NGRAM_it numeric
+@attribute 'NGRAM_may mean' numeric
+@attribute 'NGRAM_; terry , suarez' numeric
+@attribute 'NGRAM_of his career' numeric
+@attribute 'NGRAM_rio use it' numeric
+@attribute 'NGRAM_it and can\'t' numeric
+@attribute 'NGRAM_for_NEG a_NEG' numeric
+@attribute NGRAM_; numeric
+@attribute NGRAM_of_NEG numeric
+@attribute 'NGRAM_alleged racism' numeric
+@attribute 'NGRAM_; terry' numeric
+@attribute NGRAM_? numeric
+@attribute 'NGRAM_may mean end of' numeric
+@attribute 'NGRAM_, rio use' numeric
+@attribute 'NGRAM_, suarez , rio' numeric
+@attribute 'NGRAM_clattenburg\'s' numeric
+@attribute 'NGRAM_clattenburg\'s alleged racism' numeric
+@attribute 'NGRAM_suarez ,' numeric
+@attribute 'NGRAM_suarez , rio use' numeric
+@attribute 'NGRAM_suarez , rio' numeric
+@attribute NGRAM_#consistency numeric
+@attribute 'NGRAM_a_NEG couple_NEG of_NEG weeks_NEG' numeric
+@attribute NGRAM_alleged numeric
+@attribute 'NGRAM_couple_NEG of_NEG weeks_NEG' numeric
+@attribute 'NGRAM_use it' numeric
+@attribute 'NGRAM_it and can\'t play_NEG' numeric
+@attribute 'NGRAM_a_NEG couple_NEG of_NEG' numeric
+@attribute 'NGRAM_, rio' numeric
+@attribute 'NGRAM_mean end' numeric
+@attribute 'NGRAM_mean end of his' numeric
+@attribute 'NGRAM_; terry ,' numeric
+@attribute NGRAM_so numeric
+@attribute 'NGRAM_terry , suarez ,' numeric
+@attribute 'NGRAM_can\'t' numeric
+@attribute 'NGRAM_clattenburg\'s alleged racism may' numeric
+@attribute NGRAM_for_NEG numeric
+@attribute NGRAM_may numeric
+@attribute 'NGRAM_of his career ;' numeric
+@attribute 'NGRAM_play_NEG for_NEG a_NEG' numeric
+@attribute 'NGRAM_can\'t play_NEG for_NEG' numeric
+@attribute 'NGRAM_career ;' numeric
+@attribute NGRAM_use numeric
+@attribute 'NGRAM_couple_NEG of_NEG weeks_NEG ?' numeric
+@attribute 'NGRAM_rio use it and' numeric
+@attribute 'NGRAM_end of his career' numeric
+@attribute 'NGRAM_mean end of' numeric
+@attribute 'NGRAM_a_NEG couple_NEG' numeric
+@attribute NGRAM_his numeric
+@attribute 'NGRAM_use it and' numeric
+@attribute 'NGRAM_, rio use it' numeric
+@attribute 'NGRAM_play_NEG for_NEG a_NEG couple_NEG' numeric
+@attribute 'NGRAM_end of his' numeric
+@attribute 'NGRAM_his career' numeric
+@attribute 'NGRAM_rio use' numeric
+@attribute NGRAM_weeks_NEG numeric
+@attribute 'NGRAM_end of' numeric
+@attribute 'NGRAM_for_NEG a_NEG couple_NEG' numeric
+@attribute 'NGRAM_and can\'t' numeric
+@attribute 'NGRAM_of_NEG weeks_NEG ?' numeric
+@attribute 'NGRAM_may mean end' numeric
+@attribute NGRAM_terry numeric
+@attribute 'NGRAM_clattenburg\'s alleged' numeric
+@attribute 'NGRAM_can\'t play_NEG for_NEG a_NEG' numeric
+@attribute 'NGRAM_can\'t play_NEG' numeric
+@attribute 'NGRAM_racism may' numeric
+@attribute 'NGRAM_play_NEG for_NEG' numeric
+@attribute 'NGRAM_of_NEG weeks_NEG ? #consistency' numeric
+@attribute 'NGRAM_terry , suarez' numeric
+@attribute NGRAM_couple_NEG numeric
+@attribute 'NGRAM_racism may mean' numeric
+@attribute NGRAM_suarez numeric
+@attribute 'NGRAM_alleged racism may' numeric
+@attribute 'NGRAM_his career ; terry' numeric
+@attribute NGRAM_of numeric
+@attribute NGRAM_end numeric
+@attribute 'NGRAM_of his' numeric
+@attribute 'NGRAM_alleged racism may mean' numeric
+@attribute NGRAM_racism numeric
+@attribute NGRAM_play_NEG numeric
+@attribute 'NGRAM_of_NEG weeks_NEG' numeric
+@attribute NGRAM_mean numeric
+@attribute 'NGRAM_career ; terry' numeric
+@attribute 'NGRAM_his career ;' numeric
+@attribute 'NGRAM_it and' numeric
+@attribute CHARNGRAM_ege numeric
+@attribute 'CHARNGRAM_ks? #' numeric
+@attribute CHARNGRAM_uarez numeric
+@attribute 'CHARNGRAM_se ' numeric
+@attribute CHARNGRAM_ouple numeric
+@attribute 'CHARNGRAM_ ter' numeric
+@attribute 'CHARNGRAM_sm m' numeric
+@attribute CHARNGRAM_rac numeric
+@attribute CHARNGRAM_ten numeric
+@attribute CHARNGRAM_ter numeric
+@attribute CHARNGRAM_lege numeric
+@attribute 'CHARNGRAM_ it ' numeric
+@attribute 'CHARNGRAM_r; t' numeric
+@attribute CHARNGRAM_coup numeric
+@attribute 'CHARNGRAM_a cou' numeric
+@attribute 'CHARNGRAM_r a' numeric
+@attribute 'CHARNGRAM_n end' numeric
+@attribute 'CHARNGRAM_? #c' numeric
+@attribute CHARNGRAM_clatt numeric
+@attribute 'CHARNGRAM_ay fo' numeric
+@attribute CHARNGRAM_onsi numeric
+@attribute CHARNGRAM_weeks numeric
+@attribute CHARNGRAM_terr numeric
+@attribute 'CHARNGRAM_for ' numeric
+@attribute 'CHARNGRAM_nd c' numeric
+@attribute 'CHARNGRAM_ a c' numeric
+@attribute 'CHARNGRAM_rez,' numeric
+@attribute CHARNGRAM_stenc numeric
+@attribute 'CHARNGRAM_it ' numeric
+@attribute 'CHARNGRAM_of w' numeric
+@attribute 'CHARNGRAM_rg\'s ' numeric
+@attribute 'CHARNGRAM_of h' numeric
+@attribute 'CHARNGRAM_; te' numeric
+@attribute CHARNGRAM_reer; numeric
+@attribute 'CHARNGRAM_y, su' numeric
+@attribute 'CHARNGRAM_o use' numeric
+@attribute CHARNGRAM_ism numeric
+@attribute 'CHARNGRAM_? #' numeric
+@attribute CHARNGRAM_aci numeric
+@attribute 'CHARNGRAM_ cl' numeric
+@attribute CHARNGRAM_arez numeric
+@attribute CHARNGRAM_ist numeric
+@attribute CHARNGRAM_eks numeric
+@attribute 'CHARNGRAM_rg\'' numeric
+@attribute CHARNGRAM_ree numeric
+@attribute 'CHARNGRAM_\'t ' numeric
+@attribute 'CHARNGRAM_er; ' numeric
+@attribute CHARNGRAM_acism numeric
+@attribute CHARNGRAM_rez numeric
+@attribute CHARNGRAM_llege numeric
+@attribute 'CHARNGRAM_a co' numeric
+@attribute 'CHARNGRAM_ end' numeric
+@attribute 'CHARNGRAM_nd o' numeric
+@attribute 'CHARNGRAM_ for' numeric
+@attribute CHARNGRAM_terry numeric
+@attribute CHARNGRAM_aree numeric
+@attribute 'CHARNGRAM_ #c' numeric
+@attribute CHARNGRAM_ttenb numeric
+@attribute 'CHARNGRAM_s car' numeric
+@attribute 'CHARNGRAM_ez, ' numeric
+@attribute CHARNGRAM_for numeric
+@attribute 'CHARNGRAM_ en' numeric
+@attribute CHARNGRAM_cis numeric
+@attribute 'CHARNGRAM_an\'t ' numeric
+@attribute 'CHARNGRAM_eks? ' numeric
+@attribute CHARNGRAM_onsis numeric
+@attribute CHARNGRAM_enb numeric
+@attribute CHARNGRAM_end numeric
+@attribute CHARNGRAM_enc numeric
+@attribute CHARNGRAM_sis numeric
+@attribute CHARNGRAM_acis numeric
+@attribute CHARNGRAM_coupl numeric
+@attribute 'CHARNGRAM_f we' numeric
+@attribute 'CHARNGRAM_ cla' numeric
+@attribute 'CHARNGRAM_ rio' numeric
+@attribute 'CHARNGRAM_ fo' numeric
+@attribute 'CHARNGRAM_ed ra' numeric
+@attribute CHARNGRAM_eged numeric
+@attribute 'CHARNGRAM_z, ri' numeric
+@attribute 'CHARNGRAM_o c' numeric
+@attribute CHARNGRAM_enbur numeric
+@attribute 'CHARNGRAM_an en' numeric
+@attribute 'CHARNGRAM_o u' numeric
+@attribute 'CHARNGRAM_sm ' numeric
+@attribute CHARNGRAM_nburg numeric
+@attribute CHARNGRAM_leged numeric
+@attribute CHARNGRAM_cla numeric
+@attribute 'CHARNGRAM_ of ' numeric
+@attribute CHARNGRAM_rio numeric
+@attribute 'CHARNGRAM_rio u' numeric
+@attribute 'CHARNGRAM_t pl' numeric
+@attribute 'CHARNGRAM_ed r' numeric
+@attribute 'CHARNGRAM_an e' numeric
+@attribute 'CHARNGRAM_ hi' numeric
+@attribute 'CHARNGRAM_m may' numeric
+@attribute 'CHARNGRAM_rry,' numeric
+@attribute 'CHARNGRAM_of ' numeric
+@attribute CHARNGRAM_iste numeric
+@attribute CHARNGRAM_er; numeric
+@attribute 'CHARNGRAM_play ' numeric
+@attribute CHARNGRAM_upl numeric
+@attribute 'CHARNGRAM_f wee' numeric
+@attribute 'CHARNGRAM_n e' numeric
+@attribute 'CHARNGRAM_nd ca' numeric
+@attribute CHARNGRAM_nbu numeric
+@attribute 'CHARNGRAM_ a co' numeric
+@attribute 'CHARNGRAM_so ' numeric
+@attribute 'CHARNGRAM_ it' numeric
+@attribute 'CHARNGRAM_or a' numeric
+@attribute 'CHARNGRAM_ may' numeric
+@attribute 'CHARNGRAM_n\'t ' numeric
+@attribute 'CHARNGRAM_, rio' numeric
+@attribute 'CHARNGRAM_can\'t' numeric
+@attribute CHARNGRAM_uple numeric
+@attribute CHARNGRAM_may numeric
+@attribute CHARNGRAM_err numeric
+@attribute 'CHARNGRAM_ for ' numeric
+@attribute 'CHARNGRAM_s? #c' numeric
+@attribute CHARNGRAM_ncy numeric
+@attribute 'CHARNGRAM_ terr' numeric
+@attribute CHARNGRAM_urg numeric
+@attribute 'CHARNGRAM_or a ' numeric
+@attribute CHARNGRAM_cism numeric
+@attribute 'CHARNGRAM_ez, r' numeric
+@attribute 'CHARNGRAM_f his' numeric
+@attribute 'CHARNGRAM_ use' numeric
+@attribute 'CHARNGRAM_ of w' numeric
+@attribute 'CHARNGRAM_ cou' numeric
+@attribute CHARNGRAM_eks? numeric
+@attribute 'CHARNGRAM_, r' numeric
+@attribute 'CHARNGRAM_, s' numeric
+@attribute CHARNGRAM_con numeric
+@attribute CHARNGRAM_use numeric
+@attribute 'CHARNGRAM_o cl' numeric
+@attribute CHARNGRAM_cou numeric
+@attribute 'CHARNGRAM_ of h' numeric
+@attribute 'CHARNGRAM_r; te' numeric
+@attribute CHARNGRAM_uare numeric
+@attribute 'CHARNGRAM_n\'t p' numeric
+@attribute 'CHARNGRAM_ all' numeric
+@attribute 'CHARNGRAM_an\'' numeric
+@attribute CHARNGRAM_nsis numeric
+@attribute CHARNGRAM_lat numeric
+@attribute CHARNGRAM_all numeric
+@attribute 'CHARNGRAM_of hi' numeric
+@attribute 'CHARNGRAM_ple o' numeric
+@attribute CHARNGRAM_lay numeric
+@attribute 'CHARNGRAM_n en' numeric
+@attribute 'CHARNGRAM_ged ' numeric
+@attribute 'CHARNGRAM_d ca' numeric
+@attribute 'CHARNGRAM_ me' numeric
+@attribute 'CHARNGRAM_ mea' numeric
+@attribute 'CHARNGRAM_\'s al' numeric
+@attribute 'CHARNGRAM_le ' numeric
+@attribute CHARNGRAM_mea numeric
+@attribute CHARNGRAM_atte numeric
+@attribute 'CHARNGRAM_arez,' numeric
+@attribute 'CHARNGRAM_ry, ' numeric
+@attribute 'CHARNGRAM_; t' numeric
+@attribute 'CHARNGRAM_and c' numeric
+@attribute 'CHARNGRAM_ pla' numeric
+@attribute 'CHARNGRAM_ coup' numeric
+@attribute 'CHARNGRAM_r a c' numeric
+@attribute CHARNGRAM_tte numeric
+@attribute CHARNGRAM_pla numeric
+@attribute CHARNGRAM_burg numeric
+@attribute 'CHARNGRAM_y fo' numeric
+@attribute CHARNGRAM_ple numeric
+@attribute 'CHARNGRAM_ism m' numeric
+@attribute 'CHARNGRAM_ week' numeric
+@attribute 'CHARNGRAM_; ter' numeric
+@attribute 'CHARNGRAM_ of' numeric
+@attribute CHARNGRAM_leg numeric
+@attribute 'CHARNGRAM_ sua' numeric
+@attribute 'CHARNGRAM_s all' numeric
+@attribute CHARNGRAM_lleg numeric
+@attribute 'CHARNGRAM_ mean' numeric
+@attribute 'CHARNGRAM_rg\'s' numeric
+@attribute 'CHARNGRAM_m ma' numeric
+@attribute CHARNGRAM_reer numeric
+@attribute 'CHARNGRAM_ez,' numeric
+@attribute 'CHARNGRAM_n\'t' numeric
+@attribute 'CHARNGRAM_y for' numeric
+@attribute 'CHARNGRAM_io us' numeric
+@attribute CHARNGRAM_suar numeric
+@attribute CHARNGRAM_ste numeric
+@attribute CHARNGRAM_eeks numeric
+@attribute 'CHARNGRAM_so cl' numeric
+@attribute 'CHARNGRAM_rez, ' numeric
+@attribute 'CHARNGRAM_se i' numeric
+@attribute 'CHARNGRAM_\'t p' numeric
+@attribute 'CHARNGRAM_, sua' numeric
+@attribute 'CHARNGRAM_an\'t' numeric
+@attribute CHARNGRAM_rry numeric
+@attribute CHARNGRAM_suare numeric
+@attribute 'CHARNGRAM_rio ' numeric
+@attribute CHARNGRAM_sua numeric
+@attribute CHARNGRAM_racis numeric
+@attribute 'CHARNGRAM_t pla' numeric
+@attribute CHARNGRAM_latte numeric
+@attribute 'CHARNGRAM_ ra' numeric
+@attribute 'CHARNGRAM_y, s' numeric
+@attribute 'CHARNGRAM_ay f' numeric
+@attribute CHARNGRAM_oupl numeric
+@attribute 'CHARNGRAM_ ri' numeric
+@attribute 'CHARNGRAM_may m' numeric
+@attribute 'CHARNGRAM_ use ' numeric
+@attribute CHARNGRAM_#con numeric
+@attribute CHARNGRAM_clat numeric
+@attribute CHARNGRAM_ons numeric
+@attribute 'CHARNGRAM_can\'' numeric
+@attribute 'CHARNGRAM_r a ' numeric
+@attribute CHARNGRAM_bur numeric
+@attribute 'CHARNGRAM_y f' numeric
+@attribute 'CHARNGRAM_g\'s ' numeric
+@attribute 'CHARNGRAM_ su' numeric
+@attribute CHARNGRAM_eer; numeric
+@attribute CHARNGRAM_latt numeric
+@attribute CHARNGRAM_atten numeric
+@attribute 'CHARNGRAM_y m' numeric
+@attribute CHARNGRAM_siste numeric
+@attribute CHARNGRAM_eeks? numeric
+@attribute 'CHARNGRAM_end ' numeric
+@attribute 'CHARNGRAM_ may ' numeric
+@attribute 'CHARNGRAM_ te' numeric
+@attribute CHARNGRAM_enbu numeric
+@attribute 'CHARNGRAM_or ' numeric
+@attribute 'CHARNGRAM_it a' numeric
+@attribute CHARNGRAM_att numeric
+@attribute 'CHARNGRAM_ play' numeric
+@attribute 'CHARNGRAM_ay m' numeric
+@attribute 'CHARNGRAM_y me' numeric
+@attribute 'CHARNGRAM_ean e' numeric
+@attribute 'CHARNGRAM_urg\'s' numeric
+@attribute 'CHARNGRAM_use i' numeric
+@attribute 'CHARNGRAM_nd of' numeric
+@attribute 'CHARNGRAM_ us' numeric
+@attribute 'CHARNGRAM_it an' numeric
+@attribute 'CHARNGRAM_his c' numeric
+@attribute 'CHARNGRAM_, ri' numeric
+@attribute 'CHARNGRAM_eged ' numeric
+@attribute 'CHARNGRAM_ care' numeric
+@attribute 'CHARNGRAM_, su' numeric
+@attribute 'CHARNGRAM_burg\'' numeric
+@attribute 'CHARNGRAM_ry,' numeric
+@attribute CHARNGRAM_alle numeric
+@attribute 'CHARNGRAM_s al' numeric
+@attribute 'CHARNGRAM_lay ' numeric
+@attribute 'CHARNGRAM_mean ' numeric
+@attribute CHARNGRAM_caree numeric
+@attribute 'CHARNGRAM_f hi' numeric
+@attribute 'CHARNGRAM_is c' numeric
+@attribute CHARNGRAM_raci numeric
+@attribute CHARNGRAM_lle numeric
+@attribute CHARNGRAM_nsist numeric
+@attribute 'CHARNGRAM_is ca' numeric
+@attribute 'CHARNGRAM_e it' numeric
+@attribute 'CHARNGRAM_g\'s a' numeric
+@attribute 'CHARNGRAM_ we' numeric
+@attribute CHARNGRAM_ency numeric
+@attribute 'CHARNGRAM_ alle' numeric
+@attribute 'CHARNGRAM_lay f' numeric
+@attribute 'CHARNGRAM_d of ' numeric
+@attribute 'CHARNGRAM_z, r' numeric
+@attribute CHARNGRAM_sten numeric
+@attribute 'CHARNGRAM_his ' numeric
+@attribute CHARNGRAM_consi numeric
+@attribute CHARNGRAM_play numeric
+@attribute CHARNGRAM_sist numeric
+@attribute 'CHARNGRAM_ raci' numeric
+@attribute 'CHARNGRAM_ay me' numeric
+@attribute 'CHARNGRAM_rry, ' numeric
+@attribute 'CHARNGRAM_s? #' numeric
+@attribute 'CHARNGRAM_y mea' numeric
+@attribute 'CHARNGRAM_for a' numeric
+@attribute 'CHARNGRAM_ks? ' numeric
+@attribute 'CHARNGRAM_ his ' numeric
+@attribute CHARNGRAM_tten numeric
+@attribute 'CHARNGRAM_s ca' numeric
+@attribute CHARNGRAM_cons numeric
+@attribute 'CHARNGRAM_ean ' numeric
+@attribute 'CHARNGRAM_ wee' numeric
+@attribute 'CHARNGRAM_eer; ' numeric
+@attribute 'CHARNGRAM_f h' numeric
+@attribute 'CHARNGRAM_r; ' numeric
+@attribute 'CHARNGRAM_ end ' numeric
+@attribute 'CHARNGRAM_ it a' numeric
+@attribute 'CHARNGRAM_se it' numeric
+@attribute 'CHARNGRAM_erry,' numeric
+@attribute 'CHARNGRAM_f w' numeric
+@attribute 'CHARNGRAM_d of' numeric
+@attribute CHARNGRAM_care numeric
+@attribute 'CHARNGRAM_cism ' numeric
+@attribute CHARNGRAM_nsi numeric
+@attribute 'CHARNGRAM_d ra' numeric
+@attribute CHARNGRAM_ged numeric
+@attribute CHARNGRAM_oup numeric
+@attribute 'CHARNGRAM_ #con' numeric
+@attribute CHARNGRAM_isten numeric
+@attribute 'CHARNGRAM_use ' numeric
+@attribute CHARNGRAM_ean numeric
+@attribute CHARNGRAM_wee numeric
+@attribute 'CHARNGRAM_e of' numeric
+@attribute 'CHARNGRAM_ed ' numeric
+@attribute CHARNGRAM_nbur numeric
+@attribute 'CHARNGRAM_ his' numeric
+@attribute 'CHARNGRAM_ple ' numeric
+@attribute CHARNGRAM_uar numeric
+@attribute 'CHARNGRAM_may ' numeric
+@attribute 'CHARNGRAM_z, ' numeric
+@attribute 'CHARNGRAM_e i' numeric
+@attribute 'CHARNGRAM_e of ' numeric
+@attribute 'CHARNGRAM_e o' numeric
+@attribute 'CHARNGRAM_s? ' numeric
+@attribute 'CHARNGRAM_e it ' numeric
+@attribute 'CHARNGRAM_d can' numeric
+@attribute 'CHARNGRAM_ can\'' numeric
+@attribute CHARNGRAM_alleg numeric
+@attribute 'CHARNGRAM_ clat' numeric
+@attribute CHARNGRAM_areer numeric
+@attribute CHARNGRAM_his numeric
+@attribute 'CHARNGRAM_\'t pl' numeric
+@attribute CHARNGRAM_erry numeric
+@attribute 'CHARNGRAM_sm ma' numeric
+@attribute 'CHARNGRAM_ #co' numeric
+@attribute CHARNGRAM_tenbu numeric
+@attribute 'CHARNGRAM_ car' numeric
+@attribute 'CHARNGRAM_ry, s' numeric
+@attribute 'CHARNGRAM_d c' numeric
+@attribute 'CHARNGRAM_end o' numeric
+@attribute 'CHARNGRAM_so c' numeric
+@attribute 'CHARNGRAM_d o' numeric
+@attribute 'CHARNGRAM_d r' numeric
+@attribute 'CHARNGRAM_le o' numeric
+@attribute 'CHARNGRAM_io ' numeric
+@attribute 'CHARNGRAM_er; t' numeric
+@attribute CHARNGRAM_tency numeric
+@attribute 'CHARNGRAM_ged r' numeric
+@attribute CHARNGRAM_week numeric
+@attribute 'CHARNGRAM_t p' numeric
+@attribute 'CHARNGRAM_d rac' numeric
+@attribute 'CHARNGRAM_io u' numeric
+@attribute CHARNGRAM_eek numeric
+@attribute 'CHARNGRAM_o cla' numeric
+@attribute 'CHARNGRAM_urg\'' numeric
+@attribute 'CHARNGRAM_ suar' numeric
+@attribute 'CHARNGRAM_ism ' numeric
+@attribute CHARNGRAM_#co numeric
+@attribute CHARNGRAM_#cons numeric
+@attribute 'CHARNGRAM_ rio ' numeric
+@attribute CHARNGRAM_tenc numeric
+@attribute 'CHARNGRAM_g\'s' numeric
+@attribute CHARNGRAM_tenb numeric
+@attribute CHARNGRAM_eer numeric
+@attribute CHARNGRAM_car numeric
+@attribute CHARNGRAM_ks? numeric
+@attribute 'CHARNGRAM_o us' numeric
+@attribute 'CHARNGRAM_ rac' numeric
+@attribute 'CHARNGRAM_? #co' numeric
+@attribute 'CHARNGRAM_uple ' numeric
+@attribute CHARNGRAM_mean numeric
+@attribute 'CHARNGRAM_s c' numeric
+@attribute 'CHARNGRAM_of we' numeric
+@attribute 'CHARNGRAM_le of' numeric
+@attribute POS_Z numeric
+@attribute CLUSTER_0011101010 numeric
+@attribute CLUSTER_111101110100110 numeric
+@attribute CLUSTER_010110011100 numeric
+@attribute CLUSTER_10001101 numeric
+@attribute CLUSTER_0110110110 numeric
+@attribute CLUSTER_11110110000 numeric
+@attribute CLUSTER_11100110100 numeric
+@attribute CLUSTER_01000101010 numeric
+@attribute CLUSTER_1111010101110 numeric
+@attribute CLUSTER_01110110 numeric
+@attribute CLUSTER_111001100011 numeric
+@attribute CLUSTER_110111111 numeric
+@attribute CLUSTER_00111110 numeric
+@attribute CLUSTER_10001011 numeric
+@attribute CLUSTER_10110 numeric
+@attribute CLUSTER_111001110 numeric
+@attribute CLUSTER_111111000100 numeric
 @attribute allCaps numeric
 @attribute hashtags numeric
 @attribute punctuationCount numeric
@@ -808,6 +1660,15 @@
 @attribute Class {positive,neutral,negative}
 
 @data
-{0 1,1 1,2 1,3 1,4 1,5 1,6 1,7 1,8 1,9 1,10 1,11 1,12 1,13 1,14 1,15 1,16 1,17 1,18 1,19 1,20 1,21 1,22 1,23 1,24 1,25 1,26 1,27 1,28 1,29 1,30 1,31 1,32 1,33 1,34 1,35 1,36 1,37 1,38 1,39 1,40 1,41 1,42 1,43 1,44 1,45 1,46 1,47 1,48 1,49 1,50 1,51 1,52 1,53 1,54 1,55 1,56 1,57 1,58 1,59 1,60 1,61 1,62 1,63 1,64 1,65 1,66 1,67 1,68 1,69 1,70 1,71 1,72 1,73 1,74 1,75 1,76 1,77 1,78 1,79 1,80 1,81 1,82 1,83 1,84 1,85 1,86 1,87 1,88 1,89 1,90 1,91 1,92 1,93 1,94 1,95 1,96 1,97 1,98 1,99 1,100 1,101 1,102 1,103 1,104 1,105 1,106 1,107 1,108 1,109 1,110 1,111 1,112 1,113 1,114 1,115 1,116 1,117 1,118 1,119 1,120 1,121 1,122 1,123 1,124 1,125 1,126 1,127 1,128 1,129 1,130 1,131 1,132 1,133 1,134 1,135 1,136 1,137 1,138 1,139 1,140 1,141 1,142 1,143 1,144 1,145 1,146 1,147 1,148 1,149 1,150 1,151 1,152 1,153 1,154 1,155 1,156 1,157 1,158 1,159 1,160 1,161 1,162 1,163 1,164 1,165 1,166 1,167 1,168 1,169 1,170 1,171 1,172 1,173 1,174 1,175 1,176 1,177 1,178 1,179 1,180 1,181 1,182 1,183 1,184 1,185 1,186 1,187 1,188 1,189 1,190 1,191 1,192 1,193 1,194 1,195 1,196 1,197 1,198 1,199 1,200 1,201 1,202 1,203 1,204 1,205 1,206 1,207 1,208 1,209 1,210 1,211 1,212 1,213 1,214 1,215 1,216 1,217 1,218 1,219 1,220 1,221 1,222 1,223 1,224 1,225 1,226 1,227 1,228 1,229 1,230 1,231 1,232 1,233 1,234 1,235 1,236 1,237 1,238 1,239 1,240 1,241 1,242 1,243 1,244 1,245 1,246 1,247 1,248 1,249 1,250 1,251 1,252 1,253 1,254 1,255 1,256 1,257 1,258 1,259 1,260 1,261 1,262 1,263 1,264 1,265 1,266 1,267 1,268 1,269 1,270 1,271 1,272 1,273 1,274 1,275 1,276 1,277 1,278 1,279 1,280 1,281 1,282 1,283 1,284 1,285 1,286 1,287 1,288 1,289 1,290 1,291 1,292 1,293 1,294 1,295 1,296 1,297 1,298 1,299 1,300 1,301 1,302 1,303 1,304 1,305 1,306 1,307 1,308 1,309 1,310 1,311 1,312 1,313 1,314 1,315 1,316 1,317 1,318 1,319 1,320 1,321 1,322 1,323 1,324 1,325 1,326 1,327 1,328 1,329 1,330 1,331 1,332 1,333 1,334 1,335 1,336 1,337 1,338 1,339 1,340 1,341 1,342 1,343 1,344 1,345 1,346 1,347 1,348 1,349 1,350 1,351 1,352 1,353 1,354 1,355 1,356 1,357 1,358 1,359 1,360 1,361 1,362 1,363 1,364 1,365 1,366 1,367 1,368 1,369 1,370 1,371 1,372 1,373 1,374 1,375 1,376 1,377 1,378 1,379 1,380 2,381 1,382 1,383 2,384 2,385 1,386 6,387 8,388 1,389 1,390 1,391 1,392 1,393 1,394 1,395 1,396 1,397 1,398 1,399 1,400 1,401 1,402 1,403 1,404 1,405 1,406 1,407 1,743 1,749 14,750 4.418,751 0.837,752 0.837,753 9,754 -0.841,755 -0.197,756 -0.096,757 15,758 6.597,759 1.777,760 0.478,761 7,762 -1.81,763 -0.725,764 -0.725,765 11,766 4.235,767 1.147,768 0.365,769 3,770 -0.493,771 -0.276,772 -0.077,773 11,774 9.835,775 2.087,776 0.478,777 1,778 -0.064,779 -0.064,780 -0.064,785 1,786 -1,787 -1,788 -1,789 1,790 1,791 1,792 1,805 neutral}
-{0 1,1 1,2 1,3 1,4 1,5 1,6 1,7 1,8 1,9 1,10 1,11 1,12 1,13 1,14 1,15 1,16 1,17 1,18 1,19 1,20 1,21 1,22 1,23 1,24 1,25 1,26 1,27 1,28 1,29 1,30 1,31 1,32 1,33 1,34 1,35 1,36 1,37 1,38 1,39 1,40 1,41 1,42 1,43 1,44 1,45 1,46 1,47 1,48 1,49 1,50 1,51 1,52 1,53 1,54 1,55 1,56 1,57 1,58 1,59 1,60 1,61 1,62 1,63 1,64 1,65 1,66 1,67 1,68 1,69 1,70 1,71 1,72 1,73 1,74 1,75 1,76 1,77 1,78 1,79 1,80 1,81 1,82 1,83 1,84 1,85 1,86 1,87 1,88 1,89 1,90 1,91 1,92 1,93 1,94 1,95 1,96 1,97 1,98 1,99 1,100 1,101 1,102 1,103 1,104 1,105 1,106 1,107 1,108 1,109 1,110 1,111 1,112 1,113 1,114 1,115 1,116 1,117 1,118 1,119 1,120 1,121 1,122 1,123 1,124 1,125 1,126 1,127 1,128 1,129 1,130 1,131 1,132 1,133 1,134 1,135 1,136 1,137 1,138 1,139 1,140 1,141 1,142 1,143 1,144 1,145 1,146 1,147 1,148 1,149 1,150 1,151 1,152 1,153 1,154 1,155 1,156 1,157 1,158 1,159 1,160 1,161 1,162 1,163 1,164 1,165 1,166 1,167 1,168 1,169 1,170 1,171 1,172 1,173 1,174 1,175 1,176 1,177 1,178 1,179 1,180 1,181 1,182 1,183 1,184 1,185 1,186 1,187 1,188 1,189 1,190 1,191 1,192 1,193 1,194 1,195 1,196 1,197 1,198 1,199 1,200 1,201 1,202 1,203 1,204 1,205 1,206 1,207 1,208 1,209 1,210 1,211 1,212 1,213 1,214 1,215 1,216 1,217 1,218 1,219 1,220 1,221 1,222 1,223 1,224 1,225 1,226 1,227 1,228 1,229 1,230 1,231 1,232 1,233 1,234 1,235 1,236 1,237 1,238 1,239 1,240 1,241 1,242 1,243 1,244 1,245 1,246 1,247 1,248 1,249 1,250 1,251 1,252 1,253 1,254 1,255 1,256 1,257 1,258 1,259 1,260 1,261 1,262 1,263 1,264 1,265 1,266 1,267 1,268 1,269 1,270 1,271 1,272 1,273 1,274 1,275 1,276 1,277 1,278 1,279 1,280 1,281 1,282 1,283 1,284 1,285 1,286 1,287 1,288 1,289 1,290 1,291 1,292 1,293 1,294 1,295 1,296 1,297 1,298 1,299 1,300 1,301 1,302 1,303 1,304 1,305 1,306 1,307 1,308 1,309 1,310 1,311 1,312 1,313 1,314 1,315 1,316 1,317 1,318 1,319 1,320 1,321 1,322 1,323 1,324 1,325 1,326 1,327 1,328 1,329 1,330 1,331 1,332 1,333 1,334 1,335 1,336 1,337 1,338 1,339 1,340 1,341 1,342 1,343 1,344 1,345 1,346 1,347 1,348 1,349 1,350 1,351 1,352 1,353 1,354 1,355 1,356 1,357 1,358 1,359 1,360 1,361 1,362 1,363 1,364 1,365 1,366 1,367 1,368 1,369 1,370 1,371 1,372 1,373 1,374 1,375 1,376 1,377 1,378 1,379 1,380 2,381 1,382 1,383 2,384 2,385 1,386 6,387 8,388 1,389 1,390 1,391 1,392 1,393 1,394 1,395 1,396 1,397 1,398 1,399 1,400 1,401 1,402 1,403 1,404 1,405 1,406 1,407 1,743 1,749 14,750 4.418,751 0.837,752 0.837,753 9,754 -0.841,755 -0.197,756 -0.096,757 15,758 6.597,759 1.777,760 0.478,761 7,762 -1.81,763 -0.725,764 -0.725,765 11,766 4.235,767 1.147,768 0.365,769 3,770 -0.493,771 -0.276,772 -0.077,773 11,774 9.835,775 2.087,776 0.478,777 1,778 -0.064,779 -0.064,780 -0.064,785 1,786 -1,787 -1,788 -1,789 1,790 1,791 1,792 1,805 negative}
-{77 1,79 1,104 1,133 1,140 1,141 1,194 1,375 1,379 1,380 3,381 2,382 3,383 2,384 2,386 2,387 4,390 1,398 1,408 1,409 1,410 1,411 1,412 1,413 1,414 1,415 1,416 1,417 1,418 1,419 1,420 1,421 1,422 1,423 1,424 1,425 1,426 1,427 1,428 1,429 1,430 1,431 1,432 1,433 1,434 1,435 1,436 1,437 1,438 1,439 1,440 1,441 1,442 1,443 1,444 1,445 1,446 1,447 1,448 1,449 1,450 1,451 1,452 1,453 1,454 1,455 1,456 1,457 1,458 1,459 1,460 1,461 1,462 1,463 1,464 1,465 1,466 1,467 1,468 1,469 1,470 1,471 1,472 1,473 1,474 1,475 1,476 1,477 1,478 1,479 1,480 1,481 1,482 1,483 1,484 1,485 1,486 1,487 1,488 1,489 1,490 1,491 1,492 1,493 1,494 1,495 1,496 1,497 1,498 1,499 1,500 1,501 1,502 1,503 1,504 1,505 1,506 1,507 1,508 1,509 1,510 1,511 1,512 1,513 1,514 1,515 1,516 1,517 1,518 1,519 1,520 1,521 1,522 1,523 1,524 1,525 1,526 1,527 1,528 1,529 1,530 1,531 1,532 1,533 1,534 1,535 1,536 1,537 1,538 1,539 1,540 1,541 1,542 1,543 1,544 1,545 1,546 1,547 1,548 1,549 1,550 1,551 1,552 1,553 1,554 1,555 1,556 1,557 1,558 1,559 1,560 1,561 1,562 1,563 1,564 1,565 1,566 1,567 1,568 1,569 1,570 1,571 1,572 1,573 1,574 1,575 1,576 1,577 1,578 1,579 1,580 1,581 1,582 1,583 1,584 1,585 1,586 1,587 1,588 1,589 1,590 1,591 1,592 1,593 1,594 1,595 1,596 1,597 1,598 1,599 1,600 1,601 1,602 1,603 1,604 1,605 1,606 1,607 1,608 1,609 1,610 1,611 1,612 1,613 1,614 1,615 1,616 1,617 1,618 1,619 1,620 1,621 1,622 1,623 1,624 1,625 1,626 1,627 1,628 1,629 1,630 1,631 1,632 1,633 1,634 1,635 1,636 1,637 1,638 1,639 1,640 1,641 1,642 1,643 1,644 1,645 1,646 1,647 1,648 1,649 1,650 1,651 1,652 1,653 1,654 1,655 1,656 1,657 1,658 1,659 1,660 1,661 1,662 1,663 1,664 1,665 1,666 1,667 1,668 1,669 1,670 1,671 1,672 1,673 1,674 1,675 1,676 1,677 1,678 1,679 1,680 1,681 1,682 1,683 1,684 1,685 1,686 1,687 1,688 1,689 1,690 1,691 1,692 1,693 1,694 1,695 1,696 1,697 1,698 1,699 1,700 1,701 1,702 1,703 1,704 1,705 1,706 1,707 1,708 1,709 1,710 1,711 1,712 1,713 1,714 1,715 1,716 1,717 1,718 1,719 1,720 1,721 1,722 1,723 1,724 1,725 1,726 1,727 1,728 1,729 1,730 1,731 1,732 1,733 1,734 1,735 1,736 1,737 1,738 1,739 1,740 1,741 1,742 3,743 4,749 10,750 2.903,751 0.825,752 0.825,753 5,754 -0.708,755 -0.366,756 -0.034,757 14,758 7.235,759 1.577,760 0.056,761 1,762 -0.343,763 -0.343,764 -0.343,765 5,766 7.937,767 5,768 0.742,769 5,770 -2.105,771 -1.203,772 -0.434,773 4,774 4.055,775 1.577,776 1.577,777 2,778 -0.683,779 -0.62,780 -0.063,781 2,782 6,783 5,784 1,785 1,786 -1,787 -1,788 -1,789 2,790 2,791 1,792 1,797 2,798 2,799 1,800 1}
+{0 1,1 1,2 1,3 1,4 1,5 1,6 1,7 1,8 1,9 1,10 1,11 1,12 1,13 1,14 1,15 1,16 1,17 1,18 1,19 1,20 1,21 1,22 1,23 1,24 1,25 1,26 1,27 1,28 1,29 1,30 1,31 1,32 1,33 1,34 1,35 1,36 1,37 1,38 1,39 1,40 1,41 1,42 1,43 1,44 1,45 1,46 1,47 1,48 1,49 1,50 1,51 1,52 1,53 1,54 1,55 1,56 1,57 1,58 1,59 1,60 1,61 1,62 1,63 1,64 1,65 1,66 1,67 1,68 1,69 1,70 1,71 1,72 1,73 1,74 1,75 1,76 1,77 1,78 1,79 1,80 1,81 1,82 1,83 1,84 1,85 1,86 1,87 1,88 1,89 1,90 1,91 1,92 1,93 1,94 1,95 1,96 1,97 1,98 1,99 1,100 1,101 1,102 1,103 1,104 1,105 1,106 1,107 1,108 1,109 1,110 1,111 1,112 1,113 1,114 1,115 1,116 1,117 1,118 1,119 1,120 1,121 1,122 1,123 1,124 1,125 1,126 1,127 1,128 1,129 1,130 1,131 1,132 1,133 1,134 1,135 1,136 1,137 1,138 1,139 1,140 1,141 1,142 1,143 1,144 1,145 1,146 1,147 1,148 1,149 1,150 1,151 1,152 1,153 1,154 1,155 1,156 1,157 1,158 1,159 1,160 1,161 1,162 1,163 1,164 1,165 1,166 1,167 1,168 1,169 1,170 1,171 1,172 1,173 1,174 1,175 1,176 1,177 1,178 1,179 1,180 1,181 1,182 1,183 1,184 1,185 1,186 1,187 1,188 1,189 1,190 1,191 1,192 1,193 1,194 1,195 1,196 1,197 1,198 1,199 1,200 1,201 1,202 1,203 1,204 1,205 1,206 1,207 1,208 1,209 1,210 1,211 1,212 1,213 1,214 1,215 1,216 1,217 1,218 1,219 1,220 1,221 1,222 1,223 1,224 1,225 1,226 1,227 1,228 1,229 1,230 1,231 1,232 1,233 1,234 1,235 1,236 1,237 1,238 1,239 1,240 1,241 1,242 1,243 1,244 1,245 1,246 1,247 1,248 1,249 1,250 1,251 1,252 1,253 1,254 1,255 1,256 1,257 1,258 1,259 1,260 1,261 1,262 1,263 1,264 1,265 1,266 1,267 1,268 1,269 1,270 1,271 1,272 1,273 1,274 1,275 1,276 1,277 1,278 1,279 1,280 1,281 1,282 1,283 1,284 1,285 1,286 1,287 1,288 1,289 1,290 1,291 1,292 1,293 1,294 1,295 1,296 1,297 1,298 1,299 1,300 1,301 1,302 1,303 1,304 1,305 1,306 1,307 1,308 1,309 1,310 1,311 1,312 1,313 1,314 1,315 1,316 1,317 1,318 1,319 1,320 1,321 1,322 1,323 1,324 1,325 1,326 1,327 3,328 2,329 3,330 2,331 2,332 2,333 4,334 1,335 1,336 1,337 1,338 1,339 1,340 1,341 1,342 1,343 1,344 1,345 1,346 1,347 1,348 1,349 1,350 1,351 1,1594 3,1595 4,1601 10,1602 2.903,1603 0.825,1604 0.825,1605 5,1606 -0.708,1607 -0.366,1608 -0.034,1609 14,1610 7.235,1611 1.577,1612 0.056,1613 1,1614 -0.343,1615 -0.343,1616 -0.343,1617 5,1618 7.937,1619 5,1620 0.742,1621 5,1622 -2.105,1623 -1.203,1624 -0.434,1625 4,1626 4.055,1627 1.577,1628 1.577,1629 2,1630 -0.683,1631 -0.62,1632 -0.063,1633 2,1634 6,1635 5,1636 1,1637 1,1638 -1,1639 -1,1640 -1,1641 2,1642 2,1643 1,1644 1,1649 2,1650 2,1651 1,1652 1}
+{60 1,64 1,78 1,108 1,125 1,126 1,175 1,321 1,326 1,327 2,328 1,329 1,330 2,331 2,332 6,333 8,339 1,345 1,352 1,353 1,354 1,355 1,356 1,357 1,358 1,359 1,360 1,361 1,362 1,363 1,364 1,365 1,366 1,367 1,368 1,369 1,370 1,371 1,372 1,373 1,374 1,375 1,376 1,377 1,378 1,379 1,380 1,381 1,382 1,383 1,384 1,385 1,386 1,387 1,388 1,389 1,390 1,391 1,392 1,393 1,394 1,395 1,396 1,397 1,398 1,399 1,400 1,401 1,402 1,403 1,404 1,405 1,406 1,407 1,408 1,409 1,410 1,411 1,412 1,413 1,414 1,415 1,416 1,417 1,418 1,419 1,420 1,421 1,422 1,423 1,424 1,425 1,426 1,427 1,428 1,429 1,430 1,431 1,432 1,433 1,434 1,435 1,436 1,437 1,438 1,439 1,440 1,441 1,442 1,443 1,444 1,445 1,446 1,447 1,448 1,449 1,450 1,451 1,452 1,453 1,454 1,455 1,456 1,457 1,458 1,459 1,460 1,461 1,462 1,463 1,464 1,465 1,466 1,467 1,468 1,469 1,470 1,471 1,472 1,473 1,474 1,475 1,476 1,477 1,478 1,479 1,480 1,481 1,482 1,483 1,484 1,485 1,486 1,487 1,488 1,489 1,490 1,491 1,492 1,493 1,494 1,495 1,496 1,497 1,498 1,499 1,500 1,501 1,502 1,503 1,504 1,505 1,506 1,507 1,508 1,509 1,510 1,511 1,512 1,513 1,514 1,515 1,516 1,517 1,518 1,519 1,520 1,521 1,522 1,523 1,524 1,525 1,526 1,527 1,528 1,529 1,530 1,531 1,532 1,533 1,534 1,535 1,536 1,537 1,538 1,539 1,540 1,541 1,542 1,543 1,544 1,545 1,546 1,547 1,548 1,549 1,550 1,551 1,552 1,553 1,554 1,555 1,556 1,557 1,558 1,559 1,560 1,561 1,562 1,563 1,564 1,565 1,566 1,567 1,568 1,569 1,570 1,571 1,572 1,573 1,574 1,575 1,576 1,577 1,578 1,579 1,580 1,581 1,582 1,583 1,584 1,585 1,586 1,587 1,588 1,589 1,590 1,591 1,592 1,593 1,594 1,595 1,596 1,597 1,598 1,599 1,600 1,601 1,602 1,603 1,604 1,605 1,606 1,607 1,608 1,609 1,610 1,611 1,612 1,613 1,614 1,615 1,616 1,617 1,618 1,619 1,620 1,621 1,622 1,623 1,624 1,625 1,626 1,627 1,628 1,629 1,630 1,631 1,632 1,633 1,634 1,635 1,636 1,637 1,638 1,639 1,640 1,641 1,642 1,643 1,644 1,645 1,646 1,647 1,648 1,649 1,650 1,651 1,652 1,653 1,654 1,655 1,656 1,657 1,658 1,659 1,660 1,661 1,662 1,663 1,664 1,665 1,666 1,667 1,668 1,669 1,670 1,671 1,672 1,673 1,674 1,675 1,676 1,677 1,678 1,679 1,680 1,681 1,682 1,683 1,684 1,685 1,686 1,687 1,688 1,689 1,690 1,691 1,692 1,693 1,694 1,695 1,696 1,697 1,698 1,699 1,700 1,701 1,702 1,703 1,704 1,705 1,706 1,707 1,708 1,709 1,710 1,711 1,712 1,713 1,714 1,715 1,716 1,717 1,718 1,719 1,720 1,721 1,722 1,723 1,724 1,725 1,726 1,727 1,728 1,729 1,730 1,731 1,732 1,733 1,734 1,735 1,736 1,737 1,738 1,739 1,740 1,741 1,1595 1,1601 14,1602 4.418,1603 0.837,1604 0.837,1605 9,1606 -0.841,1607 -0.197,1608 -0.096,1609 15,1610 6.597,1611 1.777,1612 0.478,1613 7,1614 -1.81,1615 -0.725,1616 -0.725,1617 11,1618 4.235,1619 1.147,1620 0.365,1621 3,1622 -0.493,1623 -0.276,1624 -0.077,1625 11,1626 9.835,1627 2.087,1628 0.478,1629 1,1630 -0.064,1631 -0.064,1632 -0.064,1637 1,1638 -1,1639 -1,1640 -1,1641 1,1642 1,1643 1,1644 1,1657 neutral}
+{35 1,60 1,64 1,76 1,93 1,108 1,114 1,125 1,126 1,158 1,162 1,175 1,193 1,194 1,220 1,224 1,261 1,268 1,269 1,270 1,282 1,321 1,328 4,330 3,331 5,332 1,333 4,339 1,341 1,345 1,382 1,407 1,440 1,446 1,463 1,467 1,476 1,509 1,510 1,536 1,588 1,605 1,611 1,621 1,671 1,679 1,703 1,723 1,729 1,730 1,742 1,743 1,744 1,745 1,746 1,747 1,748 1,749 1,750 1,751 1,752 1,753 1,754 1,755 1,756 1,757 1,758 1,759 1,760 1,761 1,762 1,763 1,764 1,765 1,766 1,767 1,768 1,769 1,770 1,771 1,772 1,773 1,774 1,775 1,776 1,777 1,778 1,779 1,780 1,781 1,782 1,783 1,784 1,785 1,786 1,787 1,788 1,789 1,790 1,791 1,792 1,793 1,794 1,795 1,796 1,797 1,798 1,799 1,800 1,801 1,802 1,803 1,804 1,805 1,806 1,807 1,808 1,809 1,810 1,811 1,812 1,813 1,814 1,815 1,816 1,817 1,818 1,819 1,820 1,821 1,822 1,823 1,824 1,825 1,826 1,827 1,828 1,829 1,830 1,831 1,832 1,833 1,834 1,835 1,836 1,837 1,838 1,839 1,840 1,841 1,842 1,843 1,844 1,845 1,846 1,847 1,848 1,849 1,850 1,851 1,852 1,853 1,854 1,855 1,856 1,857 1,858 1,859 1,860 1,861 1,862 1,863 1,864 1,865 1,866 1,867 1,868 1,869 1,870 1,871 1,872 1,873 1,874 1,875 1,876 1,877 1,878 1,879 1,880 1,881 1,882 1,883 1,884 1,885 1,886 1,887 1,888 1,889 1,890 1,891 1,892 1,893 1,894 1,895 1,896 1,897 1,898 1,899 1,900 1,901 1,902 1,903 1,904 1,905 1,906 1,907 1,908 1,909 1,910 1,911 1,912 1,913 1,914 1,915 1,916 1,917 1,918 1,919 1,920 1,921 1,922 1,923 1,924 1,925 1,926 1,927 1,928 1,929 1,930 1,931 1,932 1,933 1,934 1,935 1,936 1,937 1,938 1,939 1,940 1,941 1,942 1,943 1,944 1,945 1,946 1,947 1,948 1,949 1,950 1,951 1,952 1,953 1,954 1,955 1,956 1,957 1,958 1,959 1,960 1,961 1,962 1,963 1,964 1,965 1,966 1,967 1,968 1,969 1,970 1,971 1,972 1,973 1,974 1,975 1,976 1,977 1,978 1,979 1,980 1,981 1,982 1,983 1,984 1,985 1,986 1,987 1,988 1,989 1,990 1,991 1,992 1,993 1,994 1,995 1,996 1,997 1,998 1,999 1,1000 1,1001 1,1002 1,1003 1,1004 1,1005 1,1006 1,1007 1,1008 1,1009 1,1010 1,1011 1,1012 1,1013 1,1014 1,1015 1,1016 1,1017 1,1018 1,1019 1,1020 1,1021 1,1022 1,1023 1,1024 1,1025 1,1026 1,1027 1,1028 1,1029 1,1030 1,1031 1,1032 1,1033 1,1034 1,1035 1,1036 1,1037 1,1038 1,1039 1,1040 1,1041 1,1042 1,1043 1,1044 1,1045 1,1046 1,1047 1,1048 1,1049 1,1050 1,1051 1,1052 1,1053 1,1054 1,1055 1,1056 1,1057 1,1058 1,1059 1,1060 1,1061 1,1062 1,1063 1,1064 1,1065 1,1066 1,1067 1,1068 1,1069 1,1070 1,1071 1,1072 1,1073 1,1074 1,1075 1,1076 1,1077 1,1078 1,1079 1,1080 1,1081 1,1082 1,1083 1,1084 1,1085 1,1086 1,1087 1,1088 1,1089 1,1090 1,1091 1,1092 4,1093 1,1094 1,1095 1,1096 1,1097 1,1098 1,1099 1,1100 1,1101 1,1102 1,1103 1,1104 1,1105 1,1106 1,1107 1,1108 1,1601 16,1602 3.404,1603 0.965,1604 0.025,1605 8,1606 -1.537,1607 -0.664,1608 -0.096,1609 9,1610 2.175,1611 0.798,1612 0.009,1613 14,1614 -6.247,1615 -2.294,1616 -0.258,1617 8,1618 3.645,1619 1.197,1620 0.742,1621 5,1622 -1.933,1623 -0.835,1624 -0.835,1625 7,1626 2.709,1627 0.883,1628 0.883,1629 4,1630 -6.552,1631 -4.999,1632 -0.214,1633 1,1634 5,1635 5,1636 5,1641 1,1642 1,1643 1,1644 1,1645 1,1646 -1,1647 -1,1648 -1,1653 1,1654 -1,1655 -1,1656 -1}
+{60 1,64 1,78 1,108 1,125 1,126 1,175 1,321 1,326 1,327 2,328 1,329 1,330 2,331 2,332 6,333 8,339 1,345 1,352 1,353 1,354 1,355 1,356 1,357 1,358 1,359 1,360 1,361 1,362 1,363 1,364 1,365 1,366 1,367 1,368 1,369 1,370 1,371 1,372 1,373 1,374 1,375 1,376 1,377 1,378 1,379 1,380 1,381 1,382 1,383 1,384 1,385 1,386 1,387 1,388 1,389 1,390 1,391 1,392 1,393 1,394 1,395 1,396 1,397 1,398 1,399 1,400 1,401 1,402 1,403 1,404 1,405 1,406 1,407 1,408 1,409 1,410 1,411 1,412 1,413 1,414 1,415 1,416 1,417 1,418 1,419 1,420 1,421 1,422 1,423 1,424 1,425 1,426 1,427 1,428 1,429 1,430 1,431 1,432 1,433 1,434 1,435 1,436 1,437 1,438 1,439 1,440 1,441 1,442 1,443 1,444 1,445 1,446 1,447 1,448 1,449 1,450 1,451 1,452 1,453 1,454 1,455 1,456 1,457 1,458 1,459 1,460 1,461 1,462 1,463 1,464 1,465 1,466 1,467 1,468 1,469 1,470 1,471 1,472 1,473 1,474 1,475 1,476 1,477 1,478 1,479 1,480 1,481 1,482 1,483 1,484 1,485 1,486 1,487 1,488 1,489 1,490 1,491 1,492 1,493 1,494 1,495 1,496 1,497 1,498 1,499 1,500 1,501 1,502 1,503 1,504 1,505 1,506 1,507 1,508 1,509 1,510 1,511 1,512 1,513 1,514 1,515 1,516 1,517 1,518 1,519 1,520 1,521 1,522 1,523 1,524 1,525 1,526 1,527 1,528 1,529 1,530 1,531 1,532 1,533 1,534 1,535 1,536 1,537 1,538 1,539 1,540 1,541 1,542 1,543 1,544 1,545 1,546 1,547 1,548 1,549 1,550 1,551 1,552 1,553 1,554 1,555 1,556 1,557 1,558 1,559 1,560 1,561 1,562 1,563 1,564 1,565 1,566 1,567 1,568 1,569 1,570 1,571 1,572 1,573 1,574 1,575 1,576 1,577 1,578 1,579 1,580 1,581 1,582 1,583 1,584 1,585 1,586 1,587 1,588 1,589 1,590 1,591 1,592 1,593 1,594 1,595 1,596 1,597 1,598 1,599 1,600 1,601 1,602 1,603 1,604 1,605 1,606 1,607 1,608 1,609 1,610 1,611 1,612 1,613 1,614 1,615 1,616 1,617 1,618 1,619 1,620 1,621 1,622 1,623 1,624 1,625 1,626 1,627 1,628 1,629 1,630 1,631 1,632 1,633 1,634 1,635 1,636 1,637 1,638 1,639 1,640 1,641 1,642 1,643 1,644 1,645 1,646 1,647 1,648 1,649 1,650 1,651 1,652 1,653 1,654 1,655 1,656 1,657 1,658 1,659 1,660 1,661 1,662 1,663 1,664 1,665 1,666 1,667 1,668 1,669 1,670 1,671 1,672 1,673 1,674 1,675 1,676 1,677 1,678 1,679 1,680 1,681 1,682 1,683 1,684 1,685 1,686 1,687 1,688 1,689 1,690 1,691 1,692 1,693 1,694 1,695 1,696 1,697 1,698 1,699 1,700 1,701 1,702 1,703 1,704 1,705 1,706 1,707 1,708 1,709 1,710 1,711 1,712 1,713 1,714 1,715 1,716 1,717 1,718 1,719 1,720 1,721 1,722 1,723 1,724 1,725 1,726 1,727 1,728 1,729 1,730 1,731 1,732 1,733 1,734 1,735 1,736 1,737 1,738 1,739 1,740 1,741 1,1595 1,1601 14,1602 4.418,1603 0.837,1604 0.837,1605 9,1606 -0.841,1607 -0.197,1608 -0.096,1609 15,1610 6.597,1611 1.777,1612 0.478,1613 7,1614 -1.81,1615 -0.725,1616 -0.725,1617 11,1618 4.235,1619 1.147,1620 0.365,1621 3,1622 -0.493,1623 -0.276,1624 -0.077,1625 11,1626 9.835,1627 2.087,1628 0.478,1629 1,1630 -0.064,1631 -0.064,1632 -0.064,1637 1,1638 -1,1639 -1,1640 -1,1641 1,1642 1,1643 1,1644 1,1657 negative}
+{147 1,239 1,326 4,327 1,330 2,331 5,332 4,333 6,387 1,407 1,450 1,463 1,476 1,479 1,491 1,499 1,536 1,588 1,605 1,679 1,682 1,686 1,703 1,717 1,722 1,723 1,729 1,733 1,860 1,870 1,876 1,888 1,943 1,1011 1,1033 1,1041 1,1052 1,1063 1,1092 3,1093 1,1109 1,1110 1,1111 1,1112 1,1113 1,1114 1,1115 1,1116 1,1117 1,1118 1,1119 1,1120 1,1121 1,1122 1,1123 1,1124 1,1125 1,1126 1,1127 1,1128 1,1129 1,1130 1,1131 1,1132 1,1133 1,1134 1,1135 1,1136 1,1137 1,1138 1,1139 1,1140 1,1141 1,1142 1,1143 1,1144 1,1145 1,1146 1,1147 1,1148 1,1149 1,1150 1,1151 1,1152 1,1153 1,1154 1,1155 1,1156 1,1157 1,1158 1,1159 1,1160 1,1161 1,1162 1,1163 1,1164 1,1165 1,1166 1,1167 1,1168 1,1169 1,1170 1,1171 1,1172 1,1173 1,1174 1,1175 1,1176 1,1177 1,1178 1,1179 1,1180 1,1181 1,1182 1,1183 1,1184 1,1185 1,1186 1,1187 1,1188 1,1189 1,1190 1,1191 1,1192 1,1193 1,1194 1,1195 1,1196 1,1197 1,1198 1,1199 1,1200 1,1201 1,1202 1,1203 1,1204 1,1205 1,1206 1,1207 1,1208 1,1209 1,1210 1,1211 1,1212 1,1213 1,1214 1,1215 1,1216 1,1217 1,1218 1,1219 1,1220 1,1221 1,1222 1,1223 1,1224 1,1225 1,1226 1,1227 1,1228 1,1229 1,1230 1,1231 1,1232 1,1233 1,1234 1,1235 1,1236 1,1237 1,1238 1,1239 1,1240 1,1241 1,1242 1,1243 1,1244 1,1245 1,1246 1,1247 1,1248 1,1249 1,1250 1,1251 1,1252 1,1253 1,1254 1,1255 1,1256 1,1257 1,1258 1,1259 1,1260 1,1261 1,1262 1,1263 1,1264 1,1265 1,1266 1,1267 1,1268 1,1269 1,1270 1,1271 1,1272 1,1273 1,1274 1,1275 1,1276 1,1277 1,1278 1,1279 1,1280 1,1281 1,1282 1,1283 1,1284 1,1285 1,1286 1,1287 1,1288 1,1289 1,1290 1,1291 1,1292 1,1293 1,1294 1,1295 1,1296 1,1297 1,1298 1,1299 1,1300 1,1301 1,1302 1,1303 1,1304 1,1305 1,1306 1,1307 1,1308 1,1309 1,1310 1,1311 1,1312 1,1313 1,1314 1,1315 1,1316 1,1317 1,1318 1,1319 1,1320 1,1321 1,1322 1,1323 1,1324 1,1325 1,1326 1,1327 1,1328 1,1329 1,1330 1,1331 1,1332 1,1333 1,1334 1,1335 1,1336 1,1337 1,1338 1,1339 1,1340 1,1341 1,1342 1,1343 1,1344 1,1345 1,1346 1,1347 1,1348 1,1349 1,1350 1,1351 1,1352 1,1353 1,1354 1,1355 1,1356 1,1357 1,1358 1,1359 1,1360 1,1361 1,1362 1,1363 1,1364 1,1365 1,1366 1,1367 1,1368 1,1369 1,1370 1,1371 1,1372 1,1373 1,1374 1,1375 1,1376 1,1377 1,1378 1,1379 1,1380 1,1381 1,1382 1,1383 1,1384 1,1385 1,1386 1,1387 1,1388 1,1389 1,1390 1,1391 1,1392 1,1393 1,1394 1,1395 1,1396 1,1397 1,1398 1,1399 1,1400 1,1401 1,1402 1,1403 1,1404 1,1405 1,1406 1,1407 1,1408 1,1409 1,1410 1,1411 1,1412 1,1413 1,1414 1,1415 1,1416 1,1417 1,1418 1,1419 1,1420 1,1421 1,1422 1,1423 1,1424 1,1425 1,1426 1,1427 1,1428 1,1429 1,1430 1,1431 1,1432 1,1433 1,1434 1,1435 1,1436 1,1437 1,1438 1,1439 1,1440 1,1441 1,1442 1,1443 1,1444 1,1445 1,1446 1,1447 1,1448 1,1449 1,1450 1,1451 1,1452 1,1453 1,1454 1,1455 1,1456 1,1457 1,1458 1,1459 1,1460 1,1461 1,1462 1,1463 1,1464 1,1465 1,1466 1,1467 1,1468 1,1469 1,1470 1,1471 1,1472 1,1473 1,1474 1,1475 1,1476 1,1477 1,1478 1,1479 1,1480 1,1481 1,1482 1,1483 1,1484 1,1485 1,1486 1,1487 1,1488 1,1489 1,1490 1,1491 1,1492 1,1493 1,1494 1,1495 1,1496 1,1497 1,1498 1,1499 1,1500 1,1501 1,1502 1,1503 1,1504 1,1505 1,1506 1,1507 1,1508 1,1509 1,1510 1,1511 1,1512 1,1513 1,1514 1,1515 1,1516 1,1517 1,1518 1,1519 1,1520 1,1521 1,1522 1,1523 1,1524 1,1525 1,1526 1,1527 1,1528 1,1529 1,1530 1,1531 1,1532 1,1533 1,1534 1,1535 1,1536 1,1537 1,1538 1,1539 1,1540 1,1541 1,1542 1,1543 1,1544 1,1545 1,1546 1,1547 1,1548 1,1549 1,1550 1,1551 1,1552 1,1553 1,1554 1,1555 1,1556 1,1557 1,1558 1,1559 1,1560 1,1561 1,1562 1,1563 1,1564 1,1565 1,1566 1,1567 1,1568 1,1569 1,1570 1,1571 1,1572 1,1573 1,1574 1,1575 1,1576 1,1577 1,1578 1,1579 1,1580 1,1581 1,1582 1,1583 1,1584 1,1585 1,1586 1,1587 1,1588 1,1589 1,1590 1,1591 1,1592 1,1593 1,1595 1,1600 1,1601 11,1602 2.016,1603 0.274,1604 0.197,1605 8,1606 -2.576,1607 -0.798,1608 -0.744,1609 8,1610 1.728,1611 0.425,1612 0.413,1613 11,1614 -6.558,1615 -1.836,1616 -0.695,1617 4,1618 1.379,1619 1.147,1620 0.039,1621 5,1622 -7.034,1623 -4.999,1624 -1.196,1625 3,1626 1.325,1627 0.701,1628 0.701,1629 5,1630 -1.822,1631 -0.62,1632 -0.061,1637 1,1638 -1,1639 -1,1640 -1,1649 1,1650 1,1651 1,1652 1,1657 neutral}
+{147 1,239 1,326 4,327 1,330 2,331 5,332 4,333 6,387 1,407 1,450 1,463 1,476 1,479 1,491 1,499 1,536 1,588 1,605 1,679 1,682 1,686 1,703 1,717 1,722 1,723 1,729 1,733 1,860 1,870 1,876 1,888 1,943 1,1011 1,1033 1,1041 1,1052 1,1063 1,1092 3,1093 1,1109 1,1110 1,1111 1,1112 1,1113 1,1114 1,1115 1,1116 1,1117 1,1118 1,1119 1,1120 1,1121 1,1122 1,1123 1,1124 1,1125 1,1126 1,1127 1,1128 1,1129 1,1130 1,1131 1,1132 1,1133 1,1134 1,1135 1,1136 1,1137 1,1138 1,1139 1,1140 1,1141 1,1142 1,1143 1,1144 1,1145 1,1146 1,1147 1,1148 1,1149 1,1150 1,1151 1,1152 1,1153 1,1154 1,1155 1,1156 1,1157 1,1158 1,1159 1,1160 1,1161 1,1162 1,1163 1,1164 1,1165 1,1166 1,1167 1,1168 1,1169 1,1170 1,1171 1,1172 1,1173 1,1174 1,1175 1,1176 1,1177 1,1178 1,1179 1,1180 1,1181 1,1182 1,1183 1,1184 1,1185 1,1186 1,1187 1,1188 1,1189 1,1190 1,1191 1,1192 1,1193 1,1194 1,1195 1,1196 1,1197 1,1198 1,1199 1,1200 1,1201 1,1202 1,1203 1,1204 1,1205 1,1206 1,1207 1,1208 1,1209 1,1210 1,1211 1,1212 1,1213 1,1214 1,1215 1,1216 1,1217 1,1218 1,1219 1,1220 1,1221 1,1222 1,1223 1,1224 1,1225 1,1226 1,1227 1,1228 1,1229 1,1230 1,1231 1,1232 1,1233 1,1234 1,1235 1,1236 1,1237 1,1238 1,1239 1,1240 1,1241 1,1242 1,1243 1,1244 1,1245 1,1246 1,1247 1,1248 1,1249 1,1250 1,1251 1,1252 1,1253 1,1254 1,1255 1,1256 1,1257 1,1258 1,1259 1,1260 1,1261 1,1262 1,1263 1,1264 1,1265 1,1266 1,1267 1,1268 1,1269 1,1270 1,1271 1,1272 1,1273 1,1274 1,1275 1,1276 1,1277 1,1278 1,1279 1,1280 1,1281 1,1282 1,1283 1,1284 1,1285 1,1286 1,1287 1,1288 1,1289 1,1290 1,1291 1,1292 1,1293 1,1294 1,1295 1,1296 1,1297 1,1298 1,1299 1,1300 1,1301 1,1302 1,1303 1,1304 1,1305 1,1306 1,1307 1,1308 1,1309 1,1310 1,1311 1,1312 1,1313 1,1314 1,1315 1,1316 1,1317 1,1318 1,1319 1,1320 1,1321 1,1322 1,1323 1,1324 1,1325 1,1326 1,1327 1,1328 1,1329 1,1330 1,1331 1,1332 1,1333 1,1334 1,1335 1,1336 1,1337 1,1338 1,1339 1,1340 1,1341 1,1342 1,1343 1,1344 1,1345 1,1346 1,1347 1,1348 1,1349 1,1350 1,1351 1,1352 1,1353 1,1354 1,1355 1,1356 1,1357 1,1358 1,1359 1,1360 1,1361 1,1362 1,1363 1,1364 1,1365 1,1366 1,1367 1,1368 1,1369 1,1370 1,1371 1,1372 1,1373 1,1374 1,1375 1,1376 1,1377 1,1378 1,1379 1,1380 1,1381 1,1382 1,1383 1,1384 1,1385 1,1386 1,1387 1,1388 1,1389 1,1390 1,1391 1,1392 1,1393 1,1394 1,1395 1,1396 1,1397 1,1398 1,1399 1,1400 1,1401 1,1402 1,1403 1,1404 1,1405 1,1406 1,1407 1,1408 1,1409 1,1410 1,1411 1,1412 1,1413 1,1414 1,1415 1,1416 1,1417 1,1418 1,1419 1,1420 1,1421 1,1422 1,1423 1,1424 1,1425 1,1426 1,1427 1,1428 1,1429 1,1430 1,1431 1,1432 1,1433 1,1434 1,1435 1,1436 1,1437 1,1438 1,1439 1,1440 1,1441 1,1442 1,1443 1,1444 1,1445 1,1446 1,1447 1,1448 1,1449 1,1450 1,1451 1,1452 1,1453 1,1454 1,1455 1,1456 1,1457 1,1458 1,1459 1,1460 1,1461 1,1462 1,1463 1,1464 1,1465 1,1466 1,1467 1,1468 1,1469 1,1470 1,1471 1,1472 1,1473 1,1474 1,1475 1,1476 1,1477 1,1478 1,1479 1,1480 1,1481 1,1482 1,1483 1,1484 1,1485 1,1486 1,1487 1,1488 1,1489 1,1490 1,1491 1,1492 1,1493 1,1494 1,1495 1,1496 1,1497 1,1498 1,1499 1,1500 1,1501 1,1502 1,1503 1,1504 1,1505 1,1506 1,1507 1,1508 1,1509 1,1510 1,1511 1,1512 1,1513 1,1514 1,1515 1,1516 1,1517 1,1518 1,1519 1,1520 1,1521 1,1522 1,1523 1,1524 1,1525 1,1526 1,1527 1,1528 1,1529 1,1530 1,1531 1,1532 1,1533 1,1534 1,1535 1,1536 1,1537 1,1538 1,1539 1,1540 1,1541 1,1542 1,1543 1,1544 1,1545 1,1546 1,1547 1,1548 1,1549 1,1550 1,1551 1,1552 1,1553 1,1554 1,1555 1,1556 1,1557 1,1558 1,1559 1,1560 1,1561 1,1562 1,1563 1,1564 1,1565 1,1566 1,1567 1,1568 1,1569 1,1570 1,1571 1,1572 1,1573 1,1574 1,1575 1,1576 1,1577 1,1578 1,1579 1,1580 1,1581 1,1582 1,1583 1,1584 1,1585 1,1586 1,1587 1,1588 1,1589 1,1590 1,1591 1,1592 1,1593 1,1595 1,1600 1,1601 11,1602 2.016,1603 0.274,1604 0.197,1605 8,1606 -2.576,1607 -0.798,1608 -0.744,1609 8,1610 1.728,1611 0.425,1612 0.413,1613 11,1614 -6.558,1615 -1.836,1616 -0.695,1617 4,1618 1.379,1619 1.147,1620 0.039,1621 5,1622 -7.034,1623 -4.999,1624 -1.196,1625 3,1626 1.325,1627 0.701,1628 0.701,1629 5,1630 -1.822,1631 -0.62,1632 -0.061,1637 1,1638 -1,1639 -1,1640 -1,1649 1,1650 1,1651 1,1652 1,1657 negative}
+{147 1,239 1,326 4,327 1,330 2,331 5,332 4,333 6,387 1,407 1,450 1,463 1,476 1,479 1,491 1,499 1,536 1,588 1,605 1,679 1,682 1,686 1,703 1,717 1,722 1,723 1,729 1,733 1,860 1,870 1,876 1,888 1,943 1,1011 1,1033 1,1041 1,1052 1,1063 1,1092 3,1093 1,1109 1,1110 1,1111 1,1112 1,1113 1,1114 1,1115 1,1116 1,1117 1,1118 1,1119 1,1120 1,1121 1,1122 1,1123 1,1124 1,1125 1,1126 1,1127 1,1128 1,1129 1,1130 1,1131 1,1132 1,1133 1,1134 1,1135 1,1136 1,1137 1,1138 1,1139 1,1140 1,1141 1,1142 1,1143 1,1144 1,1145 1,1146 1,1147 1,1148 1,1149 1,1150 1,1151 1,1152 1,1153 1,1154 1,1155 1,1156 1,1157 1,1158 1,1159 1,1160 1,1161 1,1162 1,1163 1,1164 1,1165 1,1166 1,1167 1,1168 1,1169 1,1170 1,1171 1,1172 1,1173 1,1174 1,1175 1,1176 1,1177 1,1178 1,1179 1,1180 1,1181 1,1182 1,1183 1,1184 1,1185 1,1186 1,1187 1,1188 1,1189 1,1190 1,1191 1,1192 1,1193 1,1194 1,1195 1,1196 1,1197 1,1198 1,1199 1,1200 1,1201 1,1202 1,1203 1,1204 1,1205 1,1206 1,1207 1,1208 1,1209 1,1210 1,1211 1,1212 1,1213 1,1214 1,1215 1,1216 1,1217 1,1218 1,1219 1,1220 1,1221 1,1222 1,1223 1,1224 1,1225 1,1226 1,1227 1,1228 1,1229 1,1230 1,1231 1,1232 1,1233 1,1234 1,1235 1,1236 1,1237 1,1238 1,1239 1,1240 1,1241 1,1242 1,1243 1,1244 1,1245 1,1246 1,1247 1,1248 1,1249 1,1250 1,1251 1,1252 1,1253 1,1254 1,1255 1,1256 1,1257 1,1258 1,1259 1,1260 1,1261 1,1262 1,1263 1,1264 1,1265 1,1266 1,1267 1,1268 1,1269 1,1270 1,1271 1,1272 1,1273 1,1274 1,1275 1,1276 1,1277 1,1278 1,1279 1,1280 1,1281 1,1282 1,1283 1,1284 1,1285 1,1286 1,1287 1,1288 1,1289 1,1290 1,1291 1,1292 1,1293 1,1294 1,1295 1,1296 1,1297 1,1298 1,1299 1,1300 1,1301 1,1302 1,1303 1,1304 1,1305 1,1306 1,1307 1,1308 1,1309 1,1310 1,1311 1,1312 1,1313 1,1314 1,1315 1,1316 1,1317 1,1318 1,1319 1,1320 1,1321 1,1322 1,1323 1,1324 1,1325 1,1326 1,1327 1,1328 1,1329 1,1330 1,1331 1,1332 1,1333 1,1334 1,1335 1,1336 1,1337 1,1338 1,1339 1,1340 1,1341 1,1342 1,1343 1,1344 1,1345 1,1346 1,1347 1,1348 1,1349 1,1350 1,1351 1,1352 1,1353 1,1354 1,1355 1,1356 1,1357 1,1358 1,1359 1,1360 1,1361 1,1362 1,1363 1,1364 1,1365 1,1366 1,1367 1,1368 1,1369 1,1370 1,1371 1,1372 1,1373 1,1374 1,1375 1,1376 1,1377 1,1378 1,1379 1,1380 1,1381 1,1382 1,1383 1,1384 1,1385 1,1386 1,1387 1,1388 1,1389 1,1390 1,1391 1,1392 1,1393 1,1394 1,1395 1,1396 1,1397 1,1398 1,1399 1,1400 1,1401 1,1402 1,1403 1,1404 1,1405 1,1406 1,1407 1,1408 1,1409 1,1410 1,1411 1,1412 1,1413 1,1414 1,1415 1,1416 1,1417 1,1418 1,1419 1,1420 1,1421 1,1422 1,1423 1,1424 1,1425 1,1426 1,1427 1,1428 1,1429 1,1430 1,1431 1,1432 1,1433 1,1434 1,1435 1,1436 1,1437 1,1438 1,1439 1,1440 1,1441 1,1442 1,1443 1,1444 1,1445 1,1446 1,1447 1,1448 1,1449 1,1450 1,1451 1,1452 1,1453 1,1454 1,1455 1,1456 1,1457 1,1458 1,1459 1,1460 1,1461 1,1462 1,1463 1,1464 1,1465 1,1466 1,1467 1,1468 1,1469 1,1470 1,1471 1,1472 1,1473 1,1474 1,1475 1,1476 1,1477 1,1478 1,1479 1,1480 1,1481 1,1482 1,1483 1,1484 1,1485 1,1486 1,1487 1,1488 1,1489 1,1490 1,1491 1,1492 1,1493 1,1494 1,1495 1,1496 1,1497 1,1498 1,1499 1,1500 1,1501 1,1502 1,1503 1,1504 1,1505 1,1506 1,1507 1,1508 1,1509 1,1510 1,1511 1,1512 1,1513 1,1514 1,1515 1,1516 1,1517 1,1518 1,1519 1,1520 1,1521 1,1522 1,1523 1,1524 1,1525 1,1526 1,1527 1,1528 1,1529 1,1530 1,1531 1,1532 1,1533 1,1534 1,1535 1,1536 1,1537 1,1538 1,1539 1,1540 1,1541 1,1542 1,1543 1,1544 1,1545 1,1546 1,1547 1,1548 1,1549 1,1550 1,1551 1,1552 1,1553 1,1554 1,1555 1,1556 1,1557 1,1558 1,1559 1,1560 1,1561 1,1562 1,1563 1,1564 1,1565 1,1566 1,1567 1,1568 1,1569 1,1570 1,1571 1,1572 1,1573 1,1574 1,1575 1,1576 1,1577 1,1578 1,1579 1,1580 1,1581 1,1582 1,1583 1,1584 1,1585 1,1586 1,1587 1,1588 1,1589 1,1590 1,1591 1,1592 1,1593 1,1595 1,1600 1,1601 11,1602 2.016,1603 0.274,1604 0.197,1605 8,1606 -2.576,1607 -0.798,1608 -0.744,1609 8,1610 1.728,1611 0.425,1612 0.413,1613 11,1614 -6.558,1615 -1.836,1616 -0.695,1617 4,1618 1.379,1619 1.147,1620 0.039,1621 5,1622 -7.034,1623 -4.999,1624 -1.196,1625 3,1626 1.325,1627 0.701,1628 0.701,1629 5,1630 -1.822,1631 -0.62,1632 -0.061,1637 1,1638 -1,1639 -1,1640 -1,1649 1,1650 1,1651 1,1652 1,1657 neutral}
+{147 1,239 1,326 4,327 1,330 2,331 5,332 4,333 6,387 1,407 1,450 1,463 1,476 1,479 1,491 1,499 1,536 1,588 1,605 1,679 1,682 1,686 1,703 1,717 1,722 1,723 1,729 1,733 1,860 1,870 1,876 1,888 1,943 1,1011 1,1033 1,1041 1,1052 1,1063 1,1092 3,1093 1,1109 1,1110 1,1111 1,1112 1,1113 1,1114 1,1115 1,1116 1,1117 1,1118 1,1119 1,1120 1,1121 1,1122 1,1123 1,1124 1,1125 1,1126 1,1127 1,1128 1,1129 1,1130 1,1131 1,1132 1,1133 1,1134 1,1135 1,1136 1,1137 1,1138 1,1139 1,1140 1,1141 1,1142 1,1143 1,1144 1,1145 1,1146 1,1147 1,1148 1,1149 1,1150 1,1151 1,1152 1,1153 1,1154 1,1155 1,1156 1,1157 1,1158 1,1159 1,1160 1,1161 1,1162 1,1163 1,1164 1,1165 1,1166 1,1167 1,1168 1,1169 1,1170 1,1171 1,1172 1,1173 1,1174 1,1175 1,1176 1,1177 1,1178 1,1179 1,1180 1,1181 1,1182 1,1183 1,1184 1,1185 1,1186 1,1187 1,1188 1,1189 1,1190 1,1191 1,1192 1,1193 1,1194 1,1195 1,1196 1,1197 1,1198 1,1199 1,1200 1,1201 1,1202 1,1203 1,1204 1,1205 1,1206 1,1207 1,1208 1,1209 1,1210 1,1211 1,1212 1,1213 1,1214 1,1215 1,1216 1,1217 1,1218 1,1219 1,1220 1,1221 1,1222 1,1223 1,1224 1,1225 1,1226 1,1227 1,1228 1,1229 1,1230 1,1231 1,1232 1,1233 1,1234 1,1235 1,1236 1,1237 1,1238 1,1239 1,1240 1,1241 1,1242 1,1243 1,1244 1,1245 1,1246 1,1247 1,1248 1,1249 1,1250 1,1251 1,1252 1,1253 1,1254 1,1255 1,1256 1,1257 1,1258 1,1259 1,1260 1,1261 1,1262 1,1263 1,1264 1,1265 1,1266 1,1267 1,1268 1,1269 1,1270 1,1271 1,1272 1,1273 1,1274 1,1275 1,1276 1,1277 1,1278 1,1279 1,1280 1,1281 1,1282 1,1283 1,1284 1,1285 1,1286 1,1287 1,1288 1,1289 1,1290 1,1291 1,1292 1,1293 1,1294 1,1295 1,1296 1,1297 1,1298 1,1299 1,1300 1,1301 1,1302 1,1303 1,1304 1,1305 1,1306 1,1307 1,1308 1,1309 1,1310 1,1311 1,1312 1,1313 1,1314 1,1315 1,1316 1,1317 1,1318 1,1319 1,1320 1,1321 1,1322 1,1323 1,1324 1,1325 1,1326 1,1327 1,1328 1,1329 1,1330 1,1331 1,1332 1,1333 1,1334 1,1335 1,1336 1,1337 1,1338 1,1339 1,1340 1,1341 1,1342 1,1343 1,1344 1,1345 1,1346 1,1347 1,1348 1,1349 1,1350 1,1351 1,1352 1,1353 1,1354 1,1355 1,1356 1,1357 1,1358 1,1359 1,1360 1,1361 1,1362 1,1363 1,1364 1,1365 1,1366 1,1367 1,1368 1,1369 1,1370 1,1371 1,1372 1,1373 1,1374 1,1375 1,1376 1,1377 1,1378 1,1379 1,1380 1,1381 1,1382 1,1383 1,1384 1,1385 1,1386 1,1387 1,1388 1,1389 1,1390 1,1391 1,1392 1,1393 1,1394 1,1395 1,1396 1,1397 1,1398 1,1399 1,1400 1,1401 1,1402 1,1403 1,1404 1,1405 1,1406 1,1407 1,1408 1,1409 1,1410 1,1411 1,1412 1,1413 1,1414 1,1415 1,1416 1,1417 1,1418 1,1419 1,1420 1,1421 1,1422 1,1423 1,1424 1,1425 1,1426 1,1427 1,1428 1,1429 1,1430 1,1431 1,1432 1,1433 1,1434 1,1435 1,1436 1,1437 1,1438 1,1439 1,1440 1,1441 1,1442 1,1443 1,1444 1,1445 1,1446 1,1447 1,1448 1,1449 1,1450 1,1451 1,1452 1,1453 1,1454 1,1455 1,1456 1,1457 1,1458 1,1459 1,1460 1,1461 1,1462 1,1463 1,1464 1,1465 1,1466 1,1467 1,1468 1,1469 1,1470 1,1471 1,1472 1,1473 1,1474 1,1475 1,1476 1,1477 1,1478 1,1479 1,1480 1,1481 1,1482 1,1483 1,1484 1,1485 1,1486 1,1487 1,1488 1,1489 1,1490 1,1491 1,1492 1,1493 1,1494 1,1495 1,1496 1,1497 1,1498 1,1499 1,1500 1,1501 1,1502 1,1503 1,1504 1,1505 1,1506 1,1507 1,1508 1,1509 1,1510 1,1511 1,1512 1,1513 1,1514 1,1515 1,1516 1,1517 1,1518 1,1519 1,1520 1,1521 1,1522 1,1523 1,1524 1,1525 1,1526 1,1527 1,1528 1,1529 1,1530 1,1531 1,1532 1,1533 1,1534 1,1535 1,1536 1,1537 1,1538 1,1539 1,1540 1,1541 1,1542 1,1543 1,1544 1,1545 1,1546 1,1547 1,1548 1,1549 1,1550 1,1551 1,1552 1,1553 1,1554 1,1555 1,1556 1,1557 1,1558 1,1559 1,1560 1,1561 1,1562 1,1563 1,1564 1,1565 1,1566 1,1567 1,1568 1,1569 1,1570 1,1571 1,1572 1,1573 1,1574 1,1575 1,1576 1,1577 1,1578 1,1579 1,1580 1,1581 1,1582 1,1583 1,1584 1,1585 1,1586 1,1587 1,1588 1,1589 1,1590 1,1591 1,1592 1,1593 1,1595 1,1600 1,1601 11,1602 2.016,1603 0.274,1604 0.197,1605 8,1606 -2.576,1607 -0.798,1608 -0.744,1609 8,1610 1.728,1611 0.425,1612 0.413,1613 11,1614 -6.558,1615 -1.836,1616 -0.695,1617 4,1618 1.379,1619 1.147,1620 0.039,1621 5,1622 -7.034,1623 -4.999,1624 -1.196,1625 3,1626 1.325,1627 0.701,1628 0.701,1629 5,1630 -1.822,1631 -0.62,1632 -0.061,1637 1,1638 -1,1639 -1,1640 -1,1649 1,1650 1,1651 1,1652 1,1657 negative}
+{147 1,239 1,326 4,327 1,330 2,331 5,332 4,333 6,387 1,407 1,450 1,463 1,476 1,479 1,491 1,499 1,536 1,588 1,605 1,679 1,682 1,686 1,703 1,717 1,722 1,723 1,729 1,733 1,860 1,870 1,876 1,888 1,943 1,1011 1,1033 1,1041 1,1052 1,1063 1,1092 3,1093 1,1109 1,1110 1,1111 1,1112 1,1113 1,1114 1,1115 1,1116 1,1117 1,1118 1,1119 1,1120 1,1121 1,1122 1,1123 1,1124 1,1125 1,1126 1,1127 1,1128 1,1129 1,1130 1,1131 1,1132 1,1133 1,1134 1,1135 1,1136 1,1137 1,1138 1,1139 1,1140 1,1141 1,1142 1,1143 1,1144 1,1145 1,1146 1,1147 1,1148 1,1149 1,1150 1,1151 1,1152 1,1153 1,1154 1,1155 1,1156 1,1157 1,1158 1,1159 1,1160 1,1161 1,1162 1,1163 1,1164 1,1165 1,1166 1,1167 1,1168 1,1169 1,1170 1,1171 1,1172 1,1173 1,1174 1,1175 1,1176 1,1177 1,1178 1,1179 1,1180 1,1181 1,1182 1,1183 1,1184 1,1185 1,1186 1,1187 1,1188 1,1189 1,1190 1,1191 1,1192 1,1193 1,1194 1,1195 1,1196 1,1197 1,1198 1,1199 1,1200 1,1201 1,1202 1,1203 1,1204 1,1205 1,1206 1,1207 1,1208 1,1209 1,1210 1,1211 1,1212 1,1213 1,1214 1,1215 1,1216 1,1217 1,1218 1,1219 1,1220 1,1221 1,1222 1,1223 1,1224 1,1225 1,1226 1,1227 1,1228 1,1229 1,1230 1,1231 1,1232 1,1233 1,1234 1,1235 1,1236 1,1237 1,1238 1,1239 1,1240 1,1241 1,1242 1,1243 1,1244 1,1245 1,1246 1,1247 1,1248 1,1249 1,1250 1,1251 1,1252 1,1253 1,1254 1,1255 1,1256 1,1257 1,1258 1,1259 1,1260 1,1261 1,1262 1,1263 1,1264 1,1265 1,1266 1,1267 1,1268 1,1269 1,1270 1,1271 1,1272 1,1273 1,1274 1,1275 1,1276 1,1277 1,1278 1,1279 1,1280 1,1281 1,1282 1,1283 1,1284 1,1285 1,1286 1,1287 1,1288 1,1289 1,1290 1,1291 1,1292 1,1293 1,1294 1,1295 1,1296 1,1297 1,1298 1,1299 1,1300 1,1301 1,1302 1,1303 1,1304 1,1305 1,1306 1,1307 1,1308 1,1309 1,1310 1,1311 1,1312 1,1313 1,1314 1,1315 1,1316 1,1317 1,1318 1,1319 1,1320 1,1321 1,1322 1,1323 1,1324 1,1325 1,1326 1,1327 1,1328 1,1329 1,1330 1,1331 1,1332 1,1333 1,1334 1,1335 1,1336 1,1337 1,1338 1,1339 1,1340 1,1341 1,1342 1,1343 1,1344 1,1345 1,1346 1,1347 1,1348 1,1349 1,1350 1,1351 1,1352 1,1353 1,1354 1,1355 1,1356 1,1357 1,1358 1,1359 1,1360 1,1361 1,1362 1,1363 1,1364 1,1365 1,1366 1,1367 1,1368 1,1369 1,1370 1,1371 1,1372 1,1373 1,1374 1,1375 1,1376 1,1377 1,1378 1,1379 1,1380 1,1381 1,1382 1,1383 1,1384 1,1385 1,1386 1,1387 1,1388 1,1389 1,1390 1,1391 1,1392 1,1393 1,1394 1,1395 1,1396 1,1397 1,1398 1,1399 1,1400 1,1401 1,1402 1,1403 1,1404 1,1405 1,1406 1,1407 1,1408 1,1409 1,1410 1,1411 1,1412 1,1413 1,1414 1,1415 1,1416 1,1417 1,1418 1,1419 1,1420 1,1421 1,1422 1,1423 1,1424 1,1425 1,1426 1,1427 1,1428 1,1429 1,1430 1,1431 1,1432 1,1433 1,1434 1,1435 1,1436 1,1437 1,1438 1,1439 1,1440 1,1441 1,1442 1,1443 1,1444 1,1445 1,1446 1,1447 1,1448 1,1449 1,1450 1,1451 1,1452 1,1453 1,1454 1,1455 1,1456 1,1457 1,1458 1,1459 1,1460 1,1461 1,1462 1,1463 1,1464 1,1465 1,1466 1,1467 1,1468 1,1469 1,1470 1,1471 1,1472 1,1473 1,1474 1,1475 1,1476 1,1477 1,1478 1,1479 1,1480 1,1481 1,1482 1,1483 1,1484 1,1485 1,1486 1,1487 1,1488 1,1489 1,1490 1,1491 1,1492 1,1493 1,1494 1,1495 1,1496 1,1497 1,1498 1,1499 1,1500 1,1501 1,1502 1,1503 1,1504 1,1505 1,1506 1,1507 1,1508 1,1509 1,1510 1,1511 1,1512 1,1513 1,1514 1,1515 1,1516 1,1517 1,1518 1,1519 1,1520 1,1521 1,1522 1,1523 1,1524 1,1525 1,1526 1,1527 1,1528 1,1529 1,1530 1,1531 1,1532 1,1533 1,1534 1,1535 1,1536 1,1537 1,1538 1,1539 1,1540 1,1541 1,1542 1,1543 1,1544 1,1545 1,1546 1,1547 1,1548 1,1549 1,1550 1,1551 1,1552 1,1553 1,1554 1,1555 1,1556 1,1557 1,1558 1,1559 1,1560 1,1561 1,1562 1,1563 1,1564 1,1565 1,1566 1,1567 1,1568 1,1569 1,1570 1,1571 1,1572 1,1573 1,1574 1,1575 1,1576 1,1577 1,1578 1,1579 1,1580 1,1581 1,1582 1,1583 1,1584 1,1585 1,1586 1,1587 1,1588 1,1589 1,1590 1,1591 1,1592 1,1593 1,1595 1,1600 1,1601 11,1602 2.016,1603 0.274,1604 0.197,1605 8,1606 -2.576,1607 -0.798,1608 -0.744,1609 8,1610 1.728,1611 0.425,1612 0.413,1613 11,1614 -6.558,1615 -1.836,1616 -0.695,1617 4,1618 1.379,1619 1.147,1620 0.039,1621 5,1622 -7.034,1623 -4.999,1624 -1.196,1625 3,1626 1.325,1627 0.701,1628 0.701,1629 5,1630 -1.822,1631 -0.62,1632 -0.061,1637 1,1638 -1,1639 -1,1640 -1,1649 1,1650 1,1651 1,1652 1,1657 neutral}
+{35 1,60 1,64 1,76 1,93 1,108 1,114 1,125 1,126 1,158 1,162 1,175 1,193 1,194 1,220 1,224 1,261 1,268 1,269 1,270 1,282 1,321 1,328 4,330 3,331 5,332 1,333 4,339 1,341 1,345 1,382 1,407 1,440 1,446 1,463 1,467 1,476 1,509 1,510 1,536 1,588 1,605 1,611 1,621 1,671 1,679 1,703 1,723 1,729 1,730 1,742 1,743 1,744 1,745 1,746 1,747 1,748 1,749 1,750 1,751 1,752 1,753 1,754 1,755 1,756 1,757 1,758 1,759 1,760 1,761 1,762 1,763 1,764 1,765 1,766 1,767 1,768 1,769 1,770 1,771 1,772 1,773 1,774 1,775 1,776 1,777 1,778 1,779 1,780 1,781 1,782 1,783 1,784 1,785 1,786 1,787 1,788 1,789 1,790 1,791 1,792 1,793 1,794 1,795 1,796 1,797 1,798 1,799 1,800 1,801 1,802 1,803 1,804 1,805 1,806 1,807 1,808 1,809 1,810 1,811 1,812 1,813 1,814 1,815 1,816 1,817 1,818 1,819 1,820 1,821 1,822 1,823 1,824 1,825 1,826 1,827 1,828 1,829 1,830 1,831 1,832 1,833 1,834 1,835 1,836 1,837 1,838 1,839 1,840 1,841 1,842 1,843 1,844 1,845 1,846 1,847 1,848 1,849 1,850 1,851 1,852 1,853 1,854 1,855 1,856 1,857 1,858 1,859 1,860 1,861 1,862 1,863 1,864 1,865 1,866 1,867 1,868 1,869 1,870 1,871 1,872 1,873 1,874 1,875 1,876 1,877 1,878 1,879 1,880 1,881 1,882 1,883 1,884 1,885 1,886 1,887 1,888 1,889 1,890 1,891 1,892 1,893 1,894 1,895 1,896 1,897 1,898 1,899 1,900 1,901 1,902 1,903 1,904 1,905 1,906 1,907 1,908 1,909 1,910 1,911 1,912 1,913 1,914 1,915 1,916 1,917 1,918 1,919 1,920 1,921 1,922 1,923 1,924 1,925 1,926 1,927 1,928 1,929 1,930 1,931 1,932 1,933 1,934 1,935 1,936 1,937 1,938 1,939 1,940 1,941 1,942 1,943 1,944 1,945 1,946 1,947 1,948 1,949 1,950 1,951 1,952 1,953 1,954 1,955 1,956 1,957 1,958 1,959 1,960 1,961 1,962 1,963 1,964 1,965 1,966 1,967 1,968 1,969 1,970 1,971 1,972 1,973 1,974 1,975 1,976 1,977 1,978 1,979 1,980 1,981 1,982 1,983 1,984 1,985 1,986 1,987 1,988 1,989 1,990 1,991 1,992 1,993 1,994 1,995 1,996 1,997 1,998 1,999 1,1000 1,1001 1,1002 1,1003 1,1004 1,1005 1,1006 1,1007 1,1008 1,1009 1,1010 1,1011 1,1012 1,1013 1,1014 1,1015 1,1016 1,1017 1,1018 1,1019 1,1020 1,1021 1,1022 1,1023 1,1024 1,1025 1,1026 1,1027 1,1028 1,1029 1,1030 1,1031 1,1032 1,1033 1,1034 1,1035 1,1036 1,1037 1,1038 1,1039 1,1040 1,1041 1,1042 1,1043 1,1044 1,1045 1,1046 1,1047 1,1048 1,1049 1,1050 1,1051 1,1052 1,1053 1,1054 1,1055 1,1056 1,1057 1,1058 1,1059 1,1060 1,1061 1,1062 1,1063 1,1064 1,1065 1,1066 1,1067 1,1068 1,1069 1,1070 1,1071 1,1072 1,1073 1,1074 1,1075 1,1076 1,1077 1,1078 1,1079 1,1080 1,1081 1,1082 1,1083 1,1084 1,1085 1,1086 1,1087 1,1088 1,1089 1,1090 1,1091 1,1092 4,1093 1,1094 1,1095 1,1096 1,1097 1,1098 1,1099 1,1100 1,1101 1,1102 1,1103 1,1104 1,1105 1,1106 1,1107 1,1108 1,1601 16,1602 3.404,1603 0.965,1604 0.025,1605 8,1606 -1.537,1607 -0.664,1608 -0.096,1609 9,1610 2.175,1611 0.798,1612 0.009,1613 14,1614 -6.247,1615 -2.294,1616 -0.258,1617 8,1618 3.645,1619 1.197,1620 0.742,1621 5,1622 -1.933,1623 -0.835,1624 -0.835,1625 7,1626 2.709,1627 0.883,1628 0.883,1629 4,1630 -6.552,1631 -4.999,1632 -0.214,1633 1,1634 5,1635 5,1636 5,1641 1,1642 1,1643 1,1644 1,1645 1,1646 -1,1647 -1,1648 -1,1653 1,1654 -1,1655 -1,1656 -1,1657 neutral}
+{35 1,60 1,64 1,76 1,93 1,108 1,114 1,125 1,126 1,158 1,162 1,175 1,193 1,194 1,220 1,224 1,261 1,268 1,269 1,270 1,282 1,321 1,328 4,330 3,331 5,332 1,333 4,339 1,341 1,345 1,382 1,407 1,440 1,446 1,463 1,467 1,476 1,509 1,510 1,536 1,588 1,605 1,611 1,621 1,671 1,679 1,703 1,723 1,729 1,730 1,742 1,743 1,744 1,745 1,746 1,747 1,748 1,749 1,750 1,751 1,752 1,753 1,754 1,755 1,756 1,757 1,758 1,759 1,760 1,761 1,762 1,763 1,764 1,765 1,766 1,767 1,768 1,769 1,770 1,771 1,772 1,773 1,774 1,775 1,776 1,777 1,778 1,779 1,780 1,781 1,782 1,783 1,784 1,785 1,786 1,787 1,788 1,789 1,790 1,791 1,792 1,793 1,794 1,795 1,796 1,797 1,798 1,799 1,800 1,801 1,802 1,803 1,804 1,805 1,806 1,807 1,808 1,809 1,810 1,811 1,812 1,813 1,814 1,815 1,816 1,817 1,818 1,819 1,820 1,821 1,822 1,823 1,824 1,825 1,826 1,827 1,828 1,829 1,830 1,831 1,832 1,833 1,834 1,835 1,836 1,837 1,838 1,839 1,840 1,841 1,842 1,843 1,844 1,845 1,846 1,847 1,848 1,849 1,850 1,851 1,852 1,853 1,854 1,855 1,856 1,857 1,858 1,859 1,860 1,861 1,862 1,863 1,864 1,865 1,866 1,867 1,868 1,869 1,870 1,871 1,872 1,873 1,874 1,875 1,876 1,877 1,878 1,879 1,880 1,881 1,882 1,883 1,884 1,885 1,886 1,887 1,888 1,889 1,890 1,891 1,892 1,893 1,894 1,895 1,896 1,897 1,898 1,899 1,900 1,901 1,902 1,903 1,904 1,905 1,906 1,907 1,908 1,909 1,910 1,911 1,912 1,913 1,914 1,915 1,916 1,917 1,918 1,919 1,920 1,921 1,922 1,923 1,924 1,925 1,926 1,927 1,928 1,929 1,930 1,931 1,932 1,933 1,934 1,935 1,936 1,937 1,938 1,939 1,940 1,941 1,942 1,943 1,944 1,945 1,946 1,947 1,948 1,949 1,950 1,951 1,952 1,953 1,954 1,955 1,956 1,957 1,958 1,959 1,960 1,961 1,962 1,963 1,964 1,965 1,966 1,967 1,968 1,969 1,970 1,971 1,972 1,973 1,974 1,975 1,976 1,977 1,978 1,979 1,980 1,981 1,982 1,983 1,984 1,985 1,986 1,987 1,988 1,989 1,990 1,991 1,992 1,993 1,994 1,995 1,996 1,997 1,998 1,999 1,1000 1,1001 1,1002 1,1003 1,1004 1,1005 1,1006 1,1007 1,1008 1,1009 1,1010 1,1011 1,1012 1,1013 1,1014 1,1015 1,1016 1,1017 1,1018 1,1019 1,1020 1,1021 1,1022 1,1023 1,1024 1,1025 1,1026 1,1027 1,1028 1,1029 1,1030 1,1031 1,1032 1,1033 1,1034 1,1035 1,1036 1,1037 1,1038 1,1039 1,1040 1,1041 1,1042 1,1043 1,1044 1,1045 1,1046 1,1047 1,1048 1,1049 1,1050 1,1051 1,1052 1,1053 1,1054 1,1055 1,1056 1,1057 1,1058 1,1059 1,1060 1,1061 1,1062 1,1063 1,1064 1,1065 1,1066 1,1067 1,1068 1,1069 1,1070 1,1071 1,1072 1,1073 1,1074 1,1075 1,1076 1,1077 1,1078 1,1079 1,1080 1,1081 1,1082 1,1083 1,1084 1,1085 1,1086 1,1087 1,1088 1,1089 1,1090 1,1091 1,1092 4,1093 1,1094 1,1095 1,1096 1,1097 1,1098 1,1099 1,1100 1,1101 1,1102 1,1103 1,1104 1,1105 1,1106 1,1107 1,1108 1,1601 16,1602 3.404,1603 0.965,1604 0.025,1605 8,1606 -1.537,1607 -0.664,1608 -0.096,1609 9,1610 2.175,1611 0.798,1612 0.009,1613 14,1614 -6.247,1615 -2.294,1616 -0.258,1617 8,1618 3.645,1619 1.197,1620 0.742,1621 5,1622 -1.933,1623 -0.835,1624 -0.835,1625 7,1626 2.709,1627 0.883,1628 0.883,1629 4,1630 -6.552,1631 -4.999,1632 -0.214,1633 1,1634 5,1635 5,1636 5,1641 1,1642 1,1643 1,1644 1,1645 1,1646 -1,1647 -1,1648 -1,1653 1,1654 -1,1655 -1,1656 -1}
+{35 1,60 1,64 1,76 1,93 1,108 1,114 1,125 1,126 1,158 1,162 1,175 1,193 1,194 1,220 1,224 1,261 1,268 1,269 1,270 1,282 1,321 1,328 4,330 3,331 5,332 1,333 4,339 1,341 1,345 1,382 1,407 1,440 1,446 1,463 1,467 1,476 1,509 1,510 1,536 1,588 1,605 1,611 1,621 1,671 1,679 1,703 1,723 1,729 1,730 1,742 1,743 1,744 1,745 1,746 1,747 1,748 1,749 1,750 1,751 1,752 1,753 1,754 1,755 1,756 1,757 1,758 1,759 1,760 1,761 1,762 1,763 1,764 1,765 1,766 1,767 1,768 1,769 1,770 1,771 1,772 1,773 1,774 1,775 1,776 1,777 1,778 1,779 1,780 1,781 1,782 1,783 1,784 1,785 1,786 1,787 1,788 1,789 1,790 1,791 1,792 1,793 1,794 1,795 1,796 1,797 1,798 1,799 1,800 1,801 1,802 1,803 1,804 1,805 1,806 1,807 1,808 1,809 1,810 1,811 1,812 1,813 1,814 1,815 1,816 1,817 1,818 1,819 1,820 1,821 1,822 1,823 1,824 1,825 1,826 1,827 1,828 1,829 1,830 1,831 1,832 1,833 1,834 1,835 1,836 1,837 1,838 1,839 1,840 1,841 1,842 1,843 1,844 1,845 1,846 1,847 1,848 1,849 1,850 1,851 1,852 1,853 1,854 1,855 1,856 1,857 1,858 1,859 1,860 1,861 1,862 1,863 1,864 1,865 1,866 1,867 1,868 1,869 1,870 1,871 1,872 1,873 1,874 1,875 1,876 1,877 1,878 1,879 1,880 1,881 1,882 1,883 1,884 1,885 1,886 1,887 1,888 1,889 1,890 1,891 1,892 1,893 1,894 1,895 1,896 1,897 1,898 1,899 1,900 1,901 1,902 1,903 1,904 1,905 1,906 1,907 1,908 1,909 1,910 1,911 1,912 1,913 1,914 1,915 1,916 1,917 1,918 1,919 1,920 1,921 1,922 1,923 1,924 1,925 1,926 1,927 1,928 1,929 1,930 1,931 1,932 1,933 1,934 1,935 1,936 1,937 1,938 1,939 1,940 1,941 1,942 1,943 1,944 1,945 1,946 1,947 1,948 1,949 1,950 1,951 1,952 1,953 1,954 1,955 1,956 1,957 1,958 1,959 1,960 1,961 1,962 1,963 1,964 1,965 1,966 1,967 1,968 1,969 1,970 1,971 1,972 1,973 1,974 1,975 1,976 1,977 1,978 1,979 1,980 1,981 1,982 1,983 1,984 1,985 1,986 1,987 1,988 1,989 1,990 1,991 1,992 1,993 1,994 1,995 1,996 1,997 1,998 1,999 1,1000 1,1001 1,1002 1,1003 1,1004 1,1005 1,1006 1,1007 1,1008 1,1009 1,1010 1,1011 1,1012 1,1013 1,1014 1,1015 1,1016 1,1017 1,1018 1,1019 1,1020 1,1021 1,1022 1,1023 1,1024 1,1025 1,1026 1,1027 1,1028 1,1029 1,1030 1,1031 1,1032 1,1033 1,1034 1,1035 1,1036 1,1037 1,1038 1,1039 1,1040 1,1041 1,1042 1,1043 1,1044 1,1045 1,1046 1,1047 1,1048 1,1049 1,1050 1,1051 1,1052 1,1053 1,1054 1,1055 1,1056 1,1057 1,1058 1,1059 1,1060 1,1061 1,1062 1,1063 1,1064 1,1065 1,1066 1,1067 1,1068 1,1069 1,1070 1,1071 1,1072 1,1073 1,1074 1,1075 1,1076 1,1077 1,1078 1,1079 1,1080 1,1081 1,1082 1,1083 1,1084 1,1085 1,1086 1,1087 1,1088 1,1089 1,1090 1,1091 1,1092 4,1093 1,1094 1,1095 1,1096 1,1097 1,1098 1,1099 1,1100 1,1101 1,1102 1,1103 1,1104 1,1105 1,1106 1,1107 1,1108 1,1601 16,1602 3.404,1603 0.965,1604 0.025,1605 8,1606 -1.537,1607 -0.664,1608 -0.096,1609 9,1610 2.175,1611 0.798,1612 0.009,1613 14,1614 -6.247,1615 -2.294,1616 -0.258,1617 8,1618 3.645,1619 1.197,1620 0.742,1621 5,1622 -1.933,1623 -0.835,1624 -0.835,1625 7,1626 2.709,1627 0.883,1628 0.883,1629 4,1630 -6.552,1631 -4.999,1632 -0.214,1633 1,1634 5,1635 5,1636 5,1641 1,1642 1,1643 1,1644 1,1645 1,1646 -1,1647 -1,1648 -1,1653 1,1654 -1,1655 -1,1656 -1,1657 neutral}

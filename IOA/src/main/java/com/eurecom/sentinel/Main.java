@@ -13,23 +13,23 @@ public class Main {
 	 */	
 	public static void main(String[] args) throws Exception{
 		
-		String nameOfNRCTrain = "";
-		String name = "";
+		String nameOfTrain = "";
+		String saveName = "";
 		
 		if (args.length != 2) {
 			System.out.println("[usage] <mode: train | eval> <datasetname>");
 			System.exit(0);
-		} else {	
+		} else {
 			PATH = args[1];
 		}
 
 		SentimentanalysisECIR sentimentanalysis = new SentimentanalysisECIR(PATH);
 		switch(args[0]) {
 			case "eval":
-				sentimentanalysis.testSystem(nameOfNRCTrain);
+				sentimentanalysis.testSystem(nameOfTrain);
 				break;
 			case "train":
-				sentimentanalysis.trainSystem(name);
+				sentimentanalysis.trainSystem(saveName);
 				break;
 			default:
 				throw new IllegalArgumentException("Invalid mode: " + args[0]);

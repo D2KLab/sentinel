@@ -23,7 +23,7 @@ import cmu.arktweetnlp.impl.features.WordClusterPaths;
 public class SentimentSystem {
 	
 	protected Set<Tweet> tweetList;
-	private boolean debug = false;
+	private boolean debug = true;
 
     /**
      * Constructor gets all Tweets in a list.
@@ -37,7 +37,7 @@ public class SentimentSystem {
 	 //helper functions to preprocess and get features
 	
 	/**
-	 * Gets all NGrams that occur in the Tweet
+	 * Gets all NGrams that occur in the Target term
 	 * 
 	 * @param tweet the Tweet to analyze
 	 * @param from NGram range from
@@ -65,28 +65,21 @@ public class SentimentSystem {
         
         // to return targetNGrams
         Set<String> nGramListFiltered = filterNGram(tweet, nGramList);
+        tweet.setNGramsTarget(nGramListFiltered);
         
     	return nGramListFiltered;
 	}
 	
 	/**
-	 * filter N-gram for the target term
+	 * filter N-gram for the Target Term
+	 * ps: not perfect, to be improved
 	 * 
 	 * @param tweet
 	 * @param nGramSet
 	 */
-    
     private Set<String> filterNGram(Tweet tweet, Set<String> nGramSet) {
 		// TODO Auto-generated method stub
-		String targetBegin = tweet.getTargetBegin();
-		String targetEnd = tweet.getTargetEnd();
-		String[] words = tweet.getRawTweetString().split(" ");
-		String target = "";
-		
-		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd); i++) {
-			target += words[i] + " ";
-		}		
-		
+		String target = tweet.getTargetContent();		
 		Set<String> nGramSetFiltered = new HashSet<String>(); 
 		String[] targetWords = target.split(" "); // e.g "c", "d"
 	
@@ -102,6 +95,7 @@ public class SentimentSystem {
 		
 		return nGramSetFiltered;
 	}
+    
 	/**
 	 * find value in a string array
 	 * @param arr
@@ -118,7 +112,7 @@ public class SentimentSystem {
     }
     
     /**
-     * Gets all NGrams that occur in the Tweet
+     * Gets all NGrams that occur in the Target Term
      * 
      * @param tweet the Tweet to analyze
      * @param n NGram range to, from is set to 1
@@ -129,19 +123,19 @@ public class SentimentSystem {
 	}
     
     /**
-     * Gets all Char NGrams that occur in the Tweet, from 3-Gram to 5-Gram
+     * Gets all Char NGrams that occur in the Target term, from 3-Gram to 5-Gram
      * @param tweet the Tweet to analyze
      * @return returns all NGrams that occur in the Tweet
      */
 	protected Set<String> getCharNGrams(Tweet tweet){
-		String tweetString = tweet.getTweetString();
+		String target = tweet.getTargetContent();	
     	Set<String> nGramList = new HashSet<String>();
-    	for (int i = 0; i < tweetString.length() - 2; i++){
-    		nGramList.add(tweetString.substring(i, i + 3));
-    		if (i + 4 <= tweetString.length()) nGramList.add(tweetString.substring(i, i + 4));
-    		if (i + 5 <= tweetString.length()) nGramList.add(tweetString.substring(i, i + 5));
+    	for (int i = 0; i < target.length() - 2; i++){
+    		nGramList.add(target.substring(i, i + 3));
+    		if (i + 4 <= target.length()) nGramList.add(target.substring(i, i + 4));
+    		if (i + 5 <= target.length()) nGramList.add(target.substring(i, i + 5));
     	}
-    	tweet.setCharNGramList(nGramList);
+    	tweet.setCharNGramListTarget(nGramList);
     	return nGramList;
     }
 	

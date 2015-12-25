@@ -5,7 +5,7 @@
 62968617233162240	757209662	9	13	target: ....pretty good#1st#time#will be going back# 
 	[OK] 	Initial: positive	Result: positive		Lunch from my new Lil spot ...THE COTTON BOWL ....pretty good#1st#time#will be going back# http://instagr.am/p/RX9939CIv8/ 
 264078489886552064	50767705	0	1	target: So Clattenburg's 
-	[Error] Initial: neutral	Result: negative		So Clattenburg's alleged racism may mean end of his career; Terry, Suarez, Rio use it and can't play for a couple of weeks? #consistency
+	[OK] 	Initial: neutral	Result: neutral		So Clattenburg's alleged racism may mean end of his career; Terry, Suarez, Rio use it and can't play for a couple of weeks? #consistency
 264078489886552064	50767705	2	3	target: alleged racism 
 	[OK] 	Initial: negative	Result: negative		So Clattenburg's alleged racism may mean end of his career; Terry, Suarez, Rio use it and can't play for a couple of weeks? #consistency
 264078489886552064	50767705	4	15	target: may mean end of his career; Terry, Suarez, Rio use it and 
@@ -15,7 +15,7 @@
 264078489886552064	50767705	18	23	target: for a couple of weeks? #consistency 
 	[OK] 	Initial: neutral	Result: neutral		So Clattenburg's alleged racism may mean end of his career; Terry, Suarez, Rio use it and can't play for a couple of weeks? #consistency
 264241026498179072	561738042	0	0	target: i 
-	[Error] Initial: neutral	Result: positive		i like how each Friday the announcers hype how Alabama can be beat and each Monday state how Alabama is still number one...
+	[OK] 	Initial: neutral	Result: neutral		i like how each Friday the announcers hype how Alabama can be beat and each Monday state how Alabama is still number one...
 264241026498179072	561738042	1	1	target: like 
 	[OK] 	Initial: positive	Result: positive		i like how each Friday the announcers hype how Alabama can be beat and each Monday state how Alabama is still number one...
 264241026498179072	561738042	2	20	target: how each Friday the announcers hype how Alabama can be beat and each Monday state how Alabama is still 

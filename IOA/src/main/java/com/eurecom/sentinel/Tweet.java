@@ -83,7 +83,20 @@ public class Tweet {
 		return this.charNGramListTarget;
 	}
 	
-	
+	/**
+	 * return the content of target term
+	 * @return
+	 */
+	public String getTargetContent() {
+		String targetBegin = getTargetBegin();
+		String targetEnd = getTargetEnd();
+		String[] words = getRawTweetString().split(" ");
+		String target = "";
+		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd); i++) {
+			target += words[i] + " ";
+		}
+		return target;
+	}
 	
 	
     public String getRawTweetString() {

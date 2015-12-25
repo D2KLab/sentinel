@@ -20,7 +20,7 @@ public class SentimentanalysisECIR {
 
 	private Set<Tweet> tweetList = new HashSet<Tweet>();
 	private String PATH =  "";
-	private boolean debug = true;
+	private boolean debug = false ;
 	//public static final String ANSI_RED = "\u001B[31m";
 	//public static final String ANSI_RESET = "\u001B[0m";
 	
@@ -67,6 +67,7 @@ public class SentimentanalysisECIR {
 		File file = new File("resources/tweets/" + path + ".txt");
 		Scanner scanner = new Scanner(file);
 		int multiple = 0;
+		int count = 0;
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split("\t");
 			if (line.length == 6){
@@ -74,12 +75,16 @@ public class SentimentanalysisECIR {
 					if (!storeTweetUni(line[5], line[4], line[1], line[2], line[3])){
 						System.out.println("Tweet already in list: " + line[1]);
 						multiple++;
+					} else {
+						count++;
 					}
 				}
 				else{
 					if (!storeTweetUni(line[5], line[4], line[0], line[2], line[3])){
 						System.out.println("Tweet already in list: " + line[0]);
 						multiple++;
+					} else {
+						count++;
 					}
 				}
 			}
@@ -88,6 +93,7 @@ public class SentimentanalysisECIR {
 			}
 		}
 		System.out.println("multiple Tweets: " + multiple);
+		//System.out.println("Tweets: " + count);
 		scanner.close();
 	}
 	
@@ -219,48 +225,48 @@ public class SentimentanalysisECIR {
         
         while (scanner.hasNextLine()) {
             String[] line = scanner.nextLine().split("\t");
-            String id = line[0] + " " + line[2] + " " + line[3];
-            //put target term in the output
-            String[] words = line[5].split(" ");
-            String target = "";
-            for (int i = Integer.parseInt(line[2]); i <= Integer.parseInt(line[3]); i++) {
-            	target += words[i] + " ";
-            }
-            line[3] += "\ttarget: " + target + "\n";
-            
-            if (line[0].equals("NA")){
-            	id = line[1];
-            }
-            if (line.length == 6 && !line[5].equals("Not Available")){        
-                String resultSenti = classValue.get(resultMapToPrint.get(id)); //result sentiment
-                String initialSenti = line[4]; // initial sentiment
-                if (resultSenti != null){
-                    if (!initialSenti.equals(resultSenti)){
-                    	errorcount++;
-                    	line[4] = "[Error] Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
-                    	if (debug) {
-                       		System.out.print(StringUtils.join(line, "\t"));
-                    		System.out.println();
-                    	}
-                    	tweetPrintStreamError.print(StringUtils.join(line, "\t"));
-                    	tweetPrintStreamError.println();
-                    } else {
-                    	line[4] = "[OK] 	Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
-                    	if (debug) {
-                    		System.out.print(StringUtils.join(line, "\t"));
-                    		System.out.println();
-                    	}
-                    }
-                } else {
-                    System.out.println("Error while printResultToFile (result sentiment == null): tweetIDWithPosition:" + id);
-                    errorcount++;
-                    line[2] = "neutral";
+            if (line.length == 6) {
+            	String id = line[0] + " " + line[2] + " " + line[3];
+                //put target term in the output
+                String[] words = line[5].split("//s+");
+                String target = "";
+                
+                for (int i = Integer.parseInt(line[2]); i <= Integer.parseInt(line[3]) && i < words.length; i++) {
+                	target += words[i] + " ";
                 }
-            } else if (line.length == 6 && line[5].equals("Not Available")){
-                errorcount++;
-            } else {
-            	System.out.println(line[0]);
-            }
+                
+                line[3] += "\ttarget: " + target + "\n";
+                
+                if (!line[5].equals("Not Available")) {
+                    String resultSenti = classValue.get(resultMapToPrint.get(id)); //result sentiment
+                    String initialSenti = line[4]; // initial sentiment
+                    if (resultSenti != null){
+                        if (!initialSenti.equals(resultSenti)){
+                        	errorcount++;
+                        	line[4] = "[Error] Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
+                        	if (debug) {
+                           		System.out.print(StringUtils.join(line, "\t"));
+                        		System.out.println();
+                        	}
+                        	tweetPrintStreamError.print(StringUtils.join(line, "\t"));
+                        	tweetPrintStreamError.println();
+                        } else {
+                        	line[4] = "[OK] 	Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
+                        	if (debug) {
+                        		System.out.print(StringUtils.join(line, "\t"));
+                        		System.out.println();
+                        	}
+                        }
+                    } else {
+                        System.out.println("Error while printResultToFile (result sentiment == null): tweetIDWithPosition:" + id);
+                        errorcount++;
+                        line[2] = "neutral";
+                    }
+                } else if (line[5].equals("Not Available")) {
+                	 errorcount++;
+                }
+            } 
+            
             tweetPrintStream.print(StringUtils.join(line, "\t"));
             tweetPrintStream.println();
         }

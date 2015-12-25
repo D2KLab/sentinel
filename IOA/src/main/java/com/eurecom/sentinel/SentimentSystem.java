@@ -23,7 +23,7 @@ import cmu.arktweetnlp.impl.features.WordClusterPaths;
 public class SentimentSystem {
 	
 	protected Set<Tweet> tweetList;
-	private boolean debug = true;
+	private boolean debug = false;
 
     /**
      * Constructor gets all Tweets in a list.
@@ -127,6 +127,7 @@ public class SentimentSystem {
      * @param tweet the Tweet to analyze
      * @return returns all NGrams that occur in the Tweet
      */
+    
 	protected Set<String> getCharNGrams(Tweet tweet){
 		String target = tweet.getTargetContent();	
     	Set<String> nGramList = new HashSet<String>();
@@ -135,7 +136,7 @@ public class SentimentSystem {
     		if (i + 4 <= target.length()) nGramList.add(target.substring(i, i + 4));
     		if (i + 5 <= target.length()) nGramList.add(target.substring(i, i + 5));
     	}
-    	tweet.setCharNGramListTarget(nGramList);
+    	tweet.setCharNGramList(nGramList); // normally use tweet.setCharNGramListTarget(nGramList); here. For the ease to not change the codes in SentimentSystemNRC.java
     	return nGramList;
     }
 	

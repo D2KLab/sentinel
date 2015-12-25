@@ -90,9 +90,9 @@ public class Tweet {
 	public String getTargetContent() {
 		String targetBegin = getTargetBegin();
 		String targetEnd = getTargetEnd();
-		String[] words = getRawTweetString().split(" ");
+		String[] words = getRawTweetString().split("\\s+");
 		String target = "";
-		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd); i++) {
+		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd) && i < words.length; i++) {
 			target += words[i] + " ";
 		}
 		return target;

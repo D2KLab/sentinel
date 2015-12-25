@@ -220,6 +220,14 @@ public class SentimentanalysisECIR {
         while (scanner.hasNextLine()) {
             String[] line = scanner.nextLine().split("\t");
             String id = line[0] + " " + line[2] + " " + line[3];
+            //put target term in the output
+            String[] words = line[5].split(" ");
+            String target = "";
+            for (int i = Integer.parseInt(line[2]); i <= Integer.parseInt(line[3]); i++) {
+            	target += words[i] + " ";
+            }
+            line[3] += "\ttarget: " + target + "\n";
+            
             if (line[0].equals("NA")){
             	id = line[1];
             }
@@ -227,10 +235,9 @@ public class SentimentanalysisECIR {
                 String resultSenti = classValue.get(resultMapToPrint.get(id)); //result sentiment
                 String initialSenti = line[4]; // initial sentiment
                 if (resultSenti != null){
-                    //line[4] = resultSenti;
                     if (!initialSenti.equals(resultSenti)){
                     	errorcount++;
-                    	line[4] = "[Error] Inital: " + initialSenti + " Result: " + resultSenti;
+                    	line[4] = "[Error] Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
                     	if (debug) {
                        		System.out.print(StringUtils.join(line, "\t"));
                     		System.out.println();
@@ -238,7 +245,7 @@ public class SentimentanalysisECIR {
                     	tweetPrintStreamError.print(StringUtils.join(line, "\t"));
                     	tweetPrintStreamError.println();
                     } else {
-                    	line[4] = "[OK] 	Result: " + resultSenti;
+                    	line[4] = "[OK] 	Initial: " + initialSenti + "\tResult: " + resultSenti + "\t";
                     	if (debug) {
                     		System.out.print(StringUtils.join(line, "\t"));
                     		System.out.println();

@@ -30,6 +30,8 @@ public class Tweet {
 	// target positioin
 	private String targetBegin;
 	private String targetEnd;
+	private Set<String> nGramListTarget;
+	private Set<String> charNGramListTarget;
 
     /*
     public Tweet(String tweet, String senti, String tID){
@@ -65,6 +67,25 @@ public class Tweet {
     	return targetEnd;
     }
     
+	public void setNGramsTarget(Set<String> nGramListTarget) {
+		this.nGramListTarget = nGramListTarget;
+	}
+	
+	public Set<String> getNGramListTarget() {
+		return this.nGramListTarget;
+	}
+    
+	public void setCharNGramListTarget(Set<String> charNGramListTarget) {
+		this.charNGramListTarget = charNGramListTarget;
+	}
+	
+	public Set<String> getCharNGramListTarget() {
+		return this.charNGramListTarget;
+	}
+	
+	
+	
+	
     public String getRawTweetString() {
 		return this.rawTweet;
 	}

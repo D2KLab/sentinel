@@ -12,7 +12,10 @@ public class Main {
 	 * @throws Exception
 	 */	
 	public static void main(String[] args) throws Exception{
-		
+		/*names of arff file where stores the features
+		 * train train_dataset, call trainSvstem to create arff file, if names == "", use defaut features
+		 * eval test_dataset, first train classifier with arff file, then evaluate with test_dataset
+		 */
 		String nameOfTrain = "";
 		String saveName = "";
 		

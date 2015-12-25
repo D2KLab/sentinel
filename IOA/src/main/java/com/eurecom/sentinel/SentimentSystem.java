@@ -23,6 +23,7 @@ import cmu.arktweetnlp.impl.features.WordClusterPaths;
 public class SentimentSystem {
 	
 	protected Set<Tweet> tweetList;
+	private boolean debug = false;
 
     /**
      * Constructor gets all Tweets in a list.
@@ -56,10 +57,65 @@ public class SentimentSystem {
         tokenizer.tokenize(tokenString);
         while(tokenizer.hasMoreElements()){
         	nGramList.add((String) tokenizer.nextElement());
+            if (debug) {
+            	System.out.println((String) tokenizer.nextElement());
+            }
         }
         tweet.setNGrams(nGramList);
-    	return nGramList;
+        
+        // to return targetNGrams
+        Set<String> nGramListFiltered = filterNGram(tweet, nGramList);
+        
+    	return nGramListFiltered;
 	}
+	
+	/**
+	 * filter N-gram for the target term
+	 * 
+	 * @param tweet
+	 * @param nGramSet
+	 */
+    
+    private Set<String> filterNGram(Tweet tweet, Set<String> nGramSet) {
+		// TODO Auto-generated method stub
+		String targetBegin = tweet.getTargetBegin();
+		String targetEnd = tweet.getTargetEnd();
+		String[] words = tweet.getRawTweetString().split(" ");
+		String target = "";
+		
+		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd); i++) {
+			target += words[i] + " ";
+		}		
+		
+		Set<String> nGramSetFiltered = new HashSet<String>(); 
+		String[] targetWords = target.split(" "); // e.g "c", "d"
+	
+		for (String s : nGramSet) {
+			String[] ngramWords = s.split(" "); // ["a", "b"], ["b", "c"], ["c", "d"], ["d", "e"]
+			for (String tw : targetWords) {
+				if (find(ngramWords, tw)) {
+					nGramSetFiltered.add(s);
+					//System.out.println(s);
+				}
+			}
+		}
+		
+		return nGramSetFiltered;
+	}
+	/**
+	 * find value in a string array
+	 * @param arr
+	 * @param targetValue
+	 * @return
+	 */
+    private boolean find(String[] arr, String targetValue) {
+    	for (String s: arr) {
+    		if (s.equals(targetValue)) {
+    			return true;
+    		} 
+    	}
+    	return false;
+    }
     
     /**
      * Gets all NGrams that occur in the Tweet

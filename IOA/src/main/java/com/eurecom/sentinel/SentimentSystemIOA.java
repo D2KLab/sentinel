@@ -42,7 +42,7 @@ public class SentimentSystemIOA extends SentimentSystem {
 	 * @throws IOException
 	 */
 	public void train(String saveName) throws IOException{
-		System.out.println("Starting NRC Train");
+		System.out.println("Starting IOA Train");
 		System.out.println("Tweets: " +  this.tweetList.size());
 
 		//load pos-tagger
@@ -658,7 +658,7 @@ public class SentimentSystemIOA extends SentimentSystem {
 	 * @throws Exception
 	 */
 	public Map<String,ClassificationResult> test(String nameOfTrain) throws Exception{
-		System.out.println("Starting NRC Test");
+		System.out.println("Starting IOA Test");
 		System.out.println("Tweets: " +  this.tweetList.size());
 		String trainname = "";
 		if(!nameOfTrain.equals("")){
@@ -900,9 +900,9 @@ public class SentimentSystemIOA extends SentimentSystem {
 		String rawTweet = tweet.getRawTweetString();
 		rawTweet = rawTweet.toLowerCase();
 		//filter Usernames
-		rawTweet = rawTweet.replaceAll("@[^\\s]+", "");
+		rawTweet = rawTweet.replaceAll("@[^\\s]+", "@someone");
 		//filter Urls
-		rawTweet = rawTweet.replaceAll("((www\\.[^\\s]+)|(https?://[^\\s]+))", "");
+		rawTweet = rawTweet.replaceAll("((www\\.[^\\s]+)|(https?://[^\\s]+))", "@someurl");
 		tweet.setTweetString(rawTweet.trim());
 	}
 
@@ -915,8 +915,29 @@ public class SentimentSystemIOA extends SentimentSystem {
 	 */
 	// modified to tokenize target tweet
 	private void tokenizeAndTag(Tagger tagger, Tweet tweet) throws IOException{
+		/*
+		String tweetString = tweet.getTweetString();
+		System.out.println("ID" + tweet.getTweetID() + "begin" + tweet.getTargetBegin() +"[tweet]:" + tweetString);
+		List<TaggedToken> tokens = tagger.tokenizeAndTag(tweetString);
+		int i = 0;
+		for (TaggedToken t: tokens) {
+			System.out.print(" [token" + i++ + "]" + t.token);
+		}
+		System.out.println();
+		tweet.setWordList(tokens);
+		
+		
+		String target = tweet.getTargetContent();
+		System.out.println("[target]:" + target);
+		List<TaggedToken> targetTokens = tagger.tokenizeAndTag(target);
+		i = 0;
+		for (TaggedToken t: targetTokens) {
+			System.out.print("[token" + i++ + "]" + t.token);
+		}
+		System.out.println();
+		tweet.setTargetWordList(tokens);
+		*/
 		tweet.setWordList(tagger.tokenizeAndTag(tweet.getTweetString()));
-		//added
 		tweet.setTargetWordList(tagger.tokenizeAndTag(tweet.getTargetContent()));
 	}
 

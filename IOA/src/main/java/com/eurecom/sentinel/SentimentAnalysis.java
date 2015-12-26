@@ -70,7 +70,8 @@ public class SentimentAnalysis {
 		int count = 0;
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split("\t");
-			if (line.length == 6){
+			
+			if (line.length == 6 && checkPositionFormat(line[5], line[3])){
 				if (line[0].equals("NA")){
 					if (!storeTweetUni(line[5], line[4], line[1], line[2], line[3])){
 						System.out.println("Tweet already in list: " + line[1]);
@@ -89,12 +90,21 @@ public class SentimentAnalysis {
 				}
 			}
 			else{
+				// not formal tweet including : target term out of posiont, less than 6 field
 			    System.out.println("Wrong format: " + line[0]);
 			}
 		}
 		System.out.println("multiple Tweets: " + multiple);
 		//System.out.println("Tweets: " + count);
 		scanner.close();
+	}
+	
+	private boolean checkPositionFormat(String string, String position) {
+		String[] words = string.split("\\s+");
+		if (Integer.parseInt(position) >= words.length) {
+			return false;
+		}
+		return true;
 	}
 	
 	/**

@@ -698,8 +698,10 @@ public class SentimentSystemIOA extends SentimentSystem {
     	Map<String, Double> MPQALexi = this.loadMPQA();
     	Map<String, Double> BingLiuLexi = this.loadBingLiu();
     	Map<String, Double> NRCLexi = this.loadNRC();
-		
+    	Map<String, Double> AFFINNELexi = this.loadAFINN();
+    	Map<String, Double> SentiWordNetLexi = this.loadSentiWordNet();
 		Map<String, Integer> featureMap = new HashMap<String, Integer>();
+		
 		for (int i = 0; i < train.numAttributes(); i++){
 			featureMap.put(train.attribute(i).name(), train.attribute(i).index());
 		}
@@ -852,8 +854,29 @@ public class SentimentSystemIOA extends SentimentSystem {
 			instance.setValue(featureMap.get("NRCTotalCountNeg"), NRCNeg.get(0));
 			instance.setValue(featureMap.get("NRCTotalScoreNeg"), NRCNeg.get(1));
 			instance.setValue(featureMap.get("NRCMaxScoreNeg"), NRCNeg.get(2));
-			instance.setValue(featureMap.get("NRCLastScoreNeg"), NRCNeg.get(3));
+			instance.setValue(featureMap.get("NRCLastScoreNeg"), NRCNeg.get(3));			
 			
+	    	List<Double> AFFINNEPos = this.getLexiScores(AFFINNELexi, tweet.getWordList(), false);
+			instance.setValue(featureMap.get("AFFINNETotalCountPos"), AFFINNEPos.get(0));
+			instance.setValue(featureMap.get("AFFINNETotalScorePos"), AFFINNEPos.get(1));
+			instance.setValue(featureMap.get("AFFINNEMaxScorePos"), AFFINNEPos.get(2));
+			instance.setValue(featureMap.get("AFFINNELastScorePos"), AFFINNEPos.get(3));
+			List<Double> AFFINNENeg = this.getLexiScores(AFFINNELexi, tweet.getWordList(), true);
+			instance.setValue(featureMap.get("AFFINNETotalCountNeg"), AFFINNENeg.get(0));
+			instance.setValue(featureMap.get("AFFINNETotalScoreNeg"), AFFINNENeg.get(1));
+			instance.setValue(featureMap.get("AFFINNEMaxScoreNeg"), AFFINNENeg.get(2));
+			instance.setValue(featureMap.get("AFFINNELastScoreNeg"), AFFINNENeg.get(3));
+			
+			List<Double> SentiWordNetPos = this.getLexiScores(SentiWordNetLexi, tweet.getWordList(), false);
+			instance.setValue(featureMap.get("SentiWordNetTotalCountPos"), SentiWordNetPos.get(0));
+			instance.setValue(featureMap.get("SentiWordNetTotalScorePos"), SentiWordNetPos.get(1));
+			instance.setValue(featureMap.get("SentiWordNetMaxScorePos"), SentiWordNetPos.get(2));
+			instance.setValue(featureMap.get("SentiWordNetLastScorePos"), SentiWordNetPos.get(3));
+			List<Double> SentiWordNetNeg = this.getLexiScores(SentiWordNetLexi, tweet.getWordList(), true);
+			instance.setValue(featureMap.get("SentiWordNetTotalCountNeg"), SentiWordNetNeg.get(0));
+			instance.setValue(featureMap.get("SentiWordNetTotalScoreNeg"), SentiWordNetNeg.get(1));
+			instance.setValue(featureMap.get("SentiWordNetMaxScoreNeg"), SentiWordNetNeg.get(2));
+			instance.setValue(featureMap.get("SentiWordNetLastScoreNeg"), SentiWordNetNeg.get(3));
 			//add test instance to trained features
 			train.add(instance);
 			

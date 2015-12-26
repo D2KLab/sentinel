@@ -58,7 +58,7 @@ public class SentimentSystemIOA extends SentimentSystem {
     	Map<String, Double> BingLiuLexi = this.loadBingLiu();
     	Map<String, Double> NRCLexi = this.loadNRC();
     	
-    	//load AFFINNE, SentiWordNet, hedonometer
+    	//load AFFINNE, SentiWordNet
     	Map<String, Double> AFFINNELexi = this.loadAFINN();
     	Map<String, Double> SentiWordNetLexi = this.loadSentiWordNet();
 		
@@ -389,6 +389,73 @@ public class SentimentSystemIOA extends SentimentSystem {
 		Attribute NRCLastScoreNeg = new Attribute("NRCLastScoreNeg");
 		attributeList.add(NRCLastScoreNeg);
 		featurecount++;
+	    	
+    	//AFFINNE
+    	Attribute AFFINNETotalCountPos = new Attribute("AFFINNETotalCountPos");
+		attributeList.add(AFFINNETotalCountPos);
+		featurecount++;
+		
+		Attribute AFFINNETotalScorePos = new Attribute("AFFINNETotalScorePos");
+		attributeList.add(AFFINNETotalScorePos);
+		featurecount++;
+		
+		Attribute AFFINNEMaxScorePos = new Attribute("AFFINNEMaxScorePos");
+		attributeList.add(AFFINNEMaxScorePos);
+		featurecount++;
+		
+		Attribute AFFINNELastScorePos = new Attribute("AFFINNELastScorePos");
+		attributeList.add(AFFINNELastScorePos);
+		featurecount++;
+		
+    	Attribute AFFINNETotalCountNeg = new Attribute("AFFINNETotalCountNeg");
+		attributeList.add(AFFINNETotalCountNeg);
+		featurecount++;
+		
+		Attribute AFFINNETotalScoreNeg = new Attribute("AFFINNETotalScoreNeg");
+		attributeList.add(AFFINNETotalScoreNeg);
+		featurecount++;
+		
+		Attribute AFFINNEMaxScoreNeg = new Attribute("AFFINNEMaxScoreNeg");
+		attributeList.add(AFFINNEMaxScoreNeg);
+		featurecount++;
+		
+		Attribute AFFINNELastScoreNeg = new Attribute("AFFINNELastScoreNeg");
+		attributeList.add(AFFINNELastScoreNeg);
+		featurecount++;
+		
+		//SentiWordNet
+    	Attribute SentiWordNetTotalCountPos = new Attribute("SentiWordNetTotalCountPos");
+		attributeList.add(SentiWordNetTotalCountPos);
+		featurecount++;
+		
+		Attribute SentiWordNetTotalScorePos = new Attribute("SentiWordNetTotalScorePos");
+		attributeList.add(SentiWordNetTotalScorePos);
+		featurecount++;
+		
+		Attribute SentiWordNetMaxScorePos = new Attribute("SentiWordNetMaxScorePos");
+		attributeList.add(SentiWordNetMaxScorePos);
+		featurecount++;
+		
+		Attribute SentiWordNetLastScorePos = new Attribute("SentiWordNetLastScorePos");
+		attributeList.add(SentiWordNetLastScorePos);
+		featurecount++;
+		
+    	Attribute SentiWordNetTotalCountNeg = new Attribute("SentiWordNetTotalCountNeg");
+		attributeList.add(SentiWordNetTotalCountNeg);
+		featurecount++;
+		
+		Attribute SentiWordNetTotalScoreNeg = new Attribute("SentiWordNetTotalScoreNeg");
+		attributeList.add(SentiWordNetTotalScoreNeg);
+		featurecount++;
+		
+		Attribute SentiWordNetMaxScoreNeg = new Attribute("SentiWordNetMaxScoreNeg");
+		attributeList.add(SentiWordNetMaxScoreNeg);
+		featurecount++;
+		
+		Attribute SentiWordNetLastScoreNeg = new Attribute("SentiWordNetLastScoreNeg");
+		attributeList.add(SentiWordNetLastScoreNeg);
+		featurecount++;
+		
 		
 		//set class attribute
 	    ArrayList<String> fvClassVal = new ArrayList<String>();
@@ -545,6 +612,30 @@ public class SentimentSystemIOA extends SentimentSystem {
 			instance.setValue(NRCMaxScoreNeg, NRCNeg.get(2));
 			instance.setValue(NRCLastScoreNeg, NRCNeg.get(3));
 			
+			
+	    	List<Double> AFFINNEPos = this.getLexiScores(AFFINNELexi, tweet.getWordList(), false);
+			instance.setValue(AFFINNETotalCountPos, AFFINNEPos.get(0));
+			instance.setValue(AFFINNETotalScorePos, AFFINNEPos.get(1));
+			instance.setValue(AFFINNEMaxScorePos, AFFINNEPos.get(2));
+			instance.setValue(AFFINNELastScorePos, AFFINNEPos.get(3));
+			List<Double> AFFINNENeg = this.getLexiScores(AFFINNELexi, tweet.getWordList(), true);
+			instance.setValue(AFFINNETotalCountNeg, AFFINNENeg.get(0));
+			instance.setValue(AFFINNETotalScoreNeg, AFFINNENeg.get(1));
+			instance.setValue(AFFINNEMaxScoreNeg, AFFINNENeg.get(2));
+			instance.setValue(AFFINNELastScoreNeg, AFFINNENeg.get(3));
+			
+			List<Double> SentiWordNetPos = this.getLexiScores(SentiWordNetLexi, tweet.getWordList(), false);
+			instance.setValue(SentiWordNetTotalCountPos, SentiWordNetPos.get(0));
+			instance.setValue(SentiWordNetTotalScorePos, SentiWordNetPos.get(1));
+			instance.setValue(SentiWordNetMaxScorePos, SentiWordNetPos.get(2));
+			instance.setValue(SentiWordNetLastScorePos, SentiWordNetPos.get(3));
+			List<Double> SentiWordNetNeg = this.getLexiScores(SentiWordNetLexi, tweet.getWordList(), true);
+			instance.setValue(SentiWordNetTotalCountNeg, SentiWordNetNeg.get(0));
+			instance.setValue(SentiWordNetTotalScoreNeg, SentiWordNetNeg.get(1));
+			instance.setValue(SentiWordNetMaxScoreNeg, SentiWordNetNeg.get(2));
+			instance.setValue(SentiWordNetLastScoreNeg, SentiWordNetNeg.get(3));
+	    		    	
+	    	
 			//set class attribute
 			instance.setValue(classAttribute, tweet.getSentiment());
 

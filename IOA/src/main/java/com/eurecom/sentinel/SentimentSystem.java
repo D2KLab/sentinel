@@ -21,68 +21,68 @@ import cmu.arktweetnlp.impl.features.WordClusterPaths;
  * Provides functions to get features
  */
 public class SentimentSystem {
-	
+
 	protected Set<Tweet> tweetList;
 	private boolean debug = false;
 
-    /**
-     * Constructor gets all Tweets in a list.
-     * 
-     * @param tweetList the list with all Tweets.
-     */
+	/**
+	 * Constructor gets all Tweets in a list.
+	 *
+	 * @param tweetList the list with all Tweets.
+	 */
 	public SentimentSystem(Set<Tweet> tweetList) {
 		this.tweetList = tweetList;
 	}
-	
-	 //helper functions to preprocess and get features
-	
+
+	//helper functions to preprocess and get features
+
 	/**
 	 * Gets all NGrams that occur in the Target term
-	 * 
+	 *
 	 * @param tweet the Tweet to analyze
 	 * @param from NGram range from
 	 * @param to NGram range to
 	 * @return returns all NGrams that occur in the Tweet
 	 */
-    protected Set<String> getNGrams(Tweet tweet, int from, int to) {
-    	Set<String> nGramList = new HashSet<String>();
-    	String tokenString = "";
-    	for (TaggedToken token : tweet.getWordList()){
-    		tokenString = tokenString + token.token + " ";
-    	}
-        NGramTokenizer tokenizer = new NGramTokenizer();
-        tokenizer.setNGramMaxSize(to);
-        tokenizer.setNGramMinSize(from);
-        tokenizer.setDelimiters(" ");
-        tokenizer.tokenize(tokenString);
-        while(tokenizer.hasMoreElements()){
-        	nGramList.add((String) tokenizer.nextElement());
-            if (debug) {
-            	System.out.println((String) tokenizer.nextElement());
-            }
-        }
-        tweet.setNGrams(nGramList);
-        
-        // to return targetNGrams
-        Set<String> nGramListFiltered = filterNGram(tweet, nGramList);
-        tweet.setNGramsTarget(nGramListFiltered);
-        
-    	return nGramListFiltered;
+	protected Set<String> getNGrams(Tweet tweet, int from, int to) {
+		Set<String> nGramList = new HashSet<String>();
+		String tokenString = "";
+		for (TaggedToken token : tweet.getWordList()){
+			tokenString = tokenString + token.token + " ";
+		}
+		NGramTokenizer tokenizer = new NGramTokenizer();
+		tokenizer.setNGramMaxSize(to);
+		tokenizer.setNGramMinSize(from);
+		tokenizer.setDelimiters(" ");
+		tokenizer.tokenize(tokenString);
+		while(tokenizer.hasMoreElements()){
+			nGramList.add((String) tokenizer.nextElement());
+			if (debug) {
+				System.out.println((String) tokenizer.nextElement());
+			}
+		}
+		tweet.setNGrams(nGramList);
+
+		// to return targetNGrams
+		Set<String> nGramListFiltered = filterNGram(tweet, nGramList);
+		tweet.setNGramsTarget(nGramListFiltered);
+
+		return nGramListFiltered;
 	}
-	
+
 	/**
 	 * filter N-gram for the Target Term
 	 * ps: not perfect, to be improved
-	 * 
+	 *
 	 * @param tweet
 	 * @param nGramSet
 	 */
-    private Set<String> filterNGram(Tweet tweet, Set<String> nGramSet) {
+	private Set<String> filterNGram(Tweet tweet, Set<String> nGramSet) {
 		// TODO Auto-generated method stub
-		String target = tweet.getTargetContent();		
-		Set<String> nGramSetFiltered = new HashSet<String>(); 
+		String target = tweet.getTargetContent();
+		Set<String> nGramSetFiltered = new HashSet<String>();
 		String[] targetWords = target.split(" "); // e.g "c", "d"
-	
+
 		for (String s : nGramSet) {
 			String[] ngramWords = s.split(" "); // ["a", "b"], ["b", "c"], ["c", "d"], ["d", "e"]
 			for (String tw : targetWords) {
@@ -92,137 +92,137 @@ public class SentimentSystem {
 				}
 			}
 		}
-		
+
 		return nGramSetFiltered;
 	}
-    
+
 	/**
 	 * find value in a string array
 	 * @param arr
 	 * @param targetValue
 	 * @return
 	 */
-    private boolean find(String[] arr, String targetValue) {
-    	for (String s: arr) {
-    		if (s.equals(targetValue)) {
-    			return true;
-    		} 
-    	}
-    	return false;
-    }
-    
-    /**
-     * Gets all NGrams that occur in the Target Term
-     * 
-     * @param tweet the Tweet to analyze
-     * @param n NGram range to, from is set to 1
-     * @return returns all NGrams that occur in the Tweet
-     */
-    protected Set<String> getNGrams(Tweet tweet, int n) {
-    	return getNGrams(tweet, 1, n);
+	private boolean find(String[] arr, String targetValue) {
+		for (String s: arr) {
+			if (s.equals(targetValue)) {
+				return true;
+			}
+		}
+		return false;
 	}
-    
-    /**
-     * Gets all Char NGrams that occur in the Target term, from 3-Gram to 5-Gram
-     * @param tweet the Tweet to analyze
-     * @return returns all NGrams that occur in the Tweet
-     */
-    
+
+	/**
+	 * Gets all NGrams that occur in the Target Term
+	 *
+	 * @param tweet the Tweet to analyze
+	 * @param n NGram range to, from is set to 1
+	 * @return returns all NGrams that occur in the Tweet
+	 */
+	protected Set<String> getNGrams(Tweet tweet, int n) {
+		return getNGrams(tweet, 1, n);
+	}
+
+	/**
+	 * Gets all Char NGrams that occur in the Target term, from 3-Gram to 5-Gram
+	 * @param tweet the Tweet to analyze
+	 * @return returns all NGrams that occur in the Tweet
+	 */
+
 	protected Set<String> getCharNGrams(Tweet tweet){
-		String target = tweet.getTargetContent();	
-    	Set<String> nGramList = new HashSet<String>();
-    	for (int i = 0; i < target.length() - 2; i++){
-    		nGramList.add(target.substring(i, i + 3));
-    		if (i + 4 <= target.length()) nGramList.add(target.substring(i, i + 4));
-    		if (i + 5 <= target.length()) nGramList.add(target.substring(i, i + 5));
-    	}
-    	tweet.setCharNGramList(nGramList); // normally use tweet.setCharNGramListTarget(nGramList); here. For the ease to not change the codes in SentimentSystemNRC.java
-    	return nGramList;
-    }
-	
+		String target = tweet.getTargetContent();
+		Set<String> nGramList = new HashSet<String>();
+		for (int i = 0; i < target.length() - 2; i++){
+			nGramList.add(target.substring(i, i + 3));
+			if (i + 4 <= target.length()) nGramList.add(target.substring(i, i + 4));
+			if (i + 5 <= target.length()) nGramList.add(target.substring(i, i + 5));
+		}
+		tweet.setCharNGramList(nGramList); // normally use tweet.setCharNGramListTarget(nGramList); here. For the ease to not change the codes in SentimentSystemNRC.java
+		return nGramList;
+	}
+
 	/**
 	 *  Determine the Cluster IDs for words in the Tweet 
-	 * 
+	 *
 	 * @param tweet the Tweet to analyze
 	 * @return returns a set of Cluster IDs
 	 */
-    protected Set<String> getClusters(Tweet tweet) {
-    	Set<String> clusterList = new HashSet<String>();
-    	for (TaggedToken token : tweet.getWordList()){
-    		String cluster = WordClusterPaths.wordToPath.get(token.token);
-    		if (cluster != null){
-    			clusterList.add(cluster);
-    		}
-    	}
-    	tweet.setClusters(clusterList);
+	protected Set<String> getClusters(Tweet tweet) {
+		Set<String> clusterList = new HashSet<String>();
+		for (TaggedToken token : tweet.getWordList()){
+			String cluster = WordClusterPaths.wordToPath.get(token.token);
+			if (cluster != null){
+				clusterList.add(cluster);
+			}
+		}
+		tweet.setClusters(clusterList);
 		return clusterList;
-    }
-    
-    /**
-     * Determine all emoticons in the Tweet 
-     * 
-     * @param tweet the Tweet to analyze
-     * @return returns a set of emoticons
-     */
-    protected Set<String> getEmoticons(Tweet tweet){
-    	Set<String> emoticons = new HashSet<String>();
-    	String emoticon_string = "(?:[<>]?[:;=8][\\-o\\*\\']?[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\]|[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\] [\\-o\\*\\']?[:;=8][<>]?)";
-    	Matcher m = Pattern.compile(emoticon_string).matcher(tweet.getTweetString());
-    	while (m.find()){
-    		emoticons.add(tweet.getTweetString().substring(m.start(), m.end()));
-    		if(m.end() == tweet.getTweetString().length()) tweet.setLastEmoticon(true);
-    	}
-    	tweet.setEmoticons(emoticons);
-    	return emoticons;
-    }
-    
-    /**
-     * Negates the Tweet, all Word in the negation range get the suffix "_NEG", and the negation count get  increased
-     * 
-     * @param tweet the Tweet to analyze
-     */
-    protected void negate(Tweet tweet) {
-		int negationCount = 0;
-    	boolean neg = false;
-    	for (TaggedToken token : tweet.getWordList()){
-    		if(neg){
-    			if(token.token.matches("^[.:;!?]$")){
-    				neg = false;
-    				negationCount++;
-    			}
-    			else{
-    				token.token = token.token + "_NEG";
-    			}
-    		}
-    		if(token.token.toLowerCase().matches("^(?:never|no|nothing|nowhere|noone|none|not|havent|hasnt|hadnt|cant|couldnt|shouldnt|wont|wouldnt|dont|doesnt|didnt|isnt|arent|aint)|.*n't")){
-    			neg = true;
-    		}
-    		
-    	}
-    	if (neg) negationCount++;	
-    	tweet.setNegationCount(negationCount);
 	}
-    
-    
-    /**
-     * Determine the stems for words in the Tweet 
-     * 
-     * @param tweet the Tweet to analyze
-     * @return returns a set of stems
-     */
+
+	/**
+	 * Determine all emoticons in the Tweet
+	 *
+	 * @param tweet the Tweet to analyze
+	 * @return returns a set of emoticons
+	 */
+	protected Set<String> getEmoticons(Tweet tweet){
+		Set<String> emoticons = new HashSet<String>();
+		String emoticon_string = "(?:[<>]?[:;=8][\\-o\\*\\']?[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\]|[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\] [\\-o\\*\\']?[:;=8][<>]?)";
+		Matcher m = Pattern.compile(emoticon_string).matcher(tweet.getTweetString());
+		while (m.find()){
+			emoticons.add(tweet.getTweetString().substring(m.start(), m.end()));
+			if(m.end() == tweet.getTweetString().length()) tweet.setLastEmoticon(true);
+		}
+		tweet.setEmoticons(emoticons);
+		return emoticons;
+	}
+
+	/**
+	 * Negates the Tweet, all Word in the negation range get the suffix "_NEG", and the negation count get  increased
+	 *
+	 * @param tweet the Tweet to analyze
+	 */
+	protected void negate(Tweet tweet) {
+		int negationCount = 0;
+		boolean neg = false;
+		for (TaggedToken token : tweet.getWordList()){
+			if(neg){
+				if(token.token.matches("^[.:;!?]$")){
+					neg = false;
+					negationCount++;
+				}
+				else{
+					token.token = token.token + "_NEG";
+				}
+			}
+			if(token.token.toLowerCase().matches("^(?:never|no|nothing|nowhere|noone|none|not|havent|hasnt|hadnt|cant|couldnt|shouldnt|wont|wouldnt|dont|doesnt|didnt|isnt|arent|aint)|.*n't")){
+				neg = true;
+			}
+
+		}
+		if (neg) negationCount++;
+		tweet.setNegationCount(negationCount);
+	}
+
+
+	/**
+	 * Determine the stems for words in the Tweet
+	 *
+	 * @param tweet the Tweet to analyze
+	 * @return returns a set of stems
+	 */
 	protected Set<String> getStems(Tweet tweet) {
 		SnowballStemmer stemmer = new SnowballStemmer("english");
-    	Set<String> stemList = new HashSet<String>();
-    	for (TaggedToken token : tweet.getWordList()){
-    		stemList.add(stemmer.stem(token.token));
-    	}
-    	tweet.setStemList(stemList);
-		return stemList;  
+		Set<String> stemList = new HashSet<String>();
+		for (TaggedToken token : tweet.getWordList()){
+			stemList.add(stemmer.stem(token.token));
+		}
+		tweet.setStemList(stemList);
+		return stemList;
 	}
 
 	/**
 	 * Loads and parses a sentiment lexica
-	 * 
+	 *
 	 * @param path the path to the lexica
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
@@ -240,11 +240,11 @@ public class SentimentSystem {
 		scanner.close();
 		return lexiMap;
 	}
-	
-	
+
+
 	/**
 	 * Loads and parses the MPQA sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -274,10 +274,10 @@ public class SentimentSystem {
 		scanner.close();
 		return lexiMap;
 	}
-	
+
 	/**
 	 *  Loads and parses the BingLiu sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -286,21 +286,21 @@ public class SentimentSystem {
 		File file = new File("resources/lexi/bingliu/positive-words.txt");
 		Scanner scanner = new Scanner(file);
 		while (scanner.hasNextLine()) {
-				lexiMap.put(scanner.nextLine(), 1.0);
+			lexiMap.put(scanner.nextLine(), 1.0);
 		}
 		scanner.close();
 		File file2 = new File("resources/lexi/bingliu/negative-words.txt");
 		Scanner scanner2 = new Scanner(file2);
 		while (scanner2.hasNextLine()) {
-				lexiMap.put(scanner2.nextLine(), -1.0);
+			lexiMap.put(scanner2.nextLine(), -1.0);
 		}
 		scanner2.close();
 		return lexiMap;
 	}
-	
+
 	/**
 	 * Loads and parses the NRC sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -323,11 +323,11 @@ public class SentimentSystem {
 		}
 		scanner.close();
 		return lexiMap;
-	}	
-	
+	}
+
 	/**
 	 * Loads and parses the SentiWordNet sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -347,10 +347,10 @@ public class SentimentSystem {
 		scanner.close();
 		return sentiWordMap;
 	}
-	
+
 	/**
 	 * Loads and parses the AFFINN sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -367,10 +367,10 @@ public class SentimentSystem {
 		scanner.close();
 		return afinnMap;
 	}
-	
+
 	/**
 	 * Loads and parses the GeneralInquirer sentiment lexica
-	 * 
+	 *
 	 * @return returns a map with words and there sentiment
 	 * @throws FileNotFoundException
 	 */
@@ -394,81 +394,81 @@ public class SentimentSystem {
 		scanner.close();
 		return inquirernMap;
 	}
-	
+
 	/**
 	 * Calculates the lexica score for the lexica features from unigrams
-	 * 
+	 *
 	 * @param lexi a map with all the lexica scores
 	 * @param wordList a list of words that occur in the Tweet
 	 * @param neg get positive or negative scores
 	 * @return returns a list with all lexica features
 	 */
-    protected List<Double> getLexiScores(Map<String,Double> lexi, List<TaggedToken> wordList, boolean neg) {
-    	// need to add min score and count of non-negative score
-    	double totalCount = 0.0;
-    	double totalScore = 0.0;
-    	double maxScore = 0.0;
-    	double lastScore = 0.0;
-    	for (TaggedToken token : wordList){
-    		Double score = lexi.get(token.token);
-    		if(score != null){
-    			if ((neg && score < 0) || (!neg && score > 0)){
-    	             totalCount++;
-    	             totalScore = totalScore + score;
-    	             if (neg){
-    	                 if(score < maxScore) maxScore = score;
-                          
-    	             }else{
-    	                 if(score > maxScore) maxScore = score;	                 
-    	             }
-    	             lastScore = score; 
-    			}
-    		}
-    	}
-    	List<Double> scoreList = new ArrayList<Double>();
-    	scoreList.add(totalCount);
-    	scoreList.add(totalScore);
-    	scoreList.add(maxScore);
-    	scoreList.add(lastScore);
+	protected List<Double> getLexiScores(Map<String,Double> lexi, List<TaggedToken> wordList, boolean neg) {
+		// need to add min score and count of non-negative score
+		double totalCount = 0.0;
+		double totalScore = 0.0;
+		double maxScore = 0.0;
+		double lastScore = 0.0;
+		for (TaggedToken token : wordList){
+			Double score = lexi.get(token.token);
+			if(score != null){
+				if ((neg && score < 0) || (!neg && score > 0)){
+					totalCount++;
+					totalScore = totalScore + score;
+					if (neg){
+						if(score < maxScore) maxScore = score;
+
+					}else{
+						if(score > maxScore) maxScore = score;
+					}
+					lastScore = score;
+				}
+			}
+		}
+		List<Double> scoreList = new ArrayList<Double>();
+		scoreList.add(totalCount);
+		scoreList.add(totalScore);
+		scoreList.add(maxScore);
+		scoreList.add(lastScore);
 		return scoreList;
 	}
-    
-    /**
-     * Calculates the lexica score for the lexica features from bigrams
-     * 
-     * @param lexi a map with all the lexica scores
-     * @param wordList a list of words that occur in the Tweet
-     * @param neg get positive or negative scores
-     * @return returns a list with all lexica features
-     */
-    protected List<Double> getLexiScoresBi(Map<String,Double> lexi, Set<String> wordList, boolean neg) {
-      	// need to add min score and count of non-negative score
-    	double totalCount = 0.0;
-    	double totalScore = 0.0;
-    	double maxScore = 0.0;
-    	double lastScore = 0.0;
-    	for (String token : wordList){
-    		Double score;
-	        score = lexi.get(token);	        	
-    		if(score != null){
-    			if ((neg && score < 0) || (!neg && score > 0)){
-    	             totalCount++;
-    	             totalScore = totalScore + score;
-    	             if (neg){
-    	                 if(score < maxScore) maxScore = score;
-                          
-    	             }else{
-    	                 if(score > maxScore) maxScore = score;	                 
-    	             }
-    	             lastScore = score; 
-    			}
-    		}
-    	}
-    	List<Double> scoreList = new ArrayList<Double>();
-    	scoreList.add(totalCount);
-    	scoreList.add(totalScore);
-    	scoreList.add(maxScore);
-    	scoreList.add(lastScore);
+
+	/**
+	 * Calculates the lexica score for the lexica features from bigrams
+	 *
+	 * @param lexi a map with all the lexica scores
+	 * @param wordList a list of words that occur in the Tweet
+	 * @param neg get positive or negative scores
+	 * @return returns a list with all lexica features
+	 */
+	protected List<Double> getLexiScoresBi(Map<String,Double> lexi, Set<String> wordList, boolean neg) {
+		// need to add min score and count of non-negative score
+		double totalCount = 0.0;
+		double totalScore = 0.0;
+		double maxScore = 0.0;
+		double lastScore = 0.0;
+		for (String token : wordList){
+			Double score;
+			score = lexi.get(token);
+			if(score != null){
+				if ((neg && score < 0) || (!neg && score > 0)){
+					totalCount++;
+					totalScore = totalScore + score;
+					if (neg){
+						if(score < maxScore) maxScore = score;
+
+					}else{
+						if(score > maxScore) maxScore = score;
+					}
+					lastScore = score;
+				}
+			}
+		}
+		List<Double> scoreList = new ArrayList<Double>();
+		scoreList.add(totalCount);
+		scoreList.add(totalScore);
+		scoreList.add(maxScore);
+		scoreList.add(lastScore);
 		return scoreList;
 	}
 }

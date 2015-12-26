@@ -11,15 +11,16 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
  */
 public class Tweet {
 	private String rawTweet;
-	private String tweetID;	
-    private String tweetString;
-    private String sentiment;
-    private List<TaggedToken> wordList;
-    private List<TaggedToken> wordListRaw;
-    private List<TaggedToken> wordListCollapsed;
-    private Map<String, String> wordListStanford;
-    private boolean lastEmoticon = false;
-    private int negationCount = 0;
+	private String tweetID;
+	private String tweetString;
+	private String sentiment;
+	private List<TaggedToken> wordList;
+	private List<TaggedToken> targetWordList;
+	private List<TaggedToken> wordListRaw;
+	private List<TaggedToken> wordListCollapsed;
+	private Map<String, String> wordListStanford;
+	private boolean lastEmoticon = false;
+	private int negationCount = 0;
 	private Set<String> nGramList;
 	private Set<String> charNGramList;
 	private Map<String, Integer> posTagList;
@@ -40,49 +41,56 @@ public class Tweet {
     	tweetID = tID;
     }
     */
-	
-	
-    /**
-     * Create Tweet
-     * @param tweet content of tweet
-     * @param senti sentiment of the target
-     * @param tID tweet id
-     * @param targetBegin beginning of the target position
-     * @param targetEnd end of the target postition
-     */
-    public Tweet(String tweet, String senti, String tID, String targetBegin, String targetEnd){
-    	rawTweet = tweet;
-        sentiment = senti;
-    	tweetID = tID;
-    	this.targetBegin = targetBegin;
-    	this.targetEnd = targetEnd;
-    }
-    
-    
-    public String getTargetBegin() {
-    	return targetBegin;
-    }
-    
-    public String getTargetEnd() {
-    	return targetEnd;
-    }
-    
+
+
+	/**
+	 * Create Tweet
+	 * @param tweet content of tweet
+	 * @param senti sentiment of the target
+	 * @param tID tweet id
+	 * @param targetBegin beginning of the target position
+	 * @param targetEnd end of the target postition
+	 */
+	public Tweet(String tweet, String senti, String tID, String targetBegin, String targetEnd){
+		rawTweet = tweet;
+		sentiment = senti;
+		tweetID = tID;
+		this.targetBegin = targetBegin;
+		this.targetEnd = targetEnd;
+	}
+
+	public List<TaggedToken> getTargetWordList() {
+		return targetWordList;
+	}
+
+	public void setTargetWordList(List<TaggedToken> targetWordList) {
+		this.targetWordList = targetWordList;
+	}
+
+	public String getTargetBegin() {
+		return targetBegin;
+	}
+
+	public String getTargetEnd() {
+		return targetEnd;
+	}
+
 	public void setNGramsTarget(Set<String> nGramListTarget) {
 		this.nGramListTarget = nGramListTarget;
 	}
-	
+
 	public Set<String> getNGramListTarget() {
 		return this.nGramListTarget;
 	}
-    
+
 	public void setCharNGramListTarget(Set<String> charNGramListTarget) {
 		this.charNGramListTarget = charNGramListTarget;
 	}
-	
+
 	public Set<String> getCharNGramListTarget() {
 		return this.charNGramListTarget;
 	}
-	
+
 	/**
 	 * return the content of target term
 	 * @return
@@ -90,75 +98,75 @@ public class Tweet {
 	public String getTargetContent() {
 		String targetBegin = getTargetBegin();
 		String targetEnd = getTargetEnd();
-		String[] words = getRawTweetString().split("\\s+");
+		String[] words = getTweetString().split("\\s+");
 		String target = "";
 		for (int i = Integer.parseInt(targetBegin); i <= Integer.parseInt(targetEnd) && i < words.length; i++) {
 			target += words[i] + " ";
 		}
 		return target;
 	}
-	
-	
-    public String getRawTweetString() {
+
+
+	public String getRawTweetString() {
 		return this.rawTweet;
 	}
-    
-    public String getTweetID() {
-        return this.tweetID;
-    }
-    
-    public String getTweetString() {
+
+	public String getTweetID() {
+		return this.tweetID;
+	}
+
+	public String getTweetString() {
 		return this.tweetString;
 	}
-    
-    public void setTweetString(String tstring) {
+
+	public void setTweetString(String tstring) {
 		this.tweetString = tstring;
 	}
-    
-    public String getSentiment() {
-        return this.sentiment;
-    }
-    
-    public void setWordList(List<TaggedToken> wList){
-    	this.wordList = wList;
-    }
-            
-    public List<TaggedToken> getWordList() {
-	  	return this.wordList;
-  	}
-    
-    public List<TaggedToken> getRawWordList() {
-	  	return this.wordListRaw;
-  	}
-    
+
+	public String getSentiment() {
+		return this.sentiment;
+	}
+
+	public void setWordList(List<TaggedToken> wList){
+		this.wordList = wList;
+	}
+
+	public List<TaggedToken> getWordList() {
+		return this.wordList;
+	}
+
+	public List<TaggedToken> getRawWordList() {
+		return this.wordListRaw;
+	}
+
 	public void setRawWordList(List<TaggedToken> wListRaw) {
 		this.wordListRaw = wListRaw;
 	}
-	
-    public List<TaggedToken> getCollapsedWordList() {
-	  	return this.wordListCollapsed;
-  	}
-    
+
+	public List<TaggedToken> getCollapsedWordList() {
+		return this.wordListCollapsed;
+	}
+
 	public void setCollapseList(List<TaggedToken> wListCol) {
 		this.wordListCollapsed = wListCol;
 	}
 
 	public void setStanfordWordList(Map<String, String> sList) {
 		this.wordListStanford = sList;
-		
+
 	}
 	public Map<String, String> getStanfordWordList() {
 		return this.wordListStanford;
 	}
-	
+
 	public void setLastEmoticon(boolean b) {
 		this.lastEmoticon = b;
 	}
-	
+
 	public boolean isLastEmoticon(){
 		return this.lastEmoticon;
 	}
-	
+
 	public int getNegationCount() {
 		return this.negationCount;
 	}
@@ -166,49 +174,49 @@ public class Tweet {
 	public void setNegationCount(int nCount) {
 		this.negationCount = nCount;
 	}
-	
+
 	public Set<String> getnGramList() {
 		return this.nGramList;
 	}
-	
+
 	public void setNGrams(Set<String> nGList) {
 		this.nGramList = nGList;
 	}
-	
+
 	public Set<String> getCharNGramList() {
 		return this.charNGramList;
 	}
-    
+
 	public void setCharNGramList(Set<String> nGramList) {
 		this.charNGramList = nGramList;
 	}
-	
+
 	public Map<String, Integer> getPosTagList() {
 		return this.posTagList;
 	}
-	
+
 	public void setPosTags(Map<String, Integer> tagMap) {
 		this.posTagList = tagMap;
-		
+
 	}
 
 	public Set<String> getClusterList() {
 		return this.clusterList;
 	}
-	
+
 	public void setClusters(Set<String> cList) {
 		this.clusterList = cList;
-		
+
 	}
 
 	public Set<String> getEmoticonList() {
 		return this.emoticonList;
 	}
-	
+
 	public void setEmoticons(Set<String> emoticons) {
 		this.emoticonList = emoticons;
 	}
-	
+
 	public Set<String> getStemList() {
 		return this.stemList;
 	}
@@ -254,10 +262,10 @@ public class Tweet {
 	public String toString() {
 		return "Tweet [ tweetID=" + tweetID
 				+ ", targetBegin=" + targetBegin
-				+ ", targetEnd=" + targetEnd 
-				+ ", sentiment=" + sentiment 
+				+ ", targetEnd=" + targetEnd
+				+ ", sentiment=" + sentiment
 				+ "rawTweet=" + rawTweet + "]";
-		
+
 	}
 
 

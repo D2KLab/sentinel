@@ -667,6 +667,7 @@ public class SentimentSystemIOA extends SentimentSystem {
 		else{
 			trainname = "Trained-Features-NRC";
 		}
+		System.out.println("the features file to train system: " + trainname);
 
 		//load features and training instances from .arff file
 		BufferedReader reader = new BufferedReader(new FileReader("resources/arff/" + trainname + ".arff"));

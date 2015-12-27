@@ -8,7 +8,8 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
 
 /**
  * Represents one Tweet and saves some features and the preprocessed versions of the Tweet
- */
+----
+*/
 public class Tweet {
 	private String rawTweet;
 	private String tweetID;

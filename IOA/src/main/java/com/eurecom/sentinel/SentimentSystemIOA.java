@@ -645,9 +645,9 @@ public class SentimentSystemIOA extends SentimentSystem {
 		//save features and training instances in .arff file
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(trainingSet);
-		saver.setFile(new File("resources/arff/Trained-Features-" + "NRC" + saveName + ".arff"));
+		saver.setFile(new File("resources/arff/Trained-Features-" + "IOA"+ saveName + ".arff"));
 		saver.writeBatch();
-		System.out.println("Trained-Features-" + "NRC" + saveName + " saved");
+		System.out.println("Trained-Features-" + "IOA" + saveName + ".arff" + " saved");
 	}
 
 	/**
@@ -665,9 +665,9 @@ public class SentimentSystemIOA extends SentimentSystem {
 			trainname = nameOfTrain;
 		}
 		else{
-			trainname = "Trained-Features-NRC";
+			trainname = "Trained-Features-IOA";
 		}
-		System.out.println("the features file to train system: " + trainname);
+		System.out.println("the features file to train system: " + trainname + ".arff");
 
 		//load features and training instances from .arff file
 		BufferedReader reader = new BufferedReader(new FileReader("resources/arff/" + trainname + ".arff"));

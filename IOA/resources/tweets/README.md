@@ -1,0 +1,37 @@
+# Dataset Explication
+<table>
+	<tr>
+		<td>Dataset</td>
+		<td>Positive</td>
+		<td>Negative</td>
+		<td>Neutral</td>
+		<td>Total<td/>
+	</tr>
+		<td>SemEval2013-train</td>
+		<td>3676</td>
+		<td>1866</td>
+		<td>296</td>	
+		<td>5838</td>
+	</tr>
+	<tr>
+		<td>SemEval2013-dev</td>
+		<td>382</td>
+		<td>224</td>
+		<td>24</td>
+		<td>630</td>
+	</tr>
+	<tr>
+		<td>SemEval2013-test</td>
+		<td>1715</td>
+		<td>888</td>
+		<td>89</td>
+		<td>2682</td>
+	</tr>
+	<tr>
+		<td>SemEval2014-test</td>
+		<td>149</td>
+		<td>66</td>
+		<td>12</td>
+		<td>227</td>
+	</tr>
+</table>

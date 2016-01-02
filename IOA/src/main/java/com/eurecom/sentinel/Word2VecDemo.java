@@ -53,7 +53,7 @@ public class Word2VecDemo {
 
         log.info("Writing word vectors to text file....");
         // Write word embedding matrix, save the model
-        WordVectorSerializer.writeWordVectors(vec, "Word2VecDemo.txt");
+        WordVectorSerializer.writeWordVectors(vec, "resources/word2vec/trainedWord2Vec.txt");
 
         log.info("Closest Words:");
         Collection<String> lst = vec.wordsNearest("day", 10);

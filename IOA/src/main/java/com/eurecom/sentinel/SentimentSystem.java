@@ -471,4 +471,60 @@ public class SentimentSystem {
 		scoreList.add(lastScore);
 		return scoreList;
 	}
+
+	/**
+	 * Load the word2vec 
+	 * @param path
+	 * @return token and its vector
+	 * @throws FileNotFoundException
+	 */
+	protected Map<String, ArrayList<Double>> loadWord2Vec(String path) throws FileNotFoundException{
+		Map<String, ArrayList<Double>> lexiMap = new HashMap<String, ArrayList<Double>>();
+		File file = new File("resources/word2vec/" + path + ".txt");
+		Scanner scanner = new Scanner(file);
+		while (scanner.hasNextLine()) {
+			String[] line = scanner.nextLine().split(" ");
+			ArrayList<Double> scores = new ArrayList<Double>();
+			for(int i = 1; i < line.length; i++) {
+				scores.add(Double.parseDouble(line[i]));
+			}
+				lexiMap.put(line[0], scores);
+		}
+		scanner.close();
+		return lexiMap;
+	}
+
+	protected List<Double> getWord2VecScores(Map<String, ArrayList<Double>> word2vec, List<TaggedToken> wordList) {
+		// need to add min score and count of non-negative score
+		double maxScore = 0.0;
+		double avgScore = 0.0;
+		double minScore = 0.0;
+		double totalScore = 0.0;
+		int count = 0;
+		for (TaggedToken token : wordList){
+			ArrayList<Double> scores = word2vec.get(token.token);
+			if (scores != null) {
+				for (Double score: scores) {
+					if (score > maxScore) {
+						maxScore = score;
+					}
+					if (score < minScore) {
+						minScore = score;
+					}
+					totalScore += score;
+					count++;
+				}
+			}
+		}
+		if (count != 0) {
+			avgScore = totalScore/count;
+		}
+		
+		List<Double> scoreList = new ArrayList<Double>();
+		scoreList.add(maxScore);
+		scoreList.add(avgScore);
+		scoreList.add(minScore);
+		return scoreList;
+	}
+	
 }

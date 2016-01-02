@@ -61,7 +61,10 @@ public class SentimentSystemIOA extends SentimentSystem {
 		//load AFFINNE, SentiWordNet
 		Map<String, Double> AFFINNELexi = this.loadAFINN();
 		Map<String, Double> SentiWordNetLexi = this.loadSentiWordNet();
-
+		
+		//load word2vec
+		Map<String, ArrayList<Double>> Word2vec = this.loadWord2Vec("trainedWord2Vec");
+		
 		int featurecount = 0;
 		Map<String, Integer> nGramMap = new HashMap<String, Integer>();
 		Map<String, Integer> CharNGramMap = new HashMap<String, Integer>();
@@ -456,7 +459,19 @@ public class SentimentSystemIOA extends SentimentSystem {
 		attributeList.add(SentiWordNetLastScoreNeg);
 		featurecount++;
 
-
+		//word2vector
+		Attribute Word2VecMaxScore = new Attribute("Word2VecMaxScore");
+		attributeList.add(Word2VecMaxScore);
+		featurecount++;
+		
+		Attribute Word2VecAVGScore = new Attribute("Word2VecAVGScore");
+		attributeList.add(Word2VecAVGScore);
+		featurecount++;
+		
+		Attribute Word2VecMinScore = new Attribute("Word2VecMinScore");
+		attributeList.add(Word2VecMinScore);
+		featurecount++;
+		
 		//set class attribute
 		ArrayList<String> fvClassVal = new ArrayList<String>();
 		fvClassVal.add("positive");
@@ -635,6 +650,11 @@ public class SentimentSystemIOA extends SentimentSystem {
 			instance.setValue(SentiWordNetMaxScoreNeg, SentiWordNetNeg.get(2));
 			instance.setValue(SentiWordNetLastScoreNeg, SentiWordNetNeg.get(3));
 
+			//word2vec features
+			List<Double> Word2VecScores = this.getWord2VecScores(Word2vec, tweet.getTargetWordList());
+			instance.setValue(Word2VecMaxScore, Word2VecScores.get(0));
+			instance.setValue(Word2VecAVGScore, Word2VecScores.get(1));
+			instance.setValue(Word2VecMinScore, Word2VecScores.get(2));
 
 			//set class attribute
 			instance.setValue(classAttribute, tweet.getSentiment());
@@ -701,6 +721,8 @@ public class SentimentSystemIOA extends SentimentSystem {
 		Map<String, Double> NRCLexi = this.loadNRC();
 		Map<String, Double> AFFINNELexi = this.loadAFINN();
 		Map<String, Double> SentiWordNetLexi = this.loadSentiWordNet();
+		Map<String, ArrayList<Double>> Word2vec = this.loadWord2Vec("trainedWord2Vec");
+
 		Map<String, Integer> featureMap = new HashMap<String, Integer>();
 
 		for (int i = 0; i < train.numAttributes(); i++){
@@ -878,6 +900,12 @@ public class SentimentSystemIOA extends SentimentSystem {
 			instance.setValue(featureMap.get("SentiWordNetTotalScoreNeg"), SentiWordNetNeg.get(1));
 			instance.setValue(featureMap.get("SentiWordNetMaxScoreNeg"), SentiWordNetNeg.get(2));
 			instance.setValue(featureMap.get("SentiWordNetLastScoreNeg"), SentiWordNetNeg.get(3));
+			
+			//word2vec features
+			List<Double> Word2VecScores = this.getWord2VecScores(Word2vec, tweet.getTargetWordList());
+			instance.setValue(featureMap.get("Word2VecMaxScore"), Word2VecScores.get(0));
+			instance.setValue(featureMap.get("Word2VecAVGScore"), Word2VecScores.get(1));
+			instance.setValue(featureMap.get("Word2VecMinScore"), Word2VecScores.get(2));
 			//add test instance to trained features
 			train.add(instance);
 

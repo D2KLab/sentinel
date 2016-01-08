@@ -5,33 +5,46 @@
 		<td>Positive</td>
 		<td>Negative</td>
 		<td>Neutral</td>
-		<td>Total<td/>
+		<td>Total</td>
+		<td>Official total</td>
 	</tr>
-		<td>SemEval2013-train</td>
-		<td>3676</td>
-		<td>1866</td>
-		<td>296</td>	
-		<td>5838</td>
-	</tr>
-	<tr>
-		<td>SemEval2013-dev</td>
-		<td>382</td>
-		<td>224</td>
-		<td>24</td>
-		<td>630</td>
+		<td>Tweet2013-train</td>
+		<td>4553</td>
+		<td>2354</td>	
+		<td>361</td>
+		<td>7268</td>
+		<td>9451</td>
 	</tr>
 	<tr>
-		<td>SemEval2013-test</td>
-		<td>1715</td>
-		<td>888</td>
-		<td>89</td>
-		<td>2682</td>
+		<td>Tweet2013-dev</td>
+		<td>516</td>
+		<td>331</td>
+		<td>40</td>
+		<td>887</td>
+		<td>1135</td>
 	</tr>
 	<tr>
-		<td>SemEval2014-test</td>
-		<td>149</td>
-		<td>66</td>
-		<td>12</td>
-		<td>227</td>
+		<td>Tweet2013-test</td>
+		<td>2158</td>
+		<td>1164</td>
+		<td>116</td>
+		<td>3438</td>
+		<td>4435</td>
+	</tr>
+	<tr>
+		<td>Tweet2014-test</td>
+		<td>5394</td>
+		<td>3260</td>
+		<td>497</td>
+		<td>9151</td>
+		<td>10681</td>
+	</tr>
+	<tr>
+		<td>Sms2013-test</td>
+		<td>1071</td>
+		<td>1104</td>
+		<td>159</td>
+		<td>2334</td>
+		<td>2334</td>
 	</tr>
 </table>

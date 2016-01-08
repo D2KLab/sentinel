@@ -8,6 +8,7 @@
 		<td>Total</td>
 		<td>Official total</td>
 	</tr>
+	<tr>
 		<td>Tweet2013-train</td>
 		<td>4553</td>
 		<td>2354</td>	

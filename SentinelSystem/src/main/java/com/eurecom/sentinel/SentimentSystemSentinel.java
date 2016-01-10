@@ -24,14 +24,14 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
 /**
  * Trains and tests the NRC system
  */
-public class SentimentSystemIOA extends SentimentSystem {
+public class SentimentSystemSentinel extends SentimentSystem {
 
 	/**
 	 * Constructor gets all Tweets in a list.
 	 *
 	 * @param tweetList the list with all Tweets.
 	 */
-	public SentimentSystemIOA(Set<Tweet> tweetList) {
+	public SentimentSystemSentinel(Set<Tweet> tweetList) {
 		super(tweetList);
 	}
 
@@ -42,7 +42,7 @@ public class SentimentSystemIOA extends SentimentSystem {
 	 * @throws IOException
 	 */
 	public void train(String saveName) throws IOException{
-		System.out.println("Starting IOA Train");
+		System.out.println("Starting Train");
 		System.out.println("Tweets: " +  this.tweetList.size());
 
 		//load pos-tagger
@@ -665,9 +665,9 @@ public class SentimentSystemIOA extends SentimentSystem {
 		//save features and training instances in .arff file
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(trainingSet);
-		saver.setFile(new File("resources/arff/Trained-Features-" + "IOA"+ saveName + ".arff"));
+		saver.setFile(new File("resources/arff/Trained-Features-" + saveName + ".arff"));
 		saver.writeBatch();
-		System.out.println("Trained-Features-" + "IOA" + saveName + ".arff" + " saved");
+		System.out.println("Trained-Features-" + saveName + ".arff" + " saved");
 	}
 
 	/**
@@ -678,14 +678,14 @@ public class SentimentSystemIOA extends SentimentSystem {
 	 * @throws Exception
 	 */
 	public Map<String,ClassificationResult> test(String nameOfTrain) throws Exception{
-		System.out.println("Starting IOA Test");
+		System.out.println("Starting Test");
 		System.out.println("Tweets: " +  this.tweetList.size());
 		String trainname = "";
 		if(!nameOfTrain.equals("")){
 			trainname = nameOfTrain;
 		}
 		else{
-			trainname = "Trained-Features-IOA";
+			trainname = "Trained-Features-";
 		}
 		System.out.println("the features file to train system: " + trainname + ".arff");
 

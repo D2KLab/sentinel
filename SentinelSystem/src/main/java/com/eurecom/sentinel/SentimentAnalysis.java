@@ -46,7 +46,7 @@ public class SentimentAnalysis {
 	 *            optional filename for the arff file
 	 */
 	public void trainSystem(String savename) throws IOException {
-		SentimentSystemIOA nrcSystem = new SentimentSystemIOA(tweetList);
+		SentimentSystemSentinel nrcSystem = new SentimentSystemSentinel(tweetList);
 		nrcSystem.train(savename);
 	}
 
@@ -57,7 +57,7 @@ public class SentimentAnalysis {
 	 *            optional filename of the arff file
 	 */
 	public void testSystem(String trainname) throws Exception {
-		SentimentSystemIOA nrcSystem = new SentimentSystemIOA(tweetList);
+		SentimentSystemSentinel nrcSystem = new SentimentSystemSentinel(tweetList);
 		this.evalModel(nrcSystem.test(trainname));
 	}
 

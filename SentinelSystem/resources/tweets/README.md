@@ -1,4 +1,5 @@
 # Dataset Explication
+
 <table>
 	<tr>
 		<td>Dataset</td>
@@ -6,46 +7,53 @@
 		<td>Negative</td>
 		<td>Neutral</td>
 		<td>Good Tweet number</td>
-		<td>Total number</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-train</td>
-		<td>4553</td>
-		<td>2354</td>	
-		<td>361</td>
+		<td>4484</td>
+		<td>2329</td>	
+		<td>356</td>
 		<td>7169</td>
-		<td>7268</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-dev</td>
-		<td>516</td>
-		<td>331</td>
+		<td>506</td>
+		<td>326</td>
 		<td>40</td>
 		<td>872</td>
-		<td>887</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-test</td>
-		<td>2158</td>
-		<td>1164</td>
+		<td>2132</td>
+		<td>1156</td>
 		<td>116</td>
 		<td>3404</td>
-		<td>3438</td>
-	</tr>
-	<tr>
-		<td>Tweet2014-test</td>
-		<td>5394</td>
-		<td>3260</td>
-		<td>497</td>
-		<td>unknown yet </td>
-		<td>9151</td>
 	</tr>
 	<tr>
 		<td>Sms2013-test</td>
 		<td>1071</td>
-		<td>1104</td>
+		<td>1103</td>
 		<td>159</td>
 		<td>2333</td>
-		<td>2334</td>
+	</tr>
+	<tr>
+		<td>Tweet2014-test</td>
+		<td>3568</td>
+		<td>1606</td>
+		<td>190</td>
+		<td>5364</td>
+	</tr>
+	<tr>
+		<td>Sms2014-test</td>
+		<td>3175</td>
+		<td>1857</td>
+		<td>237</td>
+		<td>5270</td>
+	</tr>
+	<tr>
+		<td>LJ2014-test</td>
+		<td></td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>

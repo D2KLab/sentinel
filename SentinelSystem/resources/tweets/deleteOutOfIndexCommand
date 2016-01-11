@@ -1,0 +1,4 @@
+   # take Tweet2013-dev.txt for example
+   cat Tweet2013-dev.txt | awk -F $'\t' '{print $6}' | awk '{print NF}' > wordsLength.txt 
+   paste -d '\t' Tweet2013-dev.txt wordsLength.txt > tmp.txt
+   cat tmp.txt | awk -F $'\t' '{if ($4 <= $7-1) {print $0}}' | cut -d$'\t' -f1-6 > Tweet2013-dev.txt 

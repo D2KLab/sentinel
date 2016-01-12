@@ -665,9 +665,15 @@ public class SentimentSystemSentinel extends SentimentSystem {
 		//save features and training instances in .arff file
 		ArffSaver saver = new ArffSaver();
 		saver.setInstances(trainingSet);
-		saver.setFile(new File("resources/arff/Trained-Features-" + saveName + ".arff"));
-		saver.writeBatch();
-		System.out.println("Trained-Features-" + saveName + ".arff" + " saved");
+		if (saveName.equals("")) {
+			saver.setFile(new File("resources/arff/Trained-Features" + saveName + ".arff"));
+			saver.writeBatch();
+			System.out.println("Trained-Features" + saveName + ".arff" + " saved");
+		} else {
+			saver.setFile(new File("resources/arff/Trained-Features.arff"));
+			saver.writeBatch();
+			System.out.println("Trained-Features.arff" + " saved");
+		}
 	}
 
 	/**
@@ -685,7 +691,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 			trainname = nameOfTrain;
 		}
 		else{
-			trainname = "Trained-Features-";
+			trainname = "Trained-Features";
 		}
 		System.out.println("the features file to train system: " + trainname + ".arff");
 
@@ -697,10 +703,14 @@ public class SentimentSystemSentinel extends SentimentSystem {
 
 		//load and setup classifier
 		LibLINEAR classifier = new LibLINEAR();
-		classifier.setProbabilityEstimates(true);
-		classifier.setSVMType(new SelectedTag(0, LibLINEAR.TAGS_SVMTYPE));
+		//classifier.setProbabilityEstimates(true);
+		classifier.setSVMType(new SelectedTag(4, LibLINEAR.TAGS_SVMTYPE));
+		// set param C
 		classifier.setCost(0.5);
-
+		
+		//System.out.println("LibLINEAR svm tages " + LibLINEAR.TAGS_SVMTYPE[0]);
+		
+		
 		//train classifier with instances
 		classifier.buildClassifier(train);
 

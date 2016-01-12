@@ -104,8 +104,8 @@ public class SentimentAnalysis {
 						+ line.length);
 			}
 		}
-		System.out.println("multiple Tweets: " + multiple);
-		// System.out.println("Tweets: " + count);
+		System.out.println("duplicated Tweets: " + multiple);
+		System.out.println("Tweets: " + count);
 		scanner.close();
 	}
 
@@ -242,10 +242,12 @@ public class SentimentAnalysis {
 
 		System.out.println("precision: " + precision);
 		System.out.println("recall: " + recall);
-		// System.out.println("precisionPos: " + precisionA);
-		// System.out.println("recallPos: " + recallA);
-		// System.out.println("precisionNeg: " + precisionC);
-		// System.out.println("recallNeg: " + recallC);
+		System.out.println("precisionPos: " + precisionA);
+		System.out.println("recallPos: " + recallA);
+		System.out.println("precisionNeutral: " + precisionB);
+		System.out.println("recallNeutral: " + recallB);
+		System.out.println("precisionNeg: " + precisionC);
+		System.out.println("recallNeg: " + recallC);
 		System.out.println("f1: " + f1);
 		System.out.println("f1 without neutral: " + (f1A + f1C) / 2);
 	}

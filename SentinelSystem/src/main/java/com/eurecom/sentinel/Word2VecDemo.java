@@ -42,7 +42,7 @@ public class Word2VecDemo {
 
         log.info("Building model....");
         Word2Vec vec = new Word2Vec.Builder()
-                .minWordFrequency(5).iterations(1) // set the minimum number of times a word must appear in the corpus
+                .minWordFrequency(3).iterations(1) // set the minimum number of times a word must appear in the corpus
                 .layerSize(100).lookupTable(table) // specify the number of features in the word vector
                 .stopWords(new ArrayList<String>())// 
                 .vocabCache(cache).seed(42)

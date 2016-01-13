@@ -2,58 +2,52 @@
 
 <table>
 	<tr>
-		<td>Dataset</td>
+		<td>Corpus</td>
 		<td>Positive</td>
 		<td>Negative</td>
 		<td>Neutral</td>
-		<td>Good Tweet number</td>
+		<td>Tweets No.</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-train</td>
-		<td>4484</td>
-		<td>2329</td>	
-		<td>356</td>
+		<td>4484(62.5%)</td>
+		<td>2329(32.5%)</td>	
+		<td>356(5%)</td>
 		<td>7169</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-dev</td>
-		<td>506</td>
-		<td>326</td>
-		<td>40</td>
+		<td>506(62.6%)</td>
+		<td>326(34.0%)</td>
+		<td>40(3.4%)</td>
 		<td>872</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-test</td>
-		<td>2132</td>
-		<td>1156</td>
-		<td>116</td>
+		<td>2132(62.6%)</td>
+		<td>1156(34.0%)</td>
+		<td>116(3.4%)</td>
 		<td>3404</td>
 	</tr>
 	<tr>
 		<td>Sms2013-test</td>
-		<td>1071</td>
-		<td>1103</td>
-		<td>159</td>
+		<td>1071(45.9%)</td>
+		<td>1103(47.3%)</td>
+		<td>159(6,8%)</td>
 		<td>2333</td>
 	</tr>
 	<tr>
 		<td>Tweet2014-test</td>
-		<td>3568</td>
-		<td>1606</td>
-		<td>190</td>
+		<td>3568(66.5%)</td>
+		<td>1606(29.9%)</td>
+		<td>190(3.5%)</td>
 		<td>5364</td>
 	</tr>
 	<tr>
 		<td>Sms2014-test</td>
-		<td>3175</td>
-		<td>1857</td>
-		<td>237</td>
+		<td>3175(60.2%)</td>
+		<td>1857(35.2%)</td>
+		<td>237(4.5%)</td>
 		<td>5270</td>
-	</tr>
-	<tr>
-		<td>LJ2014-test</td>
-		<td></td>
-		<td></td>
-		<td></td>
 	</tr>
 </table>

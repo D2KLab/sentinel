@@ -2,11 +2,11 @@
 This sentinel system is built to classify sentiment from Tweet. Idea is from SemEval2015 Sub Task A. The objective is to detect the sentiment of a term within a message(Term-level task).
 
 ## Approach
-Sentinel system inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modified the code and adapted it to term-level.
+Sentinel system inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modified the code and adapted it to term-level. Besides, we extracted and added some new features e.g. More lexicons, Word2Vec etc.
 
 Sentinel System is trained with Tweet2013-train.txt and Tweet2013-dev.txt. For the features of Word2Vec, we pre-trained a Word2Vec model with all the tweets(Tweet2013-train.txt, Tweet2013-dev.txt, Tweet2013-text.txt and Tweet2014-test.txt)
 
-Thanks to theses two systems, we reproduce our system above them. We added some extra features e.g. More lexicons, Word2Vec features etc. Here are the workflow of sentinel system:
+Thanks to theses two systems, we could reproduce sentinel system.
 
 ![image](https://docs.google.com/drawings/d/1G0UbNY2REuCkvXTFCONzqe5LV6ZiyLxHONayuElWJNU/pub?w=960&h=720)
 
@@ -66,31 +66,32 @@ Thanks to theses two systems, we reproduce our system above them. We added some 
 
 ## How to run
 Above all, train the module with training data. Then evaluate it with testing data.
-The system in sentinel folder. Main class is in src/ folder.
+The system is in sentinel/ folder. Main class is in src/ folder.
 ### train Usage
 	train <train_data> [<model_name>]
 Train a model with train\_data, save the model as the name of model\_name. By default model is saved as the name of Trained-Features.aff
 
 ### evaluation Usage
 	eval <test_data> [<model_name>]
-Evaluate a model with test_data. By default using the model of Trained-Features.aff
+Evaluate a model with test_data. By default using the trained model of Trained-Features.aff
 
 ### Examples
 	
 	> train Tweet2013-train
 
-Train a model with training dataset in resources/tweets/Tweet2013-train.txt, and save the model in resources/arff/Trained-Features.arff
+Train a model with training dataset in sentinel/resources/tweets/Tweet2013-train.txt, and save the model in resources/arff/Trained-Features.arff
 
 	> train train sentinel
 	
-Train a model with training dataset in resources/tweets/train.txt, and save the model in resources/arff/Trained-Features-sentinel.arff
+Train a model with training dataset in sentinel/resources/tweets/train.txt, and save the model in sentinel/resources/arff/Trained-Features-sentinel.arff
 
 	> eval Tweet2013-test 
 	
-Evaluate the resources/Trained-Features.arff model with the training dataset in resources/tweets/Tweet2013-test.txt 
+Evaluate the sentinel/resources/Trained-Features.arff model with the training dataset in sentinel/resources/tweets/Tweet2013-test.txt 
 
 	> eval Tweet2013-test Trained-Features-sentinel
-Evaluate the sentinel model which is saved in resources/Trained-Features-sentinel.arff with the training dataset in resources/tweets/Tweet2013-test.txt 
+	
+Evaluate the sentinel model which is saved in sentinel/resources/Trained-Features-sentinel.arff with the training dataset in sentinel/resources/tweets/Tweet2013-test.txt 
 	
 ### output
 
@@ -100,7 +101,7 @@ Evaluate the sentinel model which is saved in resources/Trained-Features-sentine
     "I drove a Linconl and it was awful"
     Linconl -> proper noun -> negative
 
-All the prediction is in output folder. The error output is in output/error_analysis folder
+All the predictions are in sentinel/output folder. The error output is in sentinel/output/error_analysis folder
 	
 
 ## Team

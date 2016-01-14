@@ -685,9 +685,9 @@ public class SentimentSystemSentinel extends SentimentSystem {
 	 */
 	public Map<String,ClassificationResult> test(String nameOfTrain) throws Exception{
 		System.out.println("Starting Test");
-		System.out.println("Tweets: " +  this.tweetList.size());
+		//System.out.println("Tweets: " +  this.tweetList.size());
 		String trainname = "";
-		if(!nameOfTrain.equals("")){
+		if(!nameOfTrain.equals("")) {
 			trainname = nameOfTrain;
 		}
 		else{
@@ -702,9 +702,10 @@ public class SentimentSystemSentinel extends SentimentSystem {
 		reader.close();
 
 		//load and setup classifier
+		// Look at this github to find the params for svm https://github.com/bwaldvogel/liblinear-java
 		LibLINEAR classifier = new LibLINEAR();
-		//classifier.setProbabilityEstimates(true);
-		classifier.setSVMType(new SelectedTag(4, LibLINEAR.TAGS_SVMTYPE));
+		classifier.setProbabilityEstimates(true);
+		classifier.setSVMType(new SelectedTag(0, LibLINEAR.TAGS_SVMTYPE));
 		// set param C
 		classifier.setCost(0.5);
 		

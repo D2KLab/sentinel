@@ -1,5 +1,5 @@
 # Sentinel system 
-This sentinel system is built to classify sentiment from Tweet. Idea is from SemEval2015 Sub Task A. The objective is to detect the sentiment of a term within a message(Term-level task).
+This sentinel system is built to classify sentiment from Tweet. The idea is from SemEval2015 Sub Task A. The objective is to detect the sentiment of a term within a message(Term-level task).
 
 
 ## Approach
@@ -59,10 +59,10 @@ Thanks to theses two systems, we reproduce our system above them. We added some 
 	</tr>
 	<tr>
 		<td>Sms2014-test</td>
-		<td>3175(60.2%)</td>
-		<td>1857(35.2%)</td>
-		<td>237(4.5%)</td>
-		<td>5270</td>
+		<td>710(45.3%)</td>
+		<td>747(46.7%)</td>
+		<td>111(7.1%)</td>
+		<td>1568</td>
 	</tr>
 </table>
 

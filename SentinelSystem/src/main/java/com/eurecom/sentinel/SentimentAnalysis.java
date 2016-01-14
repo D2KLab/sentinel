@@ -46,8 +46,8 @@ public class SentimentAnalysis {
 	 *            optional filename for the arff file
 	 */
 	public void trainSystem(String savename) throws IOException {
-		SentimentSystemSentinel nrcSystem = new SentimentSystemSentinel(tweetList);
-		nrcSystem.train(savename);
+		SentimentSystemSentinel sentinelSystem = new SentimentSystemSentinel(tweetList);
+		sentinelSystem.train(savename);
 	}
 
 	/**
@@ -57,8 +57,8 @@ public class SentimentAnalysis {
 	 *            optional filename of the arff file
 	 */
 	public void testSystem(String trainname) throws Exception {
-		SentimentSystemSentinel nrcSystem = new SentimentSystemSentinel(tweetList);
-		this.evalModel(nrcSystem.test(trainname));
+		SentimentSystemSentinel sentinelSystem = new SentimentSystemSentinel(tweetList);
+		this.evalModel(sentinelSystem.test(trainname));
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class SentimentAnalysis {
 	 * Stores Tweet in tweetList, if not already in there
 	 * 
 	 * @param tweetString
-	 *            the Tweetstring
+	 *            the Tweetstring, rawTweet
 	 * @param senti
 	 *            the Tweet Sentiment
 	 * @param tweetID
@@ -224,7 +224,6 @@ public class SentimentAnalysis {
 				/ (matrix[1][1] + matrix[2][1] + matrix[0][1]);
 		double precisionC = matrix[2][2]
 				/ (matrix[2][2] + matrix[0][2] + matrix[1][2]);
-
 		double precision = (precisionA + precisionB + precisionC) / 3;
 
 		double recallA = matrix[0][0]
@@ -235,21 +234,32 @@ public class SentimentAnalysis {
 				/ (matrix[2][2] + matrix[2][0] + matrix[2][1]);
 		double recall = (recallA + recallB + recallC) / 3;
 
+		double accuracy = 0;
+		double total = 0;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				total += matrix[i][j];
+			}
+		}
+		accuracy = (matrix[0][0] + matrix[1][1] + matrix[2][2]) / total;
+				
 		double f1 = 2 * ((precision * recall) / (precision + recall));
 		double f1A = 2 * ((precisionA * recallA) / (precisionA + recallA));
 		// double f1B = 2 * ((precisionB * recallB) / (precisionB + recallB));
 		double f1C = 2 * ((precisionC * recallC) / (precisionC + recallC));
 
 		System.out.println("precision: " + precision);
-		System.out.println("recall: " + recall);
+		System.out.println("recall: " + recall + "\n");
+		System.out.println("accuracy: " + accuracy + "\n" );
 		System.out.println("precisionPos: " + precisionA);
-		System.out.println("recallPos: " + recallA);
+		System.out.println("recallPos: " + recallA + "\n");
 		System.out.println("precisionNeutral: " + precisionB);
-		System.out.println("recallNeutral: " + recallB);
+		System.out.println("recallNeutral: " + recallB + "\n");
 		System.out.println("precisionNeg: " + precisionC);
-		System.out.println("recallNeg: " + recallC);
+		System.out.println("recallNeg: " + recallC + "\n");
 		System.out.println("f1: " + f1);
 		System.out.println("f1 without neutral: " + (f1A + f1C) / 2);
+		
 	}
 
 	/**
@@ -273,7 +283,9 @@ public class SentimentAnalysis {
 		PrintStream tweetPrintStreamError = new PrintStream(new File(
 				"output/error_analysis/error.txt"));
 		Scanner scanner = new Scanner(file);
-
+		
+		/******first format of output**********/
+		/*
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split("\t");
 			if (line.length == 6) {
@@ -285,7 +297,7 @@ public class SentimentAnalysis {
 						.parseInt(line[3]) && i < words.length; i++) {
 					target = target + words[i] + " ";
 				}
-				line[3] = line[3] + "\ttarget: " + target + "\n";
+				line[3] = line[3] + "\ttarget: " + target;
 				
 				if (!line[5].equals("Not Available")) {
 					String resultSenti = classValue.get(resultMapToPrint
@@ -315,13 +327,56 @@ public class SentimentAnalysis {
 				}
 			}
 
-			tweetPrintStream.print(StringUtils.join(line, "\t"));
-			tweetPrintStream.println();
+			//tweetPrintStream.print(StringUtils.join(line, "\t"));
+			tweetPrintStream.println(line[5]);
+			tweetPrintStream.println(line[3] +  " -> " + line[4]);
 		}
+		*/
+		while (scanner.hasNextLine()) {
+			String[] line = scanner.nextLine().split("\t");
+			if (line.length == 6) {
+				String id = line[0] + " " + line[2] + " " + line[3];
+				// put target term in the output
+				String[] words = line[5].split("\\s+");
+				String target = "";
+				for (int i = Integer.parseInt(line[2]); i <= Integer
+						.parseInt(line[3]) && i < words.length; i++) {
+					target = target + words[i] + " ";
+				}
+
+				
+				if (!line[5].equals("Not Available")) {
+					String resultSenti = classValue.get(resultMapToPrint
+							.get(id)); // result sentiment
+					String initialSenti = line[4]; // initial sentiment
+					// error
+					if (!initialSenti.equals(resultSenti)) {
+						errorcount++;
+						line[3] = line[3] + "\ttarget: " + target;
+						line[4] = "[Error] Initial: " + initialSenti
+								+ "\tResult: " + resultSenti + "\t\t";
+						if (debug) {
+							System.out.print(StringUtils.join(line, "\t"));
+							System.out.println();
+						}
+						tweetPrintStreamError.print(StringUtils
+								.join(line, "\t"));
+						tweetPrintStreamError.println();
+					} else {
+					// correct
+						tweetPrintStream.println(line[5]);
+						tweetPrintStream.println(target +  " ->  " + resultSenti + "\n");
+					}
+				} else if (line[5].equals("Not Available")) {
+					errorcount++;
+				}
+			}
+		}
+		
 		scanner.close();
 		tweetPrintStream.close();
 		tweetPrintStreamError.close();
 		if (errorcount != 0)
-			System.out.println("Not Available tweets: " + errorcount);
+			System.out.println("Error prediction number: " + errorcount);
 	}
 }

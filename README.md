@@ -56,10 +56,10 @@ Thanks to theses two systems, we reproduce our system above them. We added some 
 	</tr>
 	<tr>
 		<td>Sms2014-test</td>
-		<td>3175(60.2%)</td>
-		<td>1857(35.2%)</td>
-		<td>237(4.5%)</td>
-		<td>5270</td>
+		<td>710(45.3%)</td>
+		<td>747(46.7%)</td>
+		<td>111(7.1%)</td>
+		<td>1568</td>
 	</tr>
 </table>
 
@@ -95,10 +95,10 @@ Evaluate the sentinel model which is saved in resources/Trained-Features-sentine
 ### output
 
     "I drove a Linconl and it's a truly dream"
-    Linconl -> proper noun -> positive
+    Linconl -> positive
 
     "I drove a Linconl and it was awful"
-    Linconl -> proper noun -> negative
+    Linconl -> negative
 
 All the prediction is in output folder. The error output is in output/error_analysis folder
 	

@@ -460,6 +460,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 		featurecount++;
 
 		//word2vector
+		
 		Attribute Word2VecMaxScore = new Attribute("Word2VecMaxScore");
 		attributeList.add(Word2VecMaxScore);
 		featurecount++;
@@ -480,7 +481,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 		Attribute classAttribute = new Attribute("Class", fvClassVal);
 		attributeList.add(classAttribute);
 		featurecount++;
-
+		
 		//creating instances with features
 		Instances trainingSet = new Instances("test", attributeList, tweetList.size());
 		trainingSet.setClassIndex(classAttribute.index());
@@ -532,7 +533,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 				}
 			}
 
-			instance.setValue(allCaps, this.getAllCapsCount(tweet.getRawTweetString()));
+			instance.setValue(allCaps, this.getAllCapsCount(tweet.getTweetString()));
 			instance.setValue(hashtags, this.getHashtagCount(tweet.getTweetString()));
 			instance.setValue(punctuationCount, this.getPunctuation(tweet.getTweetString()));
 			if(this.isLastPunctuation(tweet.getTweetString())){
@@ -651,11 +652,12 @@ public class SentimentSystemSentinel extends SentimentSystem {
 			instance.setValue(SentiWordNetLastScoreNeg, SentiWordNetNeg.get(3));
 
 			//word2vec features
+			
 			List<Double> Word2VecScores = this.getWord2VecScores(Word2vec, tweet.getTargetWordList());
 			instance.setValue(Word2VecMaxScore, Word2VecScores.get(0));
 			instance.setValue(Word2VecAVGScore, Word2VecScores.get(1));
 			instance.setValue(Word2VecMinScore, Word2VecScores.get(2));
-
+			
 			//set class attribute
 			instance.setValue(classAttribute, tweet.getSentiment());
 
@@ -795,7 +797,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 				}
 			}
 
-			instance.setValue(featureMap.get("allCaps"), this.getAllCapsCount(tweet.getRawTweetString()));
+			instance.setValue(featureMap.get("allCaps"), this.getAllCapsCount(tweet.getTweetString()));
 			instance.setValue(featureMap.get("hashtags"), this.getHashtagCount(tweet.getTweetString()));
 			instance.setValue(featureMap.get("punctuationCount"), this.getPunctuation(tweet.getTweetString()));
 			if(this.isLastPunctuation(tweet.getTweetString())){
@@ -913,10 +915,12 @@ public class SentimentSystemSentinel extends SentimentSystem {
 			instance.setValue(featureMap.get("SentiWordNetLastScoreNeg"), SentiWordNetNeg.get(3));
 			
 			//word2vec features
+			
 			List<Double> Word2VecScores = this.getWord2VecScores(Word2vec, tweet.getTargetWordList());
 			instance.setValue(featureMap.get("Word2VecMaxScore"), Word2VecScores.get(0));
 			instance.setValue(featureMap.get("Word2VecAVGScore"), Word2VecScores.get(1));
 			instance.setValue(featureMap.get("Word2VecMinScore"), Word2VecScores.get(2));
+			
 			//add test instance to trained features
 			train.add(instance);
 
@@ -990,7 +994,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 	 */
 	private Map<String, Integer> getPosTags(Tweet tweet){
 		Map<String,Integer> tagMap = new HashMap<String, Integer>();
-		for (TaggedToken token : tweet.getWordList()){
+		for (TaggedToken token : tweet.getTargetWordList()){
 			Integer val = tagMap.get(token.tag);
 			if (val != null){
 				tagMap.put(token.tag, ++val);
@@ -1006,7 +1010,7 @@ public class SentimentSystemSentinel extends SentimentSystem {
 	/**
 	 * Determine the words which all in caps
 	 *
-	 * @param tweetString the Tweetstring to analyze
+	 * @param tweetString the Tweet string to analyze
 	 * @return returns the number of all caps words
 	 */
 	private int getAllCapsCount(String tweetString){

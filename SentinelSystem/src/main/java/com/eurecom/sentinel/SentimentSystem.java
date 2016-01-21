@@ -136,7 +136,7 @@ public class SentimentSystem {
 			if (i + 4 <= target.length()) nGramList.add(target.substring(i, i + 4));
 			if (i + 5 <= target.length()) nGramList.add(target.substring(i, i + 5));
 		}
-		tweet.setCharNGramList(nGramList); // normally use tweet.setCharNGramListTarget(nGramList); here. For the ease to not change the codes in SentimentSystemNRC.java
+		tweet.setCharNGramList(nGramList); // normally use tweet.setCharNGramListTarget(nGramList); here. For the ease to not change the codes in SentimentSystemSentinel.java
 		return nGramList;
 	}
 
@@ -167,10 +167,10 @@ public class SentimentSystem {
 	protected Set<String> getEmoticons(Tweet tweet){
 		Set<String> emoticons = new HashSet<String>();
 		String emoticon_string = "(?:[<>]?[:;=8][\\-o\\*\\']?[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\]|[\\)\\]\\(\\[dDpP/\\:\\}\\{@\\|\\\\] [\\-o\\*\\']?[:;=8][<>]?)";
-		Matcher m = Pattern.compile(emoticon_string).matcher(tweet.getTweetString());
+		Matcher m = Pattern.compile(emoticon_string).matcher(tweet.getTargetContent());
 		while (m.find()){
-			emoticons.add(tweet.getTweetString().substring(m.start(), m.end()));
-			if(m.end() == tweet.getTweetString().length()) tweet.setLastEmoticon(true);
+			emoticons.add(tweet.getTargetContent().substring(m.start(), m.end()));
+			if(m.end() == tweet.getTargetContent().length()) tweet.setLastEmoticon(true);
 		}
 		tweet.setEmoticons(emoticons);
 		return emoticons;
@@ -184,7 +184,7 @@ public class SentimentSystem {
 	protected void negate(Tweet tweet) {
 		int negationCount = 0;
 		boolean neg = false;
-		for (TaggedToken token : tweet.getWordList()){
+		for (TaggedToken token : tweet.getTargetWordList()){
 			if(neg){
 				if(token.token.matches("^[.:;!?]$")){
 					neg = false;

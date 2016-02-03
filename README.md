@@ -1,12 +1,12 @@
 # Sentinel system 
-This sentinel system is built to classify sentiment from Tweet. Idea is from SemEval2015 Sub Task A. The objective is to detect the sentiment of a term within a message(Term-level task).
+This sentinel system is built to classify sentiment from Tweet. Idea is from SemEval2015 Sub Task A. The purpose of Sentinel system is to extract the sentiment (positive, neutral, or negative) of a term within a message (Term-level task). 
 
 ## Approach
 Sentinel system inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modified the code and adapted it to term-level. Besides, we extracted and added some new features e.g. More lexicons, Word2Vec etc.
 
 Sentinel System is trained with Tweet2013-train.txt and Tweet2013-dev.txt. For the features of Word2Vec, we pre-trained a Word2Vec model with all the tweets(Tweet2013-train.txt, Tweet2013-dev.txt, Tweet2013-text.txt and Tweet2014-test.txt)
 
-Thanks to theses two systems, we could reproduce sentinel system.
+Thanks to these two systems, we could reproduce sentinel system.
 
 ![image](https://docs.google.com/drawings/d/1G0UbNY2REuCkvXTFCONzqe5LV6ZiyLxHONayuElWJNU/pub?w=960&h=720)
 
@@ -66,7 +66,7 @@ Thanks to theses two systems, we could reproduce sentinel system.
 
 ## How to run
 Above all, train the module with training data. Then evaluate it with testing data.
-The system is in sentinel/ folder. Main class is in src/ folder.
+The system is in sentinel/ folder. Main class is in sentinel/src/ folder.
 ### train Usage
 	train <train_data> [<model_name>]
 Train a model with train\_data, save the model as the name of model\_name. By default model is saved as the name of Trained-Features.aff
@@ -75,7 +75,7 @@ Train a model with train\_data, save the model as the name of model\_name. By de
 	eval <test_data> [<model_name>]
 Evaluate a model with test_data. By default using the trained model of Trained-Features.aff
 
-### Examples
+### examples
 	
 	> train Tweet2013-train
 

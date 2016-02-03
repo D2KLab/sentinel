@@ -23,7 +23,7 @@ public class Word2VecDemo {
 
     public static void main(String[] args) throws Exception {
 
-        String filePath = new ClassPathResource("tweets/word2vec-train-data.txt").getFile().getAbsolutePath();
+        String filePath = new ClassPathResource("tweets/train.txt").getFile().getAbsolutePath();
 
         log.info("Load & Vectorize Sentences....");
         // Strip white space before and after for each line

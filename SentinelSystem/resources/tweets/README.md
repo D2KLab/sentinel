@@ -6,7 +6,7 @@
 		<td>Positive</td>
 		<td>Negative</td>
 		<td>Neutral</td>
-		<td>Tweets No.</td>
+		<td>Total Tweets collected</td>
 	</tr>
 	<tr>
 		<td>Tweet2013-train</td>

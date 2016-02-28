@@ -81,6 +81,6 @@ abandons	-2<br/>
 **SentiWordNet Lexicon:** the lexicon we used is located in lexi/ folder. The lexicon’s name is SentiWordNet\_3.0.0.txt. We get the positive and negative scores from the third and forth fields respectively. The word is in forth field.
 <br/>
 **Example of SentiWordNet Lexicon:**<br/>
-a	00001740	0.125	0	able\#1	(usually followed by 'to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"
+a	00001740	0.125	0	able\#1	(usually followed by 'to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"<br/>
 a	00002098	0	0.75	unable\#1	(usually followed by 'to') not having the necessary means or skill or know-how; "unable to get to town without a car"; "unable to obtain funds"
 

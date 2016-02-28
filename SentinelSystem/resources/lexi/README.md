@@ -10,44 +10,25 @@ We used NRC Hashtag Sentiment Lexicon, Sentiment140 Lexicon, NRC Emotion Lexicon
 
 ##How to extract features
 NRC Hashtag Sentiment Lexicon: the lexicons we used are located in lexi/hashtag/ folder. We used unigrams (unigrams-pmilexicon.txt) and bigrams lexicons (bigrams-pmilexicon.txt). We get the sentimentScore as the score of the word.
-<<<<<<< HEAD
 <br/><br/>
 The format of the lexicons is:<br/>
 term\<tab\>sentimentScore\<tab\>numPositive<\tab\>numNegative
 <br/><br/>
 Examples of NRC Hashtag Sentiment Lexicon:<br/>
-\#amazing	5.096	4761	47
-\#nice	5.035	1620	17
-zayns	5	6	0
-
-<br/><br/>
-Sentiment140 Lexicon: the lexicons we used are located in lexi/sentiment140/folder. We used  unigrams (unigrams-pmilexicon.txt) and bigrams lexicons (bigrams-pmilexicon.txt). We get the sentimentScore as the score of the word.
-<br/>
-The format of the lexicons is as NRC Hashtag Sentiment Lexicon:<br/>
-term<tab>sentimentScore<tab>numPositive<tab>numNegative
-<br/><br/>
-=======
-<br/>
-The format of the lexicons is:
-term<tab>sentimentScore<tab>numPositive<tab>numNegative
-<br/>
-Examples of NRC Hashtag Sentiment Lexicon:
-#amazing	5.096	4761	47
-#nice	5.035	1620	17
-zayns	5	6	0
+\#amazing	5.096	4761	47<br/>
+\#nice	5.035	1620	17<br/>
+zayns	5	6	0<br/>
 <br/>
 Sentiment140 Lexicon: the lexicons we used are located in lexi/sentiment140/folder. We used  unigrams (unigrams-pmilexicon.txt) and bigrams lexicons (bigrams-pmilexicon.txt). We get the sentimentScore as the score of the word.
-<br/>
-The format of the lexicons is as NRC Hashtag Sentiment Lexicon:
-term<tab>sentimentScore<tab>numPositive<tab>numNegative
-<br/>
->>>>>>> 5032050ffbec07171e9e4615b5e963d6ce48c068
-Examples of Sentiment140 Lexicon:
-add everyone	7.352	1485	1
-or pay	5.975	1499	4
-train or	5.561	1487	6
+<br/><br/>
+The format of the lexicons is the same as NRC Hashtag Sentiment Lexicon:<br/>
+term\<tab\>sentimentScore\<tab\>numPositive<tab>numNegative
+<br/><br/>
+Examples of NRC Hashtag Sentiment Lexicon:<br/>
+add everyone	7.352	1485	1<br/>
+or pay	5.975	1499	4<br/>
+train or	5.561	1487	6<br/>
 
-<<<<<<< HEAD
 <br/><br/>
 NRC Emotion Lexicon: the lexicon we used is located in lexi/ folder. The file name of the lexicon is NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt. If the word has a positive attribute with value 1, set the score of the term with value 1. If the word has a negative attribute with value 1, set the score of the term with value -1.
 <br/><br/>
@@ -88,66 +69,15 @@ AFINN-11 Lexicon: the lexicon we used is located in lexi/ folder. The lexicon’
 Format of AFINN Lexicons:<br/>
 word<tab>score
 <br/><br/>
-=======
-<br/>
-NRC Emotion Lexicon: the lexicon we used is located in lexi/ folder. The file name of the lexicon is NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt. If the word has a positive attribute with value 1, set the score of the term with value 1. If the word has a negative attribute with value 1, set the score of the term with value -1.
-<br/>
-Examples of NRC Emotion Lexicon:
-admire	anger	0
-admire	anticipation	0
-admire	disgust	0
-admire	fear	0
-admire	joy	0
-admire	negative	0
-admire	positive	1
-admire	sadness	0
-admire	surprise	0
-admire	trust	1
-adrift	anger	0
-adrift	anticipation	1
-adrift	disgust	0
-adrift	fear	1
-adrift	joy	0
-adrift	negative	1
-adrift	positive	0
-adrift	sadness	1
-adrift	surprise	0
-adrift	trust	0
-<br/>
-MPQA: the lexicon we used is located in lexi/ folder. The file name of the MPQA lexicon is subjclueslen1-HLTEMNLP05.tff. If prior polarity of the word is negative, set value 1. If prior polarity of the word is positive, set value -1. Besides, if the type of the word is strongsubj, multiple the value by 5.
-<br/>
-Format of the lexicon:
-type<tab>word1<tab>pos1<tab>stemmed<tab>prior polarity
-<br/>
-Example of the lexicons:
-type=strongsubj len=1 word1=abasement pos1=anypos stemmed1=y priorpolarity=negative
-<br/>
-Bing Liu Lexicon: the lexicons we used are located in lexicons/bingliu/ folder. The names of the lexicons are negative-words.txt and positive-words.txt. Set the score of all the negative words (which are in negative-words.txt) -1, those of positive (which are in positive-words.txt) words 1.
-<br/>
-
-AFINN-11 Lexicon: the lexicon we used is located in lexi/ folder. The lexicon’s name is AFINN-111.txt. We get the score of the word in the lexicon.
-<br/>
-Format of AFINN Lexicons:
-word<tab>score
-<br/>
->>>>>>> 5032050ffbec07171e9e4615b5e963d6ce48c068
 Example of AFINN Lexicon:
 abandon	-2
 abandoned	-2
 abandons	-2
 
-<<<<<<< HEAD
 <br/> <br/>
 SentiWordNet Lexicon: the lexicon we used is located in lexi/ folder. The lexicon’s name is SentiWordNet_3.0.0.txt. We get the positive and negative scores from the third and forth fields respectively. The word is in forth field.
 <br/><br/>
 Example of SentiWordNet Lexicon:<br/>	
 a	00001740	0.125	0	able\#1	(usually followed by `to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"
 a	00002098	0	0.75	unable\#1	(usually followed by `to') not having the necessary means or skill or know-how; "unable to get to town without a car"; "unable to obtain funds"
-=======
-<br/> 
-SentiWordNet Lexicon: the lexicon we used is located in lexi/ folder. The lexicon’s name is SentiWordNet_3.0.0.txt. We get the positive and negative scores from the third and forth fields respectively. The word is in forth field.
-<br/>
-Example of SentiWordNet Lexicon:
-a	00001740	0.125	0	able#1	(usually followed by `to') having the necessary means or skill or know-how or authority to do something; "able to swim"; "she was able to program her computer"; "we were at last able to buy a car"; "able to get a grant for the project"
-a	00002098	0	0.75	unable#1	(usually followed by `to') not having the necessary means or skill or know-how; "unable to get to town without a car"; "unable to obtain funds"
->>>>>>> 5032050ffbec07171e9e4615b5e963d6ce48c068
+

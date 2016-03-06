@@ -87,6 +87,7 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
+	
 		<dependency>
 			<groupId>com.eurecom</groupId>
 			<artifactId>SentinelSystem</artifactId>
@@ -159,6 +160,18 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+          
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>com.eurecom.sentinel.Main</mainClass>
+                    <arguments>
+                  
+                    </arguments>
                 </configuration>
             </plugin>
         </plugins>

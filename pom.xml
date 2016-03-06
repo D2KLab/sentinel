@@ -1,18 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.eurecom.sentinel</groupId>
+    <groupId>com.eurecom</groupId>
     <version>0.4-rc0-SNAPSHOT</version>
-
-    <description>Examples of training different data sets</description>
+    <artifactId>SentinelSystem</artifactId>
+    <name>SentiNEL System</name>
+    
     <properties>
         <nd4j.version>0.4-rc3.7</nd4j.version>
         <dl4j.version>	0.4-rc3.7</dl4j.version>
         <canova.version>0.0.0.13</canova.version>
         <jackson.version>2.5.1</jackson.version>
     </properties>
-
-
 
     <distributionManagement>
         <snapshotRepository>
@@ -41,7 +40,6 @@
             <artifactId>deeplearning4j-nlp</artifactId>
             <version>${dl4j.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>deeplearning4j-core</artifactId>
@@ -73,6 +71,32 @@
             <version>${jackson.version}</version>
         </dependency>
 
+
+        <dependency>
+        	<groupId>nz.ac.waikato.cms.weka</groupId>
+        	<artifactId>weka-dev</artifactId>
+        	<version>3.7.10</version>
+        </dependency>
+        <dependency>
+			<groupId>edu.cmu.cs</groupId>
+			<artifactId>ark-tweet-nlp</artifactId>
+			<version>0.3.2</version>
+		</dependency>
+        <dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.eurecom</groupId>
+			<artifactId>SentinelSystem</artifactId>
+			<version>1.9.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/LibLINEAR-1.9.0.jar</systemPath>
+		</dependency>
+		
+		
     </dependencies>
 
     <build>
@@ -141,6 +165,4 @@
         </plugins>
     </build>
 
-    <artifactId>IOA</artifactId>
-    <name>SentinelSystem</name>
 </project>

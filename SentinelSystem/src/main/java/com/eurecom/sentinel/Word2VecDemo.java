@@ -16,7 +16,11 @@ import org.springframework.core.io.ClassPathResource;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
+/**
+ * Train Word2Vec module
+ * 
+ * @author SentiNEL
+ */
 public class Word2VecDemo {
 
     private static Logger log = LoggerFactory.getLogger(Word2VecDemo.class);

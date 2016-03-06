@@ -19,6 +19,15 @@ import cmu.arktweetnlp.impl.features.WordClusterPaths;
 
 /**
  * Provides functions to get features
+ * 
+ * @author SentiNEL, Webis
+ * Code is base on Webis
+ * SentiNEL modify getNGrams method
+ * SentiNEL add filterNGrams method
+ * SentiNEL modify getCharNgrams method
+ * SentiNEL add loadSentiWordNet method
+ * SentiNEL add loadWord2Vec method
+ * SentiNEL add getWord2VecScores method
  */
 public class SentimentSystem {
 

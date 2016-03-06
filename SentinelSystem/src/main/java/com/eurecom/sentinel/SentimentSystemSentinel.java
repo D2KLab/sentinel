@@ -23,6 +23,12 @@ import cmu.arktweetnlp.Tagger.TaggedToken;
 
 /**
  * Trains and tests the NRC system
+ * 
+ * @author SentiNEL, Webis
+ * Code is base on Webis System
+ * SentiNEL modify the code
+ * SentiNEL add more features in train and test methods
+ * SentiNEL modify the other methods to adapt them to term level from sentence level
  */
 public class SentimentSystemSentinel extends SentimentSystem {
 

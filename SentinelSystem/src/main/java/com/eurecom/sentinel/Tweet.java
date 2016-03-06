@@ -7,8 +7,21 @@ import java.util.Set;
 import cmu.arktweetnlp.Tagger.TaggedToken;
 
 /**
- * Represents one Tweet and saves some features and the preprocessed versions of the Tweet
-----
+ * Represents one Tweet and saves some features and the preprocessed versions of the Tweet\
+ * 
+ * @author SentiNEL, Webis
+ * Code is base on Webis System
+ * SentiNEL add targetWordList, targetBegin, targetEnd attributes
+ * SentiNEL add getTargetWordList method
+ * SentiNEL add setTargetWordList method
+ * SentiNEL add getTargetBegin method
+ * SentiNEL add getTargetEnd method
+ * SentiNEL add getTargetContent method
+ * SentiNEL add setNGramsTarget method
+ * SentiNEL add getNGramsTarget method
+ * SentiNEL add setCharNGramListTarget method
+ * SentiNEL add getCharNGramListTarget method
+ * SentiNEL modify toString method
 */
 public class Tweet {
 	private String rawTweet;

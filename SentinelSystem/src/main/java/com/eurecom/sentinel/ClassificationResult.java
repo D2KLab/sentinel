@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * Holds the result of the classification of one Tweet
+ * 
+ * @author Codes from https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015
  */
 public class ClassificationResult {
     private Tweet tweet;

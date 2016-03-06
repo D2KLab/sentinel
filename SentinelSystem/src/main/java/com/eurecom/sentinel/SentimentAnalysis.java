@@ -14,7 +14,13 @@ import java.util.Set;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Handels traning, testing and evaluation of the Sentimentsystems.
+ * Handels traning, testing and evaluation of the SentiNEL system.
+ * 
+ * @author SentiNEL, Webis
+ * Codes based on Webis system 
+ * SentiNEL modify the printResultToFile method
+ * SentiNEL add checkPositionFormat method to get rid of the tweet whose target
+ * term's end position is bigger than the tweet total length
  */
 public class SentimentAnalysis {
 
@@ -40,7 +46,7 @@ public class SentimentAnalysis {
 	}
 
 	/**
-	 * Trains systemNRC
+	 * Trains system
 	 * 
 	 * @param savename
 	 *            optional filename for the arff file
@@ -281,7 +287,7 @@ public class SentimentAnalysis {
 		PrintStream tweetPrintStream = new PrintStream(new File(
 				"output/result.txt"));
 		PrintStream tweetPrintStreamError = new PrintStream(new File(
-				"output/error_analysis/error.txt"));
+				"output/error_analysis.txt"));
 		Scanner scanner = new Scanner(file);
 		
 		/******first format of output**********/

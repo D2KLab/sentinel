@@ -1,5 +1,11 @@
 package com.eurecom.sentinel;
 
+/**
+ * Main entrance of SentiNEL System
+ * 
+ * @author SentiNEL
+ *
+ */
 public class Main {
 	
 	static String mode;

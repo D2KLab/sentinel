@@ -1,5 +1,5 @@
 # SentiNEL: Sentiment Analysis from Tweets
-[SentiNEL][sentinel] system is developed for sentiment analysis of tweets based on [SemEval2015 Task10-Subtask A](http://alt.qcri.org/semeval2015/task10/): Contextual Polarity Disambiguation. The purpose of SentiNEL is that given a message containing a marked instance of a word or phrase, determines whether that instance is positive, negative or neutral in that context. SentiNEL is inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modify the code and adapt it to term-level. Besides, SentiNEL extracts and adds some new features (e.g. More lexicons, Word2Vec etc.)
+[SentiNEL](https://github.com/MultimediaSemantics/sentinel) system is developed for sentiment analysis of tweets based on [SemEval2015 Task10-Subtask A](http://alt.qcri.org/semeval2015/task10/): Contextual Polarity Disambiguation. The purpose of SentiNEL is that given a message containing a marked instance of a word or phrase, determines whether that instance is positive, negative or neutral in that context. SentiNEL is inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B (Message-level task). We modify the code and adapt it to term-level. Besides, SentiNEL extracts and adds some new features (e.g. More lexicons, Word2Vec etc.)
 
 Key words: Sentiment analysis, Machine Learning, Data Mining, NLP
 
@@ -10,7 +10,7 @@ SentiNEL consists four steps
 * Train: it trains the SVM classifier with extracted features
 * Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
 
-![image](https://drive.google.com/drive/u/0/folders/0B04AROqqkVy7RFE4elNkdWlmelE)
+![image](https://drive.google.com/open?id=0B04AROqqkVy7Z09hemxiTGdYQlk)
 
 ## Corpus description
 The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
@@ -72,13 +72,18 @@ The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org
 * Maven 3+
 
 ## Setting Up 
-	git clone https://github.com/AmourDeMai/sentinel.git
+	git clone https://github.com/MultimediaSemantics/sentinel	
     mvn clean
     mvn compile
     
 ## Train
-	mvn exec:java -Dexec.args="train train_data [save features]"
-	
+	mvn exec:java -Dexec.args="train train_file [save_features_file]"
+```sh
+-train					set 	train mode
+-train\_data 			set 	the train input file
+-save\_feature\s_file	set 	the filename to save trained features, by default the filename is set as arff/Trained-Features.arff
+```	
+
 ### example
 	mvn exec:java -Dexec.args="train train"
 Extract the features from training dataset: resources/tweets/train.txt, and save the extracted features in arff/Trained-Features.arff
@@ -88,6 +93,11 @@ Extract the features from training dataset: resources/tweets/train.txt, and save
 
 ## Evaluation
     mvn exec:java -Dexec.args="eval test_data [saved features]"
+```sh
+-eval					set 	test mode
+-test\_data 			set 	the test input file
+-saved\_features\_file	set 	the save trained features filename, by default the filename is set as arff/Trained-Features.arff
+```	   
     
 ### example
 	mvn exec:java -Dexec.args="eval Tweet2013-test"

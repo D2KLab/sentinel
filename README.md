@@ -1,11 +1,11 @@
 # SentiNEL: Sentiment Analysis from Tweets
-[SentiNEL](https://github.com/MultimediaSemantics/sentinel) system is developed for sentiment analysis of tweets based on [SemEval2015 Task10-Subtask A](http://alt.qcri.org/semeval2015/task10/): Contextual Polarity Disambiguation. The purpose of SentiNEL is that given a message containing a marked instance of a word or phrase, determines whether that instance is positive, negative or neutral in that context. SentiNEL is inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B (Message-level task). We modify the code and adapt it to term-level. Besides, SentiNEL extracts and adds some new features (e.g. More lexicons, Word2Vec etc.)
+[SentiNEL](https://github.com/MultimediaSemantics/sentinel) system is developed for sentiment analysis of tweets based on [SemEval2015 Task10-Subtask A](http://alt.qcri.org/semeval2015/task10/): Contextual Polarity Disambiguation. The purpose of SentiNEL is that given a message containing a marked instance of a word or a phrase, determines whether that instance is positive, negative or neutral in that context. SentiNEL is inspired by the [IOA system](http://alt.qcri.org/semeval2015/cdrom/pdf/SemEval091.pdf). The main differences are that SentiNEL extracts more features (e.g. Char 3, 4, 5 grams, Hashtag, longer Word2Vec dimension, more lexicons etc.) for training. Besides, SentiNEL trains L2-regularized logistic regression SVM classifier with C value 0.5. The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However, Webis is a system only for SemEval2015 Task10-Sub Task B (Message-level task). We modify the code and adapt it to term-level. The system is scored by computing F1-score for predicting positive/negative phrases. Comparing to IOA system, SentiNEL improves the F1-score from 83.90 to 88.15 on Tweet2013-test, from 84.18 to 84.73 on Sms2013-test.
 
 Key words: Sentiment analysis, Machine Learning, Data Mining, NLP
 
 ## Architectural Overview 
-SentiNEL consists four steps
-* Pre-train Word2Vec module: it trains the Word2Vec vectors from all the words which appears 3 times at least in the dataset 
+SentiNEL consists of four steps:
+* Pre-train Word2Vec module: it trains the Word2Vec vectors from all the words which appear at least 3 times in the dataset 
 * Extraction of features: it extracts features from the training dataset
 * Train: it trains the SVM classifier with extracted features
 * Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
@@ -13,7 +13,7 @@ SentiNEL consists four steps
 ![image](https://cloud.githubusercontent.com/assets/7665292/13723294/38541c36-e860-11e5-8d58-afd3ac302450.png)
 
 ## Corpus description
-The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
+The corpus is collected from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
 <table>
 	<tr>
 		<td>Corpus</td>
@@ -80,8 +80,8 @@ The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org
 	mvn exec:java -Dexec.args="train train_file [save_features_file]"
 ```sh
 -train					set 	train mode
--train_data 			set 	the train input file
--save_features_file		set 	the filename to save trained features, by default the filename is set as arff/Trained-Features.arff
+-train_file 			set 	the input file for training
+-save_features_file		set 	the file to save trained features, by default SentiNEL saves the extracted features in arff/Trained-Features.arff
 ```	
 
 ### example
@@ -92,27 +92,28 @@ Extract the features from training dataset: resources/tweets/train.txt, and save
 Extract the features from training dataset: resources/tweets/train.txt, and save the extracted features in arff/Trained-Features-model1.arff
 
 ## Evaluation
-    mvn exec:java -Dexec.args="eval test_data [saved features]"
+    mvn exec:java -Dexec.args="eval test_file [saved_features_file]"
 ```sh
 -eval					set 	test mode
--test_data 				set 	the test input file
--saved_features_file	set 	the save trained features filename, by default the filename is set as arff/Trained-Features.arff
+-test_file 				set 	the input file for testing
+-saved_features_file	set 	the file contains trained features, by default SentiNEL trains SVM classifier with arff/Trained-Features.arff
 ```	   
     
 ### example
 	mvn exec:java -Dexec.args="eval Tweet2013-test"
-Train the SentiNEL system with the extracted features: arff/Trained-Features.arff, then evaluate it with testing dataset: resources/tweets/Tweet2013-test"
+Train SVM classifier with the extracted features: arff/Trained-Features.arff, then evaluate it with testing dataset: resources/tweets/Tweet2013-test.txt"
 
 	mvn exec:java -Dexec.args="eval Sms2013-test Trained-Features-model1"
-Train the SentiNEL system with the extracted features: arff/Trained-Features-model1.arff, then evaluate it with testing dataset: resources/tweets/Sms2013-test"
+Train SVM classifier with the extracted features: arff/Trained-Features-model1.arff, then evaluate it with testing dataset: resources/tweets/Sms2013-test.txt"
 
 ## Output
 	"I drove a Lincoln and it's a truly dream"
-    Linconl -> positive
-The output of SentiNEL locates in output/ folder. It has result.txt file which contains the sentiment prediction result, and error_analysis.txt which contains the wrong sentiment prediction result.
+    Lincoln -> positive
+The output of SentiNEL locates in output/ folder. result.txt file contains the sentiment prediction results, and error_analysis.txt file contains the wrong sentiment prediction results.
     
 ## Team
 * Yonghui Feng
 * Ahmed Abdelli
 * Giuseppe Rizzo
 * Raphael Troncy
+

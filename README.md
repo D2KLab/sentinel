@@ -10,7 +10,7 @@ SentiNEL consists four steps
 * Train: it trains the SVM classifier with extracted features
 * Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
 
-![image](https://drive.google.com/open?id=0B04AROqqkVy7Z09hemxiTGdYQlk)
+![image](https://docs.google.com/document/d/1R1Bxj98x8F8AUZy2jTMTbcEukLnE7SgQLNnsHtgh0qk/edit)
 
 ## Corpus description
 The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
@@ -109,7 +109,7 @@ Train the SentiNEL system with the extracted features: arff/Trained-Features-mod
 ## Output
 	"I drove a Lincoln and it's a truly dream"
     Linconl -> positive
-The output of SintiNEL locates in output/ folder. It has result.txt file which contains the sentiment prediction result, and error_analysis.txt which contains the wrong sentiment prediction result.
+The output of SentiNEL locates in output/ folder. It has result.txt file which contains the sentiment prediction result, and error_analysis.txt which contains the wrong sentiment prediction result.
     
 ## Team
 * Yonghui Feng

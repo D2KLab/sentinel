@@ -10,7 +10,7 @@ SentiNEL consists four steps
 * Train: it trains the SVM classifier with extracted features
 * Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
 
-![image](https://docs.google.com/document/d/1R1Bxj98x8F8AUZy2jTMTbcEukLnE7SgQLNnsHtgh0qk/edit)
+![image](https://cloud.githubusercontent.com/assets/7665292/13723294/38541c36-e860-11e5-8d58-afd3ac302450.png)
 
 ## Corpus description
 The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 

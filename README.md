@@ -10,7 +10,7 @@ SentiNEL consists four steps
 * Train: it trains the SVM classifier with extracted features
 * Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
 
-![image](blob:https://drive.google.com/01f00617-19b8-429b-9397-317a6f86f7ce)
+![image](https://drive.google.com/open?id=0B04AROqqkVy7Z09hemxiTGdYQlk)
 
 ## Corpus description
 The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
@@ -81,7 +81,7 @@ The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org
 ```sh
 -train					set 	train mode
 -train_data 			set 	the train input file
--save_features_file		set 	the filename to save trained features, by default the filename is \set as arff/Trained-Features.arff
+-save_features_file		set 	the filename to save trained features, by default the filename is set as arff/Trained-Features.arff
 ```	
 
 ### example
@@ -94,9 +94,9 @@ Extract the features from training dataset: resources/tweets/train.txt, and save
 ## Evaluation
     mvn exec:java -Dexec.args="eval test_data [saved features]"
 ```sh
--eval					set 	\test mode
+-eval					set 	test mode
 -test_data 				set 	the test input file
--saved_features_file	set 	the save trained features filename, by default the filename is \set as arff/Trained-Features.arff
+-saved_features_file	set 	the save trained features filename, by default the filename is set as arff/Trained-Features.arff
 ```	   
     
 ### example

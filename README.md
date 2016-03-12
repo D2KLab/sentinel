@@ -1,16 +1,19 @@
-# Sentinel system 
-This sentinel system is built to classify sentiment from Tweet. Idea is from SemEval2015 Sub Task A. The purpose of Sentinel system is to extract the sentiment (positive, neutral, or negative) of a term within a message (Term-level task). 
+# SentiNEL: Sentiment Analysis from Tweets
+[SentiNEL][sentinel] system is developed for sentiment analysis of tweets based on [SemEval2015 Task10-Subtask A](http://alt.qcri.org/semeval2015/task10/): Contextual Polarity Disambiguation. The purpose of SentiNEL is that given a message containing a marked instance of a word or phrase, determines whether that instance is positive, negative or neutral in that context. SentiNEL is inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modify the code and adapt it to term-level. Besides, SentiNEL extracts and adds some new features (e.g. More lexicons, Word2Vec etc.)
 
-## Approach
-Sentinel system inspired by the [NRC system](http://www.cs.toronto.edu/~xzhu/SemEval2014_NRC_t9.pdf). The code is based on [Webis system](https://github.com/webis-de/ECIR-2015-and-SEMEVAL-2015). However Webis is a system only for SemEval2015 Sub Task B(Message-level task). We modified the code and adapted it to term-level. Besides, we extracted and added some new features e.g. More lexicons, Word2Vec etc.
+Key words: Sentiment analysis, Machine Learning, Data Mining, NLP
 
-Sentinel System is trained with Tweet2013-train.txt and Tweet2013-dev.txt. For the features of Word2Vec, we pre-trained a Word2Vec model with all the tweets(Tweet2013-train.txt, Tweet2013-dev.txt, Tweet2013-text.txt and Tweet2014-test.txt)
+## Architectural Overview 
+SentiNEL consists four steps
+* Pre-train Word2Vec module: it trains the Word2Vec vectors from all the words which appears 3 times at least in the dataset 
+* Extraction of features: it extracts features from the training dataset
+* Train: it trains the SVM classifier with extracted features
+* Evaluation: it evaluates the trained SVM classifier and tests it with testing dataset
 
-Thanks to these two systems, we could reproduce sentinel system.
+![image](https://drive.google.com/drive/u/0/folders/0B04AROqqkVy7RFE4elNkdWlmelE)
 
-![image](https://docs.google.com/drawings/d/1G0UbNY2REuCkvXTFCONzqe5LV6ZiyLxHONayuElWJNU/pub?w=960&h=720)
-
-## Corpus downloaded from SemEval2015
+## Corpus description
+The corpus is downloaded from [SemEval-2015 Task 10 Dataset](http://alt.qcri.org/semeval2015/task10/index.php?id=data-and-tools). The following table shows the account of dataset we collected. 
 <table>
 	<tr>
 		<td>Corpus</td>
@@ -64,46 +67,40 @@ Thanks to these two systems, we could reproduce sentinel system.
 </table>
 
 
-## How to run
-Above all, train the module with training data. Then evaluate it with testing data.
-The system is in sentinel/ folder. Main class is in sentinel/src/ folder.
-### train Usage
-	train <train_data> [<model_name>]
-Train a model with train\_data, save the model as the name of model\_name. By default model is saved as the name of Trained-Features.aff
+## Requirements
+* Java 7+
+* Maven 3+
 
-### evaluation Usage
-	eval <test_data> [<model_name>]
-Evaluate a model with test_data. By default using the trained model of Trained-Features.aff
-
-### examples
+## Setting Up 
+	git clone https://github.com/AmourDeMai/sentinel.git
+    mvn clean
+    mvn compile
+    
+## Train
+	mvn exec:java -Dexec.args="train train_data [save features]"
 	
-	> train Tweet2013-train
+### example
+	mvn exec:java -Dexec.args="train train"
+Extract the features from training dataset: resources/tweets/train.txt, and save the extracted features in arff/Trained-Features.arff
 
-Train a model with training dataset in sentinel/resources/tweets/Tweet2013-train.txt, and save the model in resources/arff/Trained-Features.arff
+	mvn exec:java -Dexec.args="train train model1"
+Extract the features from training dataset: resources/tweets/train.txt, and save the extracted features in arff/Trained-Features-model1.arff
 
-	> train train sentinel
-	
-Train a model with training dataset in sentinel/resources/tweets/train.txt, and save the model in sentinel/resources/arff/Trained-Features-sentinel.arff
+## Evaluation
+    mvn exec:java -Dexec.args="eval test_data [saved features]"
+    
+### example
+	mvn exec:java -Dexec.args="eval Tweet2013-test"
+Train the SentiNEL system with the extracted features: arff/Trained-Features.arff, then evaluate it with testing dataset: resources/tweets/Tweet2013-test"
 
-	> eval Tweet2013-test 
-	
-Evaluate the sentinel/resources/Trained-Features.arff model with the training dataset in sentinel/resources/tweets/Tweet2013-test.txt 
+	mvn exec:java -Dexec.args="eval Sms2013-test Trained-Features-model1"
+Train the SentiNEL system with the extracted features: arff/Trained-Features-model1.arff, then evaluate it with testing dataset: resources/tweets/Sms2013-test"
 
-	> eval Tweet2013-test Trained-Features-sentinel
-	
-Evaluate the sentinel model which is saved in sentinel/resources/Trained-Features-sentinel.arff with the training dataset in sentinel/resources/tweets/Tweet2013-test.txt 
-	
-### output
-
-    "I drove a Linconl and it's a truly dream"
+## Output
+	"I drove a Lincoln and it's a truly dream"
     Linconl -> positive
-
-    "I drove a Linconl and it was awful"
-    Linconl -> negative
-
-All the predictions are in sentinel/output folder. The error output is in sentinel/output/error_analysis folder
-	
-
+The output of SintiNEL locates in output/ folder. It has result.txt file which contains the sentiment prediction result, and error_analysis.txt which contains the wrong sentiment prediction result.
+    
 ## Team
 * Yonghui Feng
 * Ahmed Abdelli
